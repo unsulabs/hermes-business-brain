@@ -1,6 +1,7 @@
 name: hermes-business-brain
 version: 0.2.0
 manifest_version: 2
+requires_hermes: ">=0.23.0"
 description: >-
   Offline Obsidian "business brain" toolkit with a native English engine: 18 local,
   network-free Hermes tools that create, validate and query private knowledge vaults, plus 19
