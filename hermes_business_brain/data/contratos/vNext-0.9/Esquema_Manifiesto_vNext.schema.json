@@ -1,0 +1,654 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/metadata/business-knowledge-handoff-0.9.schema.json",
+  "title": "Contrato portable de traspaso empresarial vNext 0.9",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "generated_at",
+    "company",
+    "documents",
+    "sources",
+    "blocks",
+    "authorities",
+    "relationships",
+    "pending",
+    "historicals",
+    "restrictions",
+    "retrieval_tests"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "0.9"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "company": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "display_name",
+        "synthetic"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "synthetic": {
+          "type": "boolean"
+        }
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/document"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/block"
+      }
+    },
+    "authorities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/authority"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "pending": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pending"
+      }
+    },
+    "historicals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/historical"
+      }
+    },
+    "restrictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/restriction"
+      }
+    },
+    "retrieval_tests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/retrieval"
+      }
+    }
+  },
+  "$defs": {
+    "editorial": {
+      "enum": [
+        "borrador",
+        "en_revision",
+        "aprobado",
+        "retirado"
+      ]
+    },
+    "coverage": {
+      "enum": [
+        "sin_fuente",
+        "parcial",
+        "suficiente_para_tarea",
+        "no_aplica"
+      ]
+    },
+    "knowledge": {
+      "enum": [
+        "hecho_observado",
+        "decision_aprobada",
+        "propuesta",
+        "hipotesis",
+        "historico",
+        "pendiente",
+        "desconocido",
+        "conflicto"
+      ]
+    },
+    "temporal": {
+      "enum": [
+        "vigente",
+        "futuro",
+        "superseded",
+        "caducado",
+        "sin_verificar"
+      ]
+    },
+    "support": {
+      "enum": [
+        "documental_directo",
+        "testimonio_atribuido",
+        "observacion",
+        "derivado_calculado",
+        "sin_fuente",
+        "fuentes_en_conflicto"
+      ]
+    },
+    "access": {
+      "enum": [
+        "publico",
+        "interno",
+        "confidencial",
+        "restringido"
+      ]
+    },
+    "coverage_q": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question",
+        "status",
+        "source_ids"
+      ],
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 5
+        },
+        "status": {
+          "$ref": "#/$defs/coverage"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "doc_id",
+        "doc_type",
+        "path",
+        "revision",
+        "editorial_status",
+        "as_of",
+        "access",
+        "coverage_by_question"
+      ],
+      "properties": {
+        "doc_id": {
+          "type": "string",
+          "pattern": "^(D0[1-7]|X0[1-7])(-[A-Za-z0-9_-]+)?$"
+        },
+        "doc_type": {
+          "enum": [
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "D06",
+            "D07",
+            "X01",
+            "X02",
+            "X03",
+            "X04",
+            "X05",
+            "X06",
+            "X07"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "editorial_status": {
+          "$ref": "#/$defs/editorial"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "access": {
+          "$ref": "#/$defs/access"
+        },
+        "coverage_by_question": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/coverage_q"
+          }
+        },
+        "checksum_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "supersedes_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "kind",
+        "locator",
+        "event_date",
+        "captured_at",
+        "access",
+        "read_status"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^F-[0-9]{4,}$"
+        },
+        "kind": {
+          "enum": [
+            "documento",
+            "conversacion",
+            "audio",
+            "hoja_datos",
+            "sistema",
+            "web",
+            "testimonio"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 2
+        },
+        "event_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "access": {
+          "$ref": "#/$defs/access"
+        },
+        "read_status": {
+          "enum": [
+            "leida_completa",
+            "leida_parcial",
+            "no_verificada"
+          ]
+        },
+        "checksum_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "permitted_uses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "missing_part": {
+          "type": "string"
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "doc_id",
+        "heading_path",
+        "semantic_type",
+        "knowledge_state",
+        "editorial_status",
+        "coverage_state",
+        "temporal_status",
+        "support_class",
+        "recorded_at",
+        "scope",
+        "source_ids",
+        "access"
+      ],
+      "properties": {
+        "block_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "doc_id": {
+          "type": "string"
+        },
+        "heading_path": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "semantic_type": {
+          "type": "string",
+          "minLength": 2
+        },
+        "knowledge_state": {
+          "$ref": "#/$defs/knowledge"
+        },
+        "editorial_status": {
+          "$ref": "#/$defs/editorial"
+        },
+        "coverage_state": {
+          "$ref": "#/$defs/coverage"
+        },
+        "temporal_status": {
+          "$ref": "#/$defs/temporal"
+        },
+        "support_class": {
+          "$ref": "#/$defs/support"
+        },
+        "valid_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "valid_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "access": {
+          "$ref": "#/$defs/access"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic_key",
+        "scope",
+        "doc_id",
+        "block_id",
+        "temporal_status",
+        "valid_from"
+      ],
+      "properties": {
+        "topic_key": {
+          "type": "string",
+          "minLength": 3
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "doc_id": {
+          "type": "string"
+        },
+        "block_id": {
+          "type": "string"
+        },
+        "temporal_status": {
+          "$ref": "#/$defs/temporal"
+        },
+        "valid_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "valid_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id",
+        "predicate",
+        "object_id",
+        "source_ids",
+        "status"
+      ],
+      "properties": {
+        "subject_id": {
+          "type": "string"
+        },
+        "predicate": {
+          "type": "string",
+          "minLength": 2
+        },
+        "object_id": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "observada",
+            "propuesta",
+            "aprobada",
+            "historica"
+          ]
+        }
+      }
+    },
+    "pending": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "priority",
+        "affected_doc_ids",
+        "blocking_task"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "alta",
+            "media",
+            "baja"
+          ]
+        },
+        "affected_doc_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blocking_task": {
+          "type": "string"
+        }
+      }
+    },
+    "historical": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "event",
+        "at",
+        "reason"
+      ],
+      "properties": {
+        "block_id": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "at": {
+          "type": "string",
+          "format": "date"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "replaced_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "restriction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "target_id",
+        "access",
+        "handling"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "target_id": {
+          "type": "string"
+        },
+        "access": {
+          "$ref": "#/$defs/access"
+        },
+        "handling": {
+          "type": "string"
+        }
+      }
+    },
+    "retrieval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test_id",
+        "question",
+        "expected_block_ids",
+        "expected_source_ids",
+        "expected_state",
+        "result"
+      ],
+      "properties": {
+        "test_id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 5
+        },
+        "expected_block_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_state": {
+          "$ref": "#/$defs/knowledge"
+        },
+        "result": {
+          "enum": [
+            "pendiente",
+            "aprobada_humana",
+            "fallida",
+            "no_ejecutada"
+          ]
+        },
+        "evidence": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

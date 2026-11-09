@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "dataset-control.v1"
+    },
+    "nonce": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "identities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "project": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "client",
+          "project",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "company": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "enum": [
+        "evaluation",
+        "training"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "nonce",
+    "identities",
+    "company",
+    "audience",
+    "purpose"
+  ],
+  "additionalProperties": false
+}

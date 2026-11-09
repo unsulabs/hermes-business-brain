@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "afirmacion.v1"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "producer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "hecho",
+        "decision",
+        "idea",
+        "razon",
+        "excepcion",
+        "duda",
+        "correccion",
+        "inferencia"
+      ]
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1
+    },
+    "speaker_label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "resolved_entity_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "resolved_entity_kind": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "attribution_state": {
+      "enum": [
+        "etiqueta_sin_resolver",
+        "resuelta",
+        "incierta",
+        "sin_hablante"
+      ]
+    },
+    "evidence_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tr_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "excerpt_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "tr_id",
+          "version_id",
+          "text_sha256",
+          "start",
+          "end",
+          "excerpt_sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asserted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "valid_time": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "editorial_state": {
+      "enum": [
+        "borrador",
+        "propuesta",
+        "en_revision",
+        "ratificado",
+        "rechazado"
+      ]
+    },
+    "validity_state": {
+      "enum": [
+        "sin_verificar",
+        "historico",
+        "vigente",
+        "futuro",
+        "aplazado",
+        "descartado",
+        "en_conflicto"
+      ]
+    },
+    "expression": {
+      "enum": [
+        "literal",
+        "parafrasis",
+        "inferencia"
+      ]
+    },
+    "confidence_basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "supersedes_claim_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "created_at",
+    "producer_version",
+    "claim_id",
+    "run_id",
+    "subject_id",
+    "kind",
+    "content",
+    "speaker_label",
+    "resolved_entity_id",
+    "attribution_state",
+    "evidence_spans",
+    "scope",
+    "asserted_at",
+    "valid_time",
+    "editorial_state",
+    "validity_state",
+    "expression",
+    "confidence_basis",
+    "limitations",
+    "supersedes_claim_id"
+  ],
+  "additionalProperties": false
+}

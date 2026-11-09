@@ -1,0 +1,6 @@
+company_id: '{{EMPRESA_ID}}'
+company_name: '{{EMPRESA_NOMBRE}}'
+version_instancia: 0.2.0
+tipo_instalacion: sin_conocimiento_inicial
+modelo_operativo: candidato-0.4
+fuente_conocimiento: sin_configurar

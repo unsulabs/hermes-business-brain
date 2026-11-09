@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "proceso"'
+        - 'tipo == "protocolo"'
+        - 'tipo == "herramienta"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - estado_editorial
+  - vigencia

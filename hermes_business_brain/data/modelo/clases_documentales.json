@@ -1,0 +1,455 @@
+{
+  "version": "vNext-1.0R",
+  "fuente": "Documentary catalog vNext-1.0R: keep semantics and content, 14 classes NOT 14 files",
+  "clases": [
+    {
+      "id": "D01",
+      "nombre": "Direction, business model, and strategic boundaries",
+      "clase": "familia",
+      "encabezados": [
+        "00 Executive brief and as-of date",
+        "01 The business as actually observed",
+        "02 Value creation–delivery–capture model",
+        "03 Strategic choices and trade-offs",
+        "04 Activity system and sustainable advantages",
+        "05 Priorities, metrics, and boundaries",
+        "06 Hypotheses, alternatives, and open decisions",
+        "07 Changes and authority references"
+      ],
+      "elicitacion": [
+        "Compare real opportunities accepted and rejected: what signals make an opportunity a fit or not?",
+        "What work could pay well but the company deliberately declines, and why?",
+        "What wins when price, capacity, reputation, quality, and time conflict?",
+        "What activity or combination of capabilities is hard to copy, and why?",
+        "What does the company want to build or stop doing in the coming periods, and what evidence would change that decision?"
+      ],
+      "contenido_obligatorio": [
+        "Verifiable identity: real business and offers actually delivered; distinguish aspiration from current activity",
+        "Value model: payer, user, buyer, job to be done, exchange, and billing mechanics",
+        "Chosen and unchosen segments, geographic scope, restrictions, and explicit trade-offs",
+        "Competitive differences backed by real activities, not aspirational adjectives",
+        "Time priorities, capabilities/milestones, selection criteria, and review rules",
+        "Critical assumptions, counter-evidence, progress indicators with sources, and decision owner",
+        "Strategy changes, reasons, effective dates, and formally approved decisions"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d01"
+    },
+    {
+      "id": "D02",
+      "nombre": "Market knowledge, customers, and brand",
+      "clase": "familia",
+      "encabezados": [
+        "00 Verifiable findings and degree of certainty",
+        "01 Actors and buying circumstances",
+        "02 Observed segments and hypotheses",
+        "03 Jobs, frictions, and alternatives per episode",
+        "04 Demand evidence and objections",
+        "05 Positioning, brand signals, and language",
+        "06 What we do NOT know and contrast experiments",
+        "07 Sources, scope, and reviews"
+      ],
+      "elicitacion": [
+        "Compare excellent and problematic customers: what signals appear before they hire?",
+        "Which question, behavior, or circumstance best reveals the job the customer is trying to get done?",
+        "Which objections are literal and which usually hide a different concern?",
+        "What promise or claim would the company never make even if it helped sell?",
+        "Which belief about customers has changed after real experiences?"
+      ],
+      "contenido_obligatorio": [
+        "Explicit distinction between buyer, approver, payer, and user",
+        "Situations / Jobs to Be Done reconstructed from concrete episodes",
+        "Evidence per segment, sample size and bias; no extrapolation",
+        "Obstacles, alternatives used, decision criteria, and purchase triggers",
+        "Channels where contact is observed and verifiable messages",
+        "Positioning: desired versus perceived associations; authorized/prohibited claims",
+        "Knowledge gaps, discovery questions, and refresh signal"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d02"
+    },
+    {
+      "id": "D03",
+      "nombre": "Portfolio and commercial system",
+      "clase": "familia",
+      "encabezados": [
+        "00 What can be offered today",
+        "01 Map of modalities and commercial state",
+        "02 Promise, scope, and exclusions per modality",
+        "03 Prices and conditions: authority and validity",
+        "04 Commercial path from opportunity to agreement",
+        "05 Authorized materials, claims, and objections",
+        "06 Exceptions, discounts, and changes",
+        "07 Commercial–operational delivery rules"
+      ],
+      "elicitacion": [
+        "How does the company build a price when the work does not match a standard offer?",
+        "Which components, costs, conditions, or exclusions must never be omitted when quoting?",
+        "When is a flat price, breakdown, module, package, or custom quote appropriate?",
+        "Which commercial exception can each person authorize, and which needs another approval?",
+        "What signals indicate a proposal is not ready to send yet?"
+      ],
+      "contenido_obligatorio": [
+        "Map of real lines: sold, pilots, products in development, internal tools, discontinued",
+        "Promise and scope per modality, exclusions, conditions, and customer evidence",
+        "Commercial mechanism: origin, qualification, diagnosis, offer, approval, closing, and follow-up",
+        "Public/particular price definition, currency, taxes, discount, validity, and approver",
+        "Sales and separation tests: delivery, purchase, handover, tool use, and cancellation",
+        "Rules for messages, statements, and claims authorized by D02",
+        "Handling of exceptions, refunds, warranty, and handoff to operations"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d03"
+    },
+    {
+      "id": "D04",
+      "nombre": "Execution, experience, and quality",
+      "clase": "familia",
+      "encabezados": [
+        "00 Promised outcome and delivery criteria",
+        "01 Inputs and handoffs",
+        "02 Observed workflow (not idealized)",
+        "03 Decisions, exceptions, and failures",
+        "04 Quality controls and evidence",
+        "05 Available resources and capacity",
+        "06 Rework, closure, and learning",
+        "07 Autonomous processes and improvement log"
+      ],
+      "elicitacion": [
+        "Reconstruct a real difficult job from confirmation to close: where were the critical decisions?",
+        "What early signal lets you anticipate that delivery may go wrong?",
+        "Which part can follow a checklist and which part requires expert judgment?",
+        "Which error is costly/hard to fix and which control prevents it?",
+        "What does «done» or «accepted» mean for the company in practice?"
+      ],
+      "contenido_obligatorio": [
+        "Entry promise, acceptance criteria, and sales handoff",
+        "Real delivery flow map with triggers, inputs, outputs, and exceptions",
+        "Owner per task and who decides, without invented titles",
+        "Critical quality points and minimum completion evidence",
+        "Dependencies on people, systems, materials, and suppliers",
+        "Escalations and variants per offer type",
+        "Proven learnings and approved changes to practice"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d04"
+    },
+    {
+      "id": "D05",
+      "nombre": "Economy, cash, and financial criteria",
+      "clase": "familia",
+      "encabezados": [
+        "00 Financial read with date and currency",
+        "01 Revenue model and recognition",
+        "02 Cost structure and drivers",
+        "03 Unit economics per offer/project",
+        "04 Collections, payments, and cash",
+        "05 Budgets, scenarios, and assumptions",
+        "06 Criteria and authority for money decisions",
+        "07 Discrepancies, sources, and closings"
+      ],
+      "elicitacion": [
+        "How does the expert estimate whether a job is worth it before all costs are locked?",
+        "Which costs or consumptions does someone unfamiliar with the business usually forget?",
+        "When can a big project be worse business than a small one?",
+        "What criteria are used for advances, discounts, credit, purchases, or extraordinary expenses?",
+        "Which figure or signal is looked at first when making an economic decision, and what limitations does it have?"
+      ],
+      "contenido_obligatorio": [
+        "Revenue mechanics: agreed price, invoiced, accrued, and collected, tracked separately",
+        "Variable/direct and fixed/shared costs with declared allocation rules",
+        "Unit economics per line or job: numerator, denominator, period, sources, and exceptions",
+        "Cash: reference balance, expected inflows/outflows, maturities, and scenarios",
+        "Policies for advances, credit, discounts, and economic authorization",
+        "Targets and thresholds with formulas, currency, taxes, and owner",
+        "Sensitivities and alerts; reconciliation between narrative and accounting system"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d05"
+    },
+    {
+      "id": "D06",
+      "nombre": "Real people, responsibilities, and authority",
+      "clase": "familia",
+      "encabezados": [
+        "00 How work is organized",
+        "01 Observed functions, not departments",
+        "02 Who decides what, under what limits",
+        "03 Execution, authorizations, and delegation",
+        "04 Critical knowledge held by people",
+        "05 Substitutions, access, and continuity",
+        "06 Onboarding and knowledge transfer",
+        "07 Responsibility changes and uncertainties"
+      ],
+      "elicitacion": [
+        "If the founder/owner is absent for several days, what keeps running and what actually stops?",
+        "Which decisions can only one specific person make today, and why?",
+        "Which task could be delegated if the expert criteria were made explicit?",
+        "What critical knowledge lives in one person's head, and how do you recognize someone has learned it?",
+        "What is the difference between executing a task and having authority to commit the company?"
+      ],
+      "contenido_obligatorio": [
+        "Existing people/capabilities and functions actually performed",
+        "Simple decision matrix: subject, who decides, who prepares, who acts, and limits",
+        "Commitments requiring approval and current delegations",
+        "Dependencies on tacit knowledge, access, and capacity",
+        "Realistic substitutions and continuity limits",
+        "Learning transfer and task-based onboarding",
+        "Gaps and improvement projects without presenting proposed roles as real"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d06"
+    },
+    {
+      "id": "D07",
+      "nombre": "Risks, commitments, and critical dependencies",
+      "clase": "familia",
+      "encabezados": [
+        "00 Exposures and commitments that matter today",
+        "01 Proven obligations and maturities",
+        "02 Risks prioritized by consequences",
+        "03 Real controls and gaps",
+        "04 Critical resources, suppliers, and systems",
+        "05 Data, access, and restrictions",
+        "06 Continuity, recovery, and owners",
+        "07 Pending legal/financial verifications"
+      ],
+      "elicitacion": [
+        "Which real problem has caused the most harm, rework, lost money, or reputational risk?",
+        "Which dependency would stop the company from delivering if it failed tomorrow?",
+        "Which risk does the company accept deliberately, and which would it never accept?",
+        "Which control or backup is taken for granted but has never been tested end to end?",
+        "Which commitments, permits, or reviews require a contractual/professional source instead of internal judgment?"
+      ],
+      "contenido_obligatorio": [
+        "Material obligations and legal/documentary source without substituting a contract",
+        "Risk: event, cause, impact on customer/cash/continuity, reasoned probability or «not estimated»",
+        "Existing versus proposed controls, warning signals, and owner",
+        "Suppliers/systems/resources whose loss interrupts the offer",
+        "Sensitive data, classification, access, retention, and limits",
+        "Continuity: contingency measure, recovery, source, and test",
+        "Permits/licenses and questions requiring specialist validation by jurisdiction"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#d07"
+    },
+    {
+      "id": "X01",
+      "nombre": "Living record for an individual offer",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 Verifiable purchase record",
+        "01 Customer/problem and promised outcome",
+        "02 Scope and measurable deliverables",
+        "03 Variants and exclusions",
+        "04 Price, conditions, and dates",
+        "05 Admission, execution, and acceptance",
+        "06 Risks, guarantees, owners",
+        "07 Versions and references"
+      ],
+      "elicitacion": [
+        "What must the buyer be able to understand without extra conversation in order to hire this offer?",
+        "Which part of the scope changes most, and which must never be left implicit?",
+        "How is this offer's price built or authorized, and what exceptions exist?",
+        "Which condition makes this offer unsuitable for a customer/case?",
+        "Which acceptance/support/warranty criteria actually apply?"
+      ],
+      "contenido_obligatorio": [
+        "Identity: name, product/service/package type, variants, and state",
+        "Problem/use circumstance and validated audience",
+        "Deliverables, quantities, specifications, exclusions, customer responsibilities",
+        "Price rules, taxes, currency, dates, and approver",
+        "Acceptance conditions, changes, warranties, or proven support",
+        "Capacity, requirements, risks, and operational dependency",
+        "Versions: validity, replacements, and communication to dependents"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x01"
+    },
+    {
+      "id": "X02",
+      "nombre": "Process or autonomous work instruction",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 What it is for and when it applies",
+        "01 Trigger, inputs, and preconditions",
+        "02 Numbered main flow",
+        "03 Decision points and exceptions",
+        "04 Responsibilities and authorizations",
+        "05 Quality checks",
+        "06 Output, evidence, and escalation",
+        "07 Tests, incidents, and version"
+      ],
+      "elicitacion": [
+        "Ask the executor to reconstruct a real run and point out decisions that are not in the checklist.",
+        "What signal forces the process to stop?",
+        "Which exception requires judgment and who can authorize it?",
+        "What evidence shows the process finished correctly?",
+        "What typical mistake does a novice make by following only literal steps?"
+      ],
+      "contenido_obligatorio": [
+        "Trigger and applicability condition",
+        "Inputs, versions, permissions, and preconditions",
+        "Observed steps and decisions; distinguish mandatory procedure from recommendation",
+        "Real roles, approval limits, and escalation",
+        "Results/evidence, acceptance criteria, record storage",
+        "Exceptions, contingencies, and stop signals",
+        "Last test and change versus previous version"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x02"
+    },
+    {
+      "id": "X03",
+      "nombre": "Relationship record with an account or customer",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 Relationship and access restrictions",
+        "01 Actors and authorizations",
+        "02 Customer-expressed objectives",
+        "03 Relevant interactions and evidence",
+        "04 Offers, agreements, and commercial state",
+        "05 Observed preferences and limits",
+        "06 Open items, risks, and next contact",
+        "07 History, master source, and closing"
+      ],
+      "elicitacion": [
+        "What real role does each contact play (user, buyer, payer, approver)?",
+        "Which needs were expressed by the customer and which are internal interpretation?",
+        "Which specific promises or exceptions remain valid for this account?",
+        "What information must not be generalized to the market?",
+        "Which access/retention/privacy restriction changes how the relationship is kept?"
+      ],
+      "contenido_obligatorio": [
+        "Minimal business identity and pseudonym if applicable",
+        "Roles: buyer, payer, approver, user, contact, and source",
+        "Chronology of material interactions and current conditions",
+        "Needs expressed in context, NOT psychological diagnoses",
+        "Confirmed opportunity state, sales events, and contractual references",
+        "Privacy and retention restrictions",
+        "Next decisions and tasks with owner and date"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x03"
+    },
+    {
+      "id": "X04",
+      "nombre": "Project, case, or episode file",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 Case record and confidentiality",
+        "01 Initial request and scope",
+        "02 Timeline of milestones/sources",
+        "03 Proposal, agreement, and changes",
+        "04 Execution and evidence",
+        "05 Delivery, collection, and closure — separately",
+        "06 Problems, causes, and hypotheses",
+        "07 Lessons, scope, and recommended actions",
+        "08 History and references"
+      ],
+      "elicitacion": [
+        "What changed materially during the case, and why?",
+        "Which decisions/exceptions were unique to the case?",
+        "Which problem did the expert detect, and what signal made it visible?",
+        "Which observed outcome supports learning, and which interpretation is still a hypothesis?",
+        "What, if anything, should be promoted to common knowledge through a separate decision?"
+      ],
+      "contenido_obligatorio": [
+        "Initial situation and actors, relevant jurisdiction/permissions",
+        "Timeline: date, event, source, change, effect",
+        "Requested, proposed, accepted, delivered, invoiced, and collected, kept distinct",
+        "Decisions and exceptions bounded to the case",
+        "Outcome evidence, incidents, limitations, and sensitive accounts",
+        "Lessons: observed fact, interpretation, scope, and proposed action",
+        "References to sources and dependents; policy changes only by separate approval"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x04"
+    },
+    {
+      "id": "X05",
+      "nombre": "Standalone agreement or obligation",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 Nature, access, and contractual source",
+        "01 Parties and exact object",
+        "02 Relevant obligations and rights",
+        "03 Dates, conditions, and maturities",
+        "04 Variations and related documents",
+        "05 Compliance and evidence",
+        "06 Risks, disputes, and professional review",
+        "07 State history and restrictions"
+      ],
+      "elicitacion": [
+        "Which obligations matter most operationally, and which exact source proves them?",
+        "Which interpretation depends on professional advice and must not be resolved by AI?",
+        "Which dates/conditions change the compliance state?",
+        "What modification or exception exists relative to the general agreement?",
+        "Which other documents/processes/cash are affected by this agreement?"
+      ],
+      "contenido_obligatorio": [
+        "Parties and object, jurisdiction and source of authority",
+        "Obligations, restrictions, consideration, and dates",
+        "Precedent conditions, approvals, milestones, and contemplated remedies",
+        "Amendments, renewals, terminations, and disputes",
+        "Compliance state based on evidence (not inferred)",
+        "Risks and restricted data; legal reading to be confirmed",
+        "Links to affected projects, figures, and owners"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x05"
+    },
+    {
+      "id": "X06",
+      "nombre": "Critical resource, system, or supplier",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 Resource and explained criticality",
+        "01 Function and capabilities it enables",
+        "02 Official source and queryable state",
+        "03 Dependencies and authorized people",
+        "04 Limits, costs, and maturities",
+        "05 Replacement, backup, and recovery",
+        "06 Incidents and continuity verification",
+        "07 Versions and references"
+      ],
+      "elicitacion": [
+        "Which business capability is lost if the resource/system/supplier fails?",
+        "What is the master source of the current state, and what must not be duplicated?",
+        "Who can administer/change/replace this resource?",
+        "Which capacity limit or dependency is usually discovered too late?",
+        "Is recovery/replacement tested or only declared?"
+      ],
+      "contenido_obligatorio": [
+        "Resource identity and business function",
+        "Registration system: where to query the current state",
+        "Operational owner/administrator and permissions without secrets",
+        "Dependencies of processes/offers/services",
+        "Capacity limits, replacement, and continuity",
+        "Expiry, conditions, evidence location, and cost when material",
+        "Incident history, changes, and recovery tests"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x06"
+    },
+    {
+      "id": "X07",
+      "nombre": "Decision, experiment, or lesson with its own identity",
+      "clase": "expediente_condicional",
+      "encabezados": [
+        "00 Type: decision / experiment / lesson",
+        "01 Situation and question to resolve",
+        "02 Options and assumptions",
+        "03 Evidence and counter-evidence",
+        "04 Authority, decision, or hypothesis",
+        "05 Test, outcome, and learning scope",
+        "06 Affected dependents and actions",
+        "07 Validity, review, and history"
+      ],
+      "elicitacion": [
+        "What exact decision/hypothesis is being preserved, and what alternatives were considered?",
+        "What signal/evidence changed the view or picked an option?",
+        "What outcome would falsify the hypothesis or force revisiting the decision?",
+        "Which part is contextual learning and which part could become policy?",
+        "Which dependents must be reviewed if this decision changes?"
+      ],
+      "contenido_obligatorio": [
+        "Precise question/decision, alternatives, and assumptions",
+        "Who has authority, who decided, date, scope, and validity",
+        "Available evidence, contradictions, and limits",
+        "Experiment success/failure rule, measurement, and review date",
+        "Observed outcome versus interpretation and possible transfer",
+        "Content promoted to policy only after explicit approval",
+        "Effects on documents and communication to users"
+      ],
+      "lectura_referencia": "metodologia/vNext-1.0R/Catalogo_Documentos_Canonicos_vNext_1_0R.md#x07"
+    }
+  ]
+}

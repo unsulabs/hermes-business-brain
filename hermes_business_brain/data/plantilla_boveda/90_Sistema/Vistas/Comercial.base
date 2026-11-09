@@ -1,0 +1,29 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "propuesta_comercial"'
+        - 'tipo == "cliente_cuenta"'
+        - 'tipo == "acuerdo"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - estado_editorial
+  - vigencia
+  - estado_comercial
+  - fuentes
+- type: kanban
+  name: Board
+  groupBy:
+    property: note.tipo
+    direction: ASC
+  order:
+  - file.name
+  - tipo
+  - estado_editorial
+  - vigencia

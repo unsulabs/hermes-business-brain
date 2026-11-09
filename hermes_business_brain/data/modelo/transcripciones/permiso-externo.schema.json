@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "sequence", "previous_hash", "reference_id", "version_id", "company", "audience", "purpose", "action", "authority", "evidence", "decided_at"],
+  "properties": {
+    "schema_version": {"const": "permiso-externo.v1"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previous_hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "reference_id": {"type": "string", "pattern": "^ER-[A-Za-z0-9_-]{1,100}$"},
+    "version_id": {"type": "string", "pattern": "^EV-[a-f0-9]{64}$"},
+    "company": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "audience": {"type": "string", "pattern": "\\S"},
+    "purpose": {"enum": ["custody", "local_analysis", "internal_query", "evaluation", "training", "publication"]},
+    "action": {"enum": ["grant", "revoke"]},
+    "authority": {"type": "string", "pattern": "\\S"},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "\\S"}},
+    "decided_at": {"type": "string", "format": "date-time", "pattern": "(Z|\\+00:00)$"}
+  }
+}

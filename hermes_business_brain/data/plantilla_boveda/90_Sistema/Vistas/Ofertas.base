@@ -1,0 +1,37 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "oferta"'
+        - 'tipo == "producto"'
+        - 'tipo == "servicio"'
+        - 'tipo == "consultoria"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - estado_editorial
+  - vigencia
+  - precio_sistema_fuente
+  - moneda
+  - fuentes
+- type: kanban
+  name: Board
+  groupBy:
+    property: note.tipo
+    direction: ASC
+  order:
+  - file.name
+  - tipo
+  - estado_editorial
+  - vigencia
+- type: cards
+  name: Cards
+  order:
+  - file.name
+  - tipo
+  - estado_editorial

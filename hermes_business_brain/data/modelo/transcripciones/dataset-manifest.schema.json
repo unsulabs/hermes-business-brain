@@ -1,0 +1,347 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "dataset-manifest.v2"
+    },
+    "status": {
+      "const": "proposed"
+    },
+    "purpose": {
+      "enum": [
+        "evaluation",
+        "training"
+      ]
+    },
+    "company": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "permission_snapshot": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "candidates": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "properties": {
+              "candidate_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+              },
+              "task": {
+                "type": "string",
+                "minLength": 1
+              },
+              "criterion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "expected_result": {
+                "type": "string",
+                "minLength": 1
+              },
+              "exception": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "observed_response": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "expert_correction": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "passages": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "tr_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+                    },
+                    "version_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+                    },
+                    "source_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "context_start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "context_end": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "passage_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "context_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "tr_id",
+                    "version_id",
+                    "source_sha256",
+                    "start",
+                    "end",
+                    "context_start",
+                    "context_end",
+                    "passage_sha256",
+                    "context_sha256"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "candidate_id",
+              "task",
+              "criterion",
+              "expected_result",
+              "exception",
+              "observed_response",
+              "expert_correction",
+              "passages"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "allow_historical": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "candidates",
+        "allow_historical"
+      ],
+      "additionalProperties": false,
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+          },
+          "task": {
+            "type": "string",
+            "minLength": 1
+          },
+          "criterion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected_result": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exception": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observed_response": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expert_correction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "passages": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "tr_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+                },
+                "version_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+                },
+                "source_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "context_start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "context_end": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "passage_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "context_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "permitted_context": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "tr_id",
+                "version_id",
+                "source_sha256",
+                "start",
+                "end",
+                "context_start",
+                "context_end",
+                "passage_sha256",
+                "context_sha256",
+                "text",
+                "permitted_context"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "candidate_id",
+          "task",
+          "criterion",
+          "expected_result",
+          "exception",
+          "observed_response",
+          "expert_correction",
+          "passages"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "excluded": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+          },
+          "reason": {
+            "const": "PERMISSION_DENIED"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tr_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+          },
+          "version_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+          }
+        },
+        "required": [
+          "tr_id",
+          "version_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "separation": {
+      "const": "conversation-all-versions-sha256-client-project"
+    },
+    "trained": {
+      "const": false
+    },
+    "export_id": {
+      "type": "string",
+      "pattern": "^DS-[a-f0-9]{64}$"
+    },
+    "control_commitment": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "purpose",
+    "company",
+    "audience",
+    "permission_snapshot",
+    "selection",
+    "candidates",
+    "excluded",
+    "source_refs",
+    "separation",
+    "trained",
+    "export_id",
+    "control_commitment"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

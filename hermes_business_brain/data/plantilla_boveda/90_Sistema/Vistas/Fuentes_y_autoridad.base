@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "fuente"'
+        - 'tipo == "decision"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - lectura
+  - fecha_evento
+  - vigencia
+  - fuentes

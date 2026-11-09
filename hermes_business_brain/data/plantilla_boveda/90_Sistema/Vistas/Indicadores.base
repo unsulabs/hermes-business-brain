@@ -1,0 +1,15 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "indicador"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - vigencia
+  - estado_editorial
+  - fuentes

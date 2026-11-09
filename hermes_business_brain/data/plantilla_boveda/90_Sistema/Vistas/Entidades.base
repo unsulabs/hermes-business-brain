@@ -1,0 +1,15 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "entidad"'
+views:
+  - type: table
+    name: "Entities"
+    order:
+      - file.name
+      - clase
+      - estado_editorial
+      - sensibilidad

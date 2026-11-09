@@ -1,0 +1,16 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "comunicacion"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - estado_editorial
+  - estado_conocimiento
+  - vigencia
+  - fuentes

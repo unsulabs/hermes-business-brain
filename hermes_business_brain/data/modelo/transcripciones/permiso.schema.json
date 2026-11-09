@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object", "additionalProperties":false,
+  "required":["schema_version","sequence","previous_hash","tr_id","version_id","company","audience","purpose","action","authority","evidence","decided_at"],
+  "properties":{
+    "schema_version":{"const":"permiso.v1"},
+    "sequence":{"type":"integer","minimum":1},
+    "previous_hash":{"type":["string","null"],"pattern":"^[a-f0-9]{64}$"},
+    "tr_id":{"type":"string","pattern":"^TR-[A-Za-z0-9_-]+$"},
+    "version_id":{"type":"string","pattern":"^V-[A-Za-z0-9_-]+$"},
+    "company":{"type":"string","pattern":"^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "audience":{"type":"string","pattern":"\\S","minLength":1},
+    "purpose":{"enum":["custody","local_analysis","internal_query","evaluation","training","publication"]},
+    "action":{"enum":["grant","revoke"]},
+    "authority":{"type":"string","pattern":"\\S","minLength":1},
+    "evidence":{"type":"array","minItems":1,"items":{"type":"string","pattern":"\\S","minLength":1}},
+    "decided_at":{"type":"string","format":"date-time","pattern":"(Z|\\+00:00)$"}
+  }
+}

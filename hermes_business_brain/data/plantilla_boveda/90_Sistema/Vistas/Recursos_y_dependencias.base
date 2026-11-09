@@ -1,0 +1,23 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "recurso"'
+        - 'tipo == "proveedor"'
+        - 'tipo == "herramienta"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - vigencia
+  - fuentes
+- type: cards
+  name: Cards
+  order:
+  - file.name
+  - tipo
+  - estado_editorial

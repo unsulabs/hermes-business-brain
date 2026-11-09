@@ -1,0 +1,357 @@
+{
+  "contract_version": "0.9",
+  "generated_at": "2026-10-25T22:00:00-06:00",
+  "company": {
+    "id": "BRISA-SINTETICA",
+    "display_name": "Brisa Modular [FICTICIA]",
+    "synthetic": true
+  },
+  "documents": [
+    {
+      "doc_id": "D03",
+      "doc_type": "D03",
+      "path": "Ejemplo_sintetico/D03_Portafolio.md",
+      "revision": "1.1",
+      "editorial_status": "en_revision",
+      "as_of": "2026-10-25",
+      "access": "interno",
+      "coverage_by_question": [
+        {
+          "question": "¿Qué oferta base es cotizable?",
+          "status": "suficiente_para_tarea",
+          "source_ids": [
+            "F-0101"
+          ],
+          "note": ""
+        },
+        {
+          "question": "¿Existe entrega sabatina aprobada?",
+          "status": "parcial",
+          "source_ids": [
+            "F-0100"
+          ],
+          "note": "No se ha aprobado"
+        }
+      ],
+      "checksum_sha256": "e036e0aee91a6c563023e62b354a9ae040773c19bf0bacc4376154b8dc9d59ce"
+    },
+    {
+      "doc_id": "X01-BRISA-001",
+      "doc_type": "X01",
+      "path": "Ejemplo_sintetico/X01_Oferta.md",
+      "revision": "1.0",
+      "editorial_status": "en_revision",
+      "as_of": "2026-10-25",
+      "access": "interno",
+      "coverage_by_question": [
+        {
+          "question": "¿Cuál es el alcance/precio de módulo estándar?",
+          "status": "suficiente_para_tarea",
+          "source_ids": [
+            "F-0101"
+          ],
+          "note": ""
+        }
+      ],
+      "checksum_sha256": "26df25315e0d7095b1430facead132ed03435affebdfc4400daf49a42496ee40"
+    },
+    {
+      "doc_id": "X04-BRISA-001",
+      "doc_type": "X04",
+      "path": "Ejemplo_sintetico/X04_Caso.md",
+      "revision": "1.0",
+      "editorial_status": "borrador",
+      "as_of": "2026-10-25",
+      "access": "interno",
+      "coverage_by_question": [
+        {
+          "question": "¿Qué sucedió realmente en la llamada?",
+          "status": "suficiente_para_tarea",
+          "source_ids": [
+            "F-0100"
+          ],
+          "note": ""
+        }
+      ],
+      "checksum_sha256": "2cbcff00499fb7472c87ff57f59cf72b676f8c7e91162f7d6cf2c03cb22f12c2"
+    },
+    {
+      "doc_id": "X07-BRISA-001",
+      "doc_type": "X07",
+      "path": "Ejemplo_sintetico/X07_Experimento.md",
+      "revision": "1.0",
+      "editorial_status": "borrador",
+      "as_of": "2026-10-25",
+      "access": "interno",
+      "coverage_by_question": [
+        {
+          "question": "¿Se autorizó experimento o nueva política?",
+          "status": "parcial",
+          "source_ids": [
+            "F-0100"
+          ],
+          "note": "Interés expresado; falta decisión"
+        }
+      ],
+      "checksum_sha256": "d767ad3c522f0280eb7b6cc7a4ca76746608cb3a82bc80654cf6b4a7c19c7000"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "F-0100",
+      "kind": "conversacion",
+      "locator": "Ejemplo_sintetico/Fuente_F-0100_Llamada_Sintetica.md",
+      "event_date": "2026-10-18",
+      "captured_at": "2026-10-25T21:00:00-06:00",
+      "access": "interno",
+      "read_status": "leida_completa",
+      "checksum_sha256": "ac81189383b12aa998d683355d529154c38bf02e3eb9445f1aceb235abb22642",
+      "permitted_uses": [
+        "documentar",
+        "probar_metodologia"
+      ]
+    },
+    {
+      "source_id": "F-0101",
+      "kind": "documento",
+      "locator": "Ejemplo_sintetico/Fuente_F-0101_Tarifa_Aprobada_Sintetica.md",
+      "event_date": "2026-10-01",
+      "captured_at": "2026-10-25T21:10:00-06:00",
+      "access": "interno",
+      "read_status": "leida_completa",
+      "checksum_sha256": "1a70c8b52724e76cf669b9d65e6f91d647040436dd8e0592e1581d8e47c42185",
+      "permitted_uses": [
+        "documentar",
+        "probar_metodologia"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "D03-B001",
+      "doc_id": "D03",
+      "heading_path": [
+        "02 Promesa, alcance y exclusiones"
+      ],
+      "semantic_type": "referencia_oferta",
+      "knowledge_state": "hecho_observado",
+      "editorial_status": "en_revision",
+      "coverage_state": "suficiente_para_tarea",
+      "temporal_status": "vigente",
+      "support_class": "documental_directo",
+      "valid_from": "2026-10-01",
+      "valid_to": null,
+      "recorded_at": "2026-10-25T21:20:00-06:00",
+      "scope": "linea:modulos",
+      "source_ids": [
+        "F-0101"
+      ],
+      "access": "interno"
+    },
+    {
+      "block_id": "D03-B004",
+      "doc_id": "D03",
+      "heading_path": [
+        "06 Excepciones, descuentos y cambios"
+      ],
+      "semantic_type": "politica_entrega_propuesta",
+      "knowledge_state": "propuesta",
+      "editorial_status": "en_revision",
+      "coverage_state": "parcial",
+      "temporal_status": "sin_verificar",
+      "support_class": "testimonio_atribuido",
+      "valid_from": null,
+      "valid_to": null,
+      "recorded_at": "2026-10-25T21:21:00-06:00",
+      "scope": "consulta:entrega_sabado",
+      "source_ids": [
+        "F-0100"
+      ],
+      "access": "interno"
+    },
+    {
+      "block_id": "X01-BRISA-001-B001",
+      "doc_id": "X01-BRISA-001",
+      "heading_path": [
+        "04 Precio, condiciones y fechas"
+      ],
+      "semantic_type": "precio_oferta",
+      "knowledge_state": "decision_aprobada",
+      "editorial_status": "en_revision",
+      "coverage_state": "suficiente_para_tarea",
+      "temporal_status": "vigente",
+      "support_class": "documental_directo",
+      "valid_from": "2026-10-01",
+      "valid_to": null,
+      "recorded_at": "2026-10-25T21:22:00-06:00",
+      "scope": "oferta:OFR-BRISA-001",
+      "source_ids": [
+        "F-0101"
+      ],
+      "access": "interno"
+    },
+    {
+      "block_id": "X04-BRISA-001-B001",
+      "doc_id": "X04-BRISA-001",
+      "heading_path": [
+        "02 Línea temporal de hitos y fuentes"
+      ],
+      "semantic_type": "episodio",
+      "knowledge_state": "hecho_observado",
+      "editorial_status": "borrador",
+      "coverage_state": "suficiente_para_tarea",
+      "temporal_status": "vigente",
+      "support_class": "testimonio_atribuido",
+      "valid_from": "2026-10-18",
+      "valid_to": null,
+      "recorded_at": "2026-10-25T21:23:00-06:00",
+      "scope": "caso:BRISA-001",
+      "source_ids": [
+        "F-0100"
+      ],
+      "access": "interno"
+    },
+    {
+      "block_id": "X07-BRISA-001-B001",
+      "doc_id": "X07-BRISA-001",
+      "heading_path": [
+        "04 Autoridad, decisión o hipótesis"
+      ],
+      "semantic_type": "experimento_propuesto",
+      "knowledge_state": "hipotesis",
+      "editorial_status": "borrador",
+      "coverage_state": "parcial",
+      "temporal_status": "futuro",
+      "support_class": "testimonio_atribuido",
+      "valid_from": null,
+      "valid_to": null,
+      "recorded_at": "2026-10-25T21:24:00-06:00",
+      "scope": "experimento:2-sabados",
+      "source_ids": [
+        "F-0100"
+      ],
+      "access": "interno"
+    }
+  ],
+  "authorities": [
+    {
+      "topic_key": "precio_modulo_estandar",
+      "scope": "oferta:OFR-BRISA-001",
+      "doc_id": "X01-BRISA-001",
+      "block_id": "X01-BRISA-001-B001",
+      "temporal_status": "vigente",
+      "valid_from": "2026-10-01",
+      "valid_to": null,
+      "reason": "Oferta específica determina precio/alcance; D03 solo enlaza"
+    }
+  ],
+  "relationships": [
+    {
+      "subject_id": "D03-B001",
+      "predicate": "refiere_oferta",
+      "object_id": "X01-BRISA-001-B001",
+      "source_ids": [
+        "F-0101"
+      ],
+      "status": "aprobada"
+    },
+    {
+      "subject_id": "X04-BRISA-001-B001",
+      "predicate": "inspira_propuesta",
+      "object_id": "D03-B004",
+      "source_ids": [
+        "F-0100"
+      ],
+      "status": "propuesta"
+    },
+    {
+      "subject_id": "D03-B004",
+      "predicate": "requiere_experimento",
+      "object_id": "X07-BRISA-001-B001",
+      "source_ids": [
+        "F-0100"
+      ],
+      "status": "propuesta"
+    }
+  ],
+  "pending": [
+    {
+      "id": "PEND-001",
+      "question": "¿Se aprueba experimentar dos entregas sabatinas y quién autoriza?",
+      "priority": "media",
+      "affected_doc_ids": [
+        "D03",
+        "X07-BRISA-001"
+      ],
+      "blocking_task": "Publicar o cotizar sábado como política"
+    },
+    {
+      "id": "PEND-002",
+      "question": "¿Cuál sería costo/operador disponible?",
+      "priority": "alta",
+      "affected_doc_ids": [
+        "X07-BRISA-001",
+        "D03"
+      ],
+      "blocking_task": "Determinar precio y rentabilidad del sábado"
+    }
+  ],
+  "historicals": [
+    {
+      "block_id": "X04-BRISA-001-B001",
+      "event": "conversacion_sin_contratacion",
+      "at": "2026-10-18",
+      "reason": "Episodio de referencia, no oferta aceptada",
+      "replaced_by": null
+    }
+  ],
+  "restrictions": [
+    {
+      "id": "RES-01",
+      "target_id": "F-0100",
+      "access": "interno",
+      "handling": "Datos 100 % sintéticos; si fuese una conversación real, verificar consentimiento y minimización antes de compartir"
+    }
+  ],
+  "retrieval_tests": [
+    {
+      "test_id": "Q-01",
+      "question": "¿Cuál es precio vigente y qué excluye el módulo estándar?",
+      "expected_block_ids": [
+        "X01-BRISA-001-B001"
+      ],
+      "expected_source_ids": [
+        "F-0101"
+      ],
+      "expected_state": "decision_aprobada",
+      "result": "no_ejecutada",
+      "evidence": "Test semántico pendiente de agente del Paso 2; esquema no garantiza respuesta"
+    },
+    {
+      "test_id": "Q-02",
+      "question": "¿Se aprobó cobrar cuatro mil pesos por entrega sabatina?",
+      "expected_block_ids": [
+        "D03-B004"
+      ],
+      "expected_source_ids": [
+        "F-0100"
+      ],
+      "expected_state": "propuesta",
+      "result": "no_ejecutada",
+      "evidence": "Debe contestar NO; solo propuesta"
+    },
+    {
+      "test_id": "Q-03",
+      "question": "¿El cliente contrató entrega de sábado el 18 de octubre?",
+      "expected_block_ids": [
+        "X04-BRISA-001-B001"
+      ],
+      "expected_source_ids": [
+        "F-0100"
+      ],
+      "expected_state": "hecho_observado",
+      "result": "no_ejecutada",
+      "evidence": "Debe responder que no consta contratación"
+    }
+  ]
+}

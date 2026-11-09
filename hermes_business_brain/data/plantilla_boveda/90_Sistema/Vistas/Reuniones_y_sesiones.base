@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "reunion"'
+        - 'tipo == "sesion"'
+        - 'tipo == "continuidad"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - fecha_reunion
+  - registrado_en

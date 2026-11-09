@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "created_at", "producer_version", "event_id", "event_type", "old_refs", "new_refs", "reason", "actor", "affected_ids", "sweep_snapshot", "jobs"],
+  "properties": {
+    "schema_version": {"const": "evento.v1"},
+    "created_at": {"type": "string", "format": "date-time", "pattern": "(Z|\\+00:00)$"},
+    "producer_version": {"type": "string", "minLength": 1},
+    "event_id": {"$ref": "#/$defs/id"},
+    "event_type": {"enum": ["nueva_fuente", "correccion", "taxonomia", "permisos", "analizador", "fallo"]},
+    "old_refs": {"$ref": "#/$defs/ids"},
+    "new_refs": {"$ref": "#/$defs/ids"},
+    "reason": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "affected_ids": {"$ref": "#/$defs/ids"},
+    "sweep_snapshot": {"$ref": "#/$defs/id"},
+    "jobs": {"$ref": "#/$defs/ids"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+  }
+}

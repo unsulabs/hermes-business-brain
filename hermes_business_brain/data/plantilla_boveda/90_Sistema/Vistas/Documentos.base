@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "documento"'
+views:
+  - type: table
+    name: "Documents"
+    order:
+      - file.name
+      - clase
+      - estado_editorial
+      - fecha_corte
+      - sensibilidad
+      - fuentes

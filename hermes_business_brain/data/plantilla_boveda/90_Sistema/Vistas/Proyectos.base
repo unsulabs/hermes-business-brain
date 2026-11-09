@@ -1,0 +1,28 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "proyecto"'
+        - 'tipo == "implementacion"'
+        - 'tipo == "caso"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - estado_proyecto
+  - estado_editorial
+  - registrado_en
+- type: kanban
+  name: Board
+  groupBy:
+    property: note.estado_proyecto
+    direction: ASC
+  order:
+  - file.name
+  - tipo
+  - estado_proyecto
+  - estado_editorial

@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "investigacion"'
+        - 'tipo == "caso"'
+        - 'tipo == "decision"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - tipo
+  - estado_conocimiento
+  - vigencia
+  - fuentes

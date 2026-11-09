@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "relacion.v1"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "producer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "predicate": {
+      "enum": [
+        "retoma",
+        "precisa",
+        "contradice",
+        "complementa",
+        "sustituye",
+        "depende_de",
+        "evidencia",
+        "relacionado_con"
+      ]
+    },
+    "vocabulary_version": {
+      "const": "relaciones-banco.v1"
+    },
+    "source_ref": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "claim",
+            "subject",
+            "source",
+            "canonical_unit"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "version_id"
+      ],
+      "additionalProperties": false
+    },
+    "target_ref": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "claim",
+            "subject",
+            "source",
+            "canonical_unit"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "version_id"
+      ],
+      "additionalProperties": false
+    },
+    "source_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tr_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "excerpt_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "tr_id",
+          "version_id",
+          "text_sha256",
+          "start",
+          "end",
+          "excerpt_sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "target_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tr_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "excerpt_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "tr_id",
+          "version_id",
+          "text_sha256",
+          "start",
+          "end",
+          "excerpt_sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "valid_time": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "editorial_state": {
+      "enum": [
+        "borrador",
+        "propuesta",
+        "en_revision",
+        "ratificado",
+        "rechazado"
+      ]
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "supersedes_relation_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "created_at",
+    "producer_version",
+    "relation_id",
+    "predicate",
+    "vocabulary_version",
+    "source_ref",
+    "target_ref",
+    "source_evidence",
+    "target_evidence",
+    "rationale",
+    "scope",
+    "valid_time",
+    "editorial_state",
+    "reviewer",
+    "supersedes_relation_id"
+  ],
+  "additionalProperties": false
+}

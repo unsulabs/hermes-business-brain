@@ -1,0 +1,139 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "original.v1"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "producer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "tr_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "version_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "blob_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "byte_length": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "media_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "encoding": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "capture_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurrence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+      }
+    },
+    "previous_version_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness_evidence": {
+      "type": "object",
+      "properties": {
+        "beginning": {
+          "type": "string"
+        },
+        "ending": {
+          "type": "string"
+        },
+        "continuity": {
+          "type": "string"
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "beginning",
+        "ending",
+        "continuity",
+        "gaps",
+        "uncertainties"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "created_at",
+    "producer_version",
+    "original_id",
+    "tr_id",
+    "version_id",
+    "blob_path",
+    "sha256",
+    "byte_length",
+    "media_type",
+    "encoding",
+    "captured_at",
+    "capture_method",
+    "occurrence_ids",
+    "previous_version_id",
+    "completeness_evidence"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

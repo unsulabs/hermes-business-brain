@@ -1,0 +1,263 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "catalogo.v1"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "producer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tr_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "company_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+      }
+    },
+    "occurrences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "occurrence_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+          },
+          "account_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+          },
+          "provider": {
+            "enum": [
+              "meetgeek",
+              "local"
+            ]
+          },
+          "provider_meeting_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "access_state": {
+            "enum": [
+              "accessible",
+              "inaccessible"
+            ]
+          }
+        },
+        "required": [
+          "occurrence_id",
+          "account_id",
+          "provider",
+          "provider_meeting_id",
+          "locator",
+          "access_state"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "version_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+      },
+      "uniqueItems": true
+    },
+    "preferred_version_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "title_reported": {
+      "type": "string"
+    },
+    "event_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "speaker_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "states": {
+      "type": "object",
+      "properties": {
+        "integrity": {
+          "enum": [
+            "pendiente",
+            "verificada",
+            "corrupta"
+          ]
+        },
+        "completeness": {
+          "enum": [
+            "desconocida",
+            "parcial",
+            "completa_comprobada",
+            "inaccesible"
+          ]
+        },
+        "analysis": {
+          "enum": [
+            "pendiente",
+            "parcial",
+            "completa",
+            "invalidada"
+          ]
+        },
+        "editorial": {
+          "enum": [
+            "borrador",
+            "propuesta",
+            "en_revision",
+            "ratificado",
+            "rechazado"
+          ]
+        },
+        "validity": {
+          "enum": [
+            "sin_verificar",
+            "historico",
+            "vigente",
+            "futuro",
+            "aplazado",
+            "descartado",
+            "en_conflicto"
+          ]
+        }
+      },
+      "required": [
+        "integrity",
+        "completeness",
+        "analysis",
+        "editorial",
+        "validity"
+      ],
+      "additionalProperties": false
+    },
+    "permission_record": {
+      "type": "object",
+      "properties": {
+        "custody": {
+          "enum": [
+            "desconocido",
+            "permitido",
+            "denegado",
+            "revocado"
+          ]
+        },
+        "local_analysis": {
+          "enum": [
+            "desconocido",
+            "permitido",
+            "denegado",
+            "revocado"
+          ]
+        },
+        "internal_query": {
+          "enum": [
+            "desconocido",
+            "permitido",
+            "denegado",
+            "revocado"
+          ]
+        },
+        "evaluation": {
+          "enum": [
+            "desconocido",
+            "permitido",
+            "denegado",
+            "revocado"
+          ]
+        },
+        "training": {
+          "enum": [
+            "desconocido",
+            "permitido",
+            "denegado",
+            "revocado"
+          ]
+        },
+        "publication": {
+          "enum": [
+            "desconocido",
+            "permitido",
+            "denegado",
+            "revocado"
+          ]
+        }
+      },
+      "required": [
+        "custody",
+        "local_analysis",
+        "internal_query",
+        "evaluation",
+        "training",
+        "publication"
+      ],
+      "additionalProperties": false
+    },
+    "analysis_runs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "created_at",
+    "producer_version",
+    "tr_id",
+    "company_scope",
+    "occurrences",
+    "version_ids",
+    "preferred_version_id",
+    "title_reported",
+    "event_time",
+    "speaker_labels",
+    "states",
+    "permission_record",
+    "analysis_runs"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

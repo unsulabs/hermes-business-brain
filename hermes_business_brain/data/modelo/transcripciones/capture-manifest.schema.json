@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "capture-manifest.v1"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "account": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+        },
+        "observed_identity": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "observed_identity"
+      ],
+      "additionalProperties": false
+    },
+    "meeting": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "title"
+      ],
+      "additionalProperties": false
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "file": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "path",
+            "size_bytes",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "unverified",
+        "inaccessible"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "beginning": {
+          "type": "string"
+        },
+        "ending": {
+          "type": "string"
+        },
+        "continuity": {
+          "type": "string"
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "beginning",
+        "ending",
+        "continuity",
+        "gaps",
+        "uncertainties"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "job_id",
+    "attempt_id",
+    "account",
+    "meeting",
+    "captured_at",
+    "method",
+    "file",
+    "completeness",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

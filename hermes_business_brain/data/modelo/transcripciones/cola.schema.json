@@ -1,0 +1,205 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "cola.v1"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+    },
+    "producer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+    },
+    "job_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+      }
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "input_hashes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "snapshot_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cursor": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+      }
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "enum": [
+        "pendiente",
+        "asignado",
+        "ejecutando",
+        "entregado",
+        "validando",
+        "consolidado",
+        "reintento",
+        "bloqueado",
+        "cancelado"
+      ]
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "lease_owner": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "lease_expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+      "pattern": "(Z|\\+00:00)$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fencing_token": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "staging_path": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "result_manifest": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "outputs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                },
+                "required": [
+                  "path",
+                  "sha256"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "outputs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "last_error": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "created_at",
+    "producer_version",
+    "job_id",
+    "job_type",
+    "scope",
+    "input_refs",
+    "input_hashes",
+    "snapshot_id",
+    "cursor",
+    "depends_on",
+    "idempotency_key",
+    "state",
+    "attempt",
+    "lease_owner",
+    "lease_expires_at",
+    "fencing_token",
+    "staging_path",
+    "result_manifest",
+    "last_error"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

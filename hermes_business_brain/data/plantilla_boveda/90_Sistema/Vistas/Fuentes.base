@@ -1,0 +1,16 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "fuente"'
+views:
+  - type: table
+    name: "Sources"
+    order:
+      - file.name
+      - clase_fuente
+      - lectura
+      - sensibilidad
+      - fecha_evento

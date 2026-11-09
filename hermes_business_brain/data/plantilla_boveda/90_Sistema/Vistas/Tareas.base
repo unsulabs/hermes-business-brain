@@ -1,0 +1,26 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - 'file.inFolder("90_Sistema/Plantillas")'
+    - or:
+        - 'tipo == "tarea"'
+views:
+- type: table
+  name: Table
+  order:
+  - file.name
+  - estado_tarea
+  - responsable
+  - fecha_programada
+  - fecha_limite
+- type: kanban
+  name: Board
+  groupBy:
+    property: note.estado_tarea
+    direction: ASC
+  order:
+  - file.name
+  - estado_tarea
+  - responsable
+  - fecha_programada

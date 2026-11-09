@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.eggs/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+
+# Editors
+.idea/
+.vscode/
+
+# skills CLI (npx skills add) artifacts — not part of the plugin
+.agents/
+skills/
+skills-lock.json
+
+# v2 bundled skills ARE part of the plugin — re-include them under the package
+!hermes_business_brain/skills/

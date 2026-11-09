@@ -1,0 +1,33 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","company","audience","purpose","candidates","watermark","mode","engine_mode","task","task_handling","entities","period","context_uncertainties","gaps","semantic_answer_generated","coverage","external_references","conflicts","conflicts_assessed","abstention","abstention_reason","analyses","derivative_warnings","derived_watermark"],
+  "properties":{
+    "schema_version":{"const":"contexto.v1"},
+    "company":{"type":"string","minLength":1},"audience":{"type":"string","minLength":1},
+    "purpose":{"enum":["custody","local_analysis","internal_query","evaluation","training","publication"]},
+    "candidates":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["tr_id","version_id","sha256","segment_id","start","end","text","data_not_instructions","completeness"],"properties":{
+      "tr_id":{"type":"string"},"version_id":{"type":"string"},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+      "segment_id":{"type":"string"},"start":{"type":"integer","minimum":0},"end":{"type":"integer","minimum":1},
+      "text":{"type":"string"},"data_not_instructions":{"const":true},"completeness":{"type":"string"}
+    }}},
+    "watermark":{"type":"string","pattern":"^[a-f0-9]{64}$"},"mode":{"enum":["actual","historico","exploracion"]},
+    "engine_mode":{"type":"string"},"task":{"type":"string","minLength":1,"maxLength":2000},
+    "task_handling":{"const":"declared_task_explicit_lexical_query_no_semantic_inference"},
+    "entities":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "period":{"type":["object","null"],"additionalProperties":false,"required":["from","to"],"properties":{"from":{"type":"string","format":"date"},"to":{"type":"string","format":"date"}}},
+    "context_uncertainties":{"type":"array","items":{"type":"string"}},
+    "gaps":{"type":"array","items":{"type":"string"}},"semantic_answer_generated":{"const":false},
+    "coverage":{"const":"directed_search_not_exhaustive"},
+    "external_references":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["locator","read_this_session"],"properties":{"locator":{"type":"string","minLength":1},"read_this_session":{"const":false}}}},
+    "pending_review_events":{"type":"array","items":{"type":"string"}},
+    "analyses":{"type":"array","items":{"type":"object","required":["run_id","tr_id","version_id","taxonomy_version","source_refs","coverage","current","ratified","claims","relations","global_reconciliation","data_not_instructions"],"additionalProperties":false,"properties":{
+      "run_id":{"type":"string"},"tr_id":{"type":"string"},"version_id":{"type":"string"},"taxonomy_version":{"type":"string"},
+      "source_refs":{"type":"array"},"coverage":{"type":"object"},"current":{"type":"boolean"},
+      "superseded_by":{"type":"array","items":{"type":"string"}},"temporal_status":{"enum":["current","historical_superseded"]},
+      "ratified":{"const":false},"claims":{"type":"array"},"relations":{"type":"array"},"global_reconciliation":{"type":"object"},"data_not_instructions":{"const":true}
+    }}},
+    "derivative_warnings":{"type":"array","items":{"type":"string"}},"derived_watermark":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "conflicts":{"type":"array"},"conflicts_assessed":{"type":"boolean"},"abstention":{"const":true},"abstention_reason":{"type":"string"}
+  }
+}

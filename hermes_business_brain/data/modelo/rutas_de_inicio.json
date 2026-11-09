@@ -1,0 +1,124 @@
+{
+  "version": "0.2-alpha",
+  "principio": "The situation is not a single label for the company: each need can be at a different stage. Retrieve first, prioritize second.",
+  "rutas": [
+    {
+      "situacion": "emprendedor_sin_empresa_formal",
+      "identificar": "Idea, customer still assumed, activities without contracts, minimal market sources",
+      "primeras_clases": [
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "primer_trabajo": "Contrast problem/segment and value model; prioritize hypotheses and experiment",
+      "peligro": "inventing buyers or payments",
+      "gates": [
+        "G1",
+        "G2",
+        "G4",
+        "G6",
+        "G7"
+      ]
+    },
+    {
+      "situacion": "empresa_operando_conocimiento_disperso",
+      "identificar": "Quotes and experiences, decisions in chats, outdated prices mixed together",
+      "primeras_clases": [
+        "D01",
+        "D03",
+        "D04",
+        "X01",
+        "X04"
+      ],
+      "primer_trabajo": "Reconstruct the offer or process from episodes and sources with validity",
+      "peligro": "elevating a quote to a contract or a case to policy",
+      "gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7"
+      ]
+    },
+    {
+      "situacion": "empresa_documentada",
+      "identificar": "Manuals, official systems, contracts, versioned documents",
+      "primeras_clases": [
+        "D01",
+        "D05",
+        "D06",
+        "D07",
+        "X05",
+        "X06"
+      ],
+      "primer_trabajo": "Authority map by subject/date and a concrete retrieval question",
+      "peligro": "duplicating official data inside Obsidian",
+      "gates": [
+        "G1",
+        "G5",
+        "G7"
+      ]
+    },
+    {
+      "situacion": "crear_nueva_oferta",
+      "identificar": "New product/service/consulting, proposal without contract",
+      "primeras_clases": [
+        "D02",
+        "D03",
+        "X01",
+        "X07"
+      ],
+      "primer_trabajo": "Define purchase mechanism, scope, exclusions, evidence, price, and who can approve",
+      "peligro": "turning a tool/implementation into a sold product",
+      "gates": [
+        "G2",
+        "G5",
+        "G6",
+        "G7"
+      ]
+    },
+    {
+      "situacion": "organizar_trabajo_activo",
+      "identificar": "Projects, commitments, meetings, scattered tasks",
+      "primeras_clases": [
+        "D04",
+        "D06",
+        "X04",
+        "X07"
+      ],
+      "primer_trabajo": "Reconcile projects and owners with the current source and record facts vs open items",
+      "peligro": "inventing state or execution from agendas",
+      "gates": [
+        "G1",
+        "G3",
+        "G5",
+        "G7"
+      ]
+    },
+    {
+      "situacion": "mejorar_area_empresarial",
+      "identificar": "Marketing, finance, operations, people, compliance, or another capability",
+      "primeras_clases": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07"
+      ],
+      "primer_trabajo": "Define the decision/task, the source of authority, and the minimum document with real value",
+      "peligro": "creating an org chart or a list of 14 files without need",
+      "gates": [
+        "G1",
+        "G2",
+        "G4",
+        "G5",
+        "G6",
+        "G7"
+      ]
+    }
+  ]
+}

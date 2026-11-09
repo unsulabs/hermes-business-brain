@@ -1,0 +1,1055 @@
+{
+  "version": "0.2.0-candidate",
+  "estado": "candidato_para_pilotos",
+  "descripcion": "Differentiated operational classes. They are not mandatory folders and carry no automatic permissions.",
+  "tipos": [
+    {
+      "tipo": "empresa",
+      "prefijo": "EMP",
+      "representa": "Legal/operational entity with its own identity and boundaries.",
+      "no_confundir": "Do not confuse brand, legal entity, and business unit.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Identity and activity",
+        "authorized sources",
+        "owners and units",
+        "relationships with offers and strategies"
+      ],
+      "relaciones_candidatas": [
+        "organizacion",
+        "persona",
+        "modelo_negocio",
+        "oferta"
+      ],
+      "pregunta_de_prueba": "What organization are we documenting and what activities does it actually perform?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "modelo_negocio",
+      "prefijo": "MOD",
+      "representa": "Current or hypothetical explanation of how value is created, delivered, and captured.",
+      "no_confundir": "Not equivalent to a mission or to a commercial offer.",
+      "carpeta": "10_Conocimiento",
+      "contenido_minimo": [
+        "Value proposition and capture mechanism",
+        "segments and trade-offs",
+        "assumptions and evidence",
+        "decisions and changes"
+      ],
+      "relaciones_candidatas": [
+        "empresa",
+        "oferta",
+        "investigacion",
+        "decision"
+      ],
+      "pregunta_de_prueba": "How does this business make money and which assumptions remain unvalidated?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "oferta",
+      "prefijo": "OFE",
+      "representa": "Purchasable commercial offer with scope, exclusions, price or price rule, and validity.",
+      "no_confundir": "Do not confuse a product/service component, a particular proposal, or a delivery tool.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Customer and promised outcome",
+        "composition and modality",
+        "scope and exclusions",
+        "conditions and price authority",
+        "admission and changes"
+      ],
+      "relaciones_candidatas": [
+        "producto",
+        "servicio",
+        "consultoria",
+        "propuesta_comercial",
+        "acuerdo",
+        "proyecto"
+      ],
+      "pregunta_de_prueba": "What can be contracted today and under what verifiable conditions?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "producto",
+      "prefijo": "PRO",
+      "representa": "Deliverable good or asset, tangible or digital, with its own identity and lifecycle.",
+      "no_confundir": "Its existence does not imply it is for sale; internal use does not equal commercialization.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "What it is and variant",
+        "use and audience",
+        "delivery",
+        "capabilities and limits",
+        "commercial link and sources"
+      ],
+      "relaciones_candidatas": [
+        "oferta",
+        "proyecto",
+        "recurso",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What is actually delivered as a product and how does it relate to an offer?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "servicio",
+      "prefijo": "SER",
+      "representa": "Work or service delivery with outcome, scope, and delivery modality.",
+      "no_confundir": "A performed service does not imply a licensed product or a sold proprietary tool.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Situation addressed",
+        "outcomes",
+        "scope and exclusions",
+        "steps and quality",
+        "delivery evidence"
+      ],
+      "relaciones_candidatas": [
+        "oferta",
+        "proceso",
+        "proyecto",
+        "cliente_cuenta"
+      ],
+      "pregunta_de_prueba": "What is delivered and what outcomes/obligations does it generate?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "consultoria",
+      "prefijo": "CON",
+      "representa": "Professional service modality based on expert judgment and agreed deliverables.",
+      "no_confundir": "Do not turn a method, a tool used, or research into a sold product.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Problem and diagnosis",
+        "methodology used",
+        "expert judgment",
+        "deliverables",
+        "limits and risks"
+      ],
+      "relaciones_candidatas": [
+        "servicio",
+        "oferta",
+        "implementacion",
+        "proyecto",
+        "investigacion"
+      ],
+      "pregunta_de_prueba": "What professional service was contracted and which tools were only used?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "herramienta",
+      "prefijo": "HER",
+      "representa": "Application, technique, or system used internally or by third parties.",
+      "no_confundir": "Using a tool does not prove a license contract, sale, or intellectual property.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Function",
+        "ownership and provider",
+        "version",
+        "dependencies",
+        "authorized access",
+        "registered use"
+      ],
+      "relaciones_candidatas": [
+        "consultoria",
+        "implementacion",
+        "recurso",
+        "proceso"
+      ],
+      "pregunta_de_prueba": "Which tool was used, for what, and what contractual relationship really exists?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "implementacion",
+      "prefijo": "IMP",
+      "representa": "Deployment of a capability or solution in a given context and date.",
+      "no_confundir": "Do not confuse executed work with a general commercial product/service.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Context and objectives",
+        "approved scope",
+        "tools",
+        "tests",
+        "acceptance",
+        "incidents"
+      ],
+      "relaciones_candidatas": [
+        "proyecto",
+        "herramienta",
+        "servicio",
+        "protocolo"
+      ],
+      "pregunta_de_prueba": "What was implemented, where, with what evidence, and under what scope?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "protocolo",
+      "prefijo": "PRT",
+      "representa": "Formal rule or agreement for acting in defined situations.",
+      "no_confundir": "Do not confuse an approved protocol with an observed process or an AI suggestion.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Trigger and domains",
+        "authority and date",
+        "expected actions",
+        "exceptions",
+        "escalation"
+      ],
+      "relaciones_candidatas": [
+        "proceso",
+        "decision",
+        "acuerdo",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What behavior is actually authorized and when does it apply?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "proceso",
+      "prefijo": "PRS",
+      "representa": "Recurring sequence that produces a business outcome; may be observed or normative.",
+      "no_confundir": "Do not assume every process needs an SOP or that the ideal process is what runs.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Trigger",
+        "inputs and outputs",
+        "real steps",
+        "owners",
+        "exceptions",
+        "controls and evidence"
+      ],
+      "relaciones_candidatas": [
+        "protocolo",
+        "servicio",
+        "proyecto",
+        "persona",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "How does this work actually happen, when does it fail, and who intervenes?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "proyecto",
+      "prefijo": "PRY",
+      "representa": "Work bounded by objective, scope, state, owners, and deliverables.",
+      "no_confundir": "Do not confuse a project with an offer, a customer, a meeting, or a historical case.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Objective and scope",
+        "customer/request",
+        "milestones and deliverables",
+        "dependencies",
+        "decisions and acceptance"
+      ],
+      "relaciones_candidatas": [
+        "organizacion",
+        "cliente_cuenta",
+        "oferta",
+        "proceso",
+        "tarea",
+        "reunion",
+        "caso"
+      ],
+      "pregunta_de_prueba": "What is being developed, what is missing, and what is approved?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "caso",
+      "prefijo": "CAS",
+      "representa": "Episode or experience relevant enough to learn or recover evidence.",
+      "no_confundir": "A particular case does not automatically become universal policy.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Context and timeline",
+        "episode",
+        "outcome",
+        "exceptions",
+        "interpretation and limits"
+      ],
+      "relaciones_candidatas": [
+        "proyecto",
+        "oferta",
+        "cliente_cuenta",
+        "investigacion",
+        "decision"
+      ],
+      "pregunta_de_prueba": "What happened in that experience and what can we really generalize?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "sesion",
+      "prefijo": "SES",
+      "representa": "Dated unit of work or interaction with its own results and context.",
+      "no_confundir": "Do not confuse a session with a formal meeting, case, proposal, or project.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Purpose and participants",
+        "situation",
+        "activity",
+        "decisions or hypotheses",
+        "deliverables",
+        "continuity"
+      ],
+      "relaciones_candidatas": [
+        "reunion",
+        "proyecto",
+        "persona",
+        "decision",
+        "tarea"
+      ],
+      "pregunta_de_prueba": "What was done in the session, what changed, and what comes next?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "reunion",
+      "prefijo": "REU",
+      "representa": "Gathering identified by date, participants, topics, and agreements.",
+      "no_confundir": "A meeting statement is not an approved decision, invoice, or contract.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Participants and roles",
+        "agenda",
+        "topics",
+        "decisions with approver",
+        "tasks and date"
+      ],
+      "relaciones_candidatas": [
+        "persona",
+        "organizacion",
+        "proyecto",
+        "tarea",
+        "decision",
+        "acuerdo"
+      ],
+      "pregunta_de_prueba": "Who participated, what was decided, and what remains open?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "persona",
+      "prefijo": "PER",
+      "representa": "Person related to the business in a specific role or capacity.",
+      "no_confundir": "A person is not a customer, account, entity, or authorized contact; minimize personal data.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Role and organization",
+        "contact only if authorized",
+        "verified authority",
+        "participation"
+      ],
+      "relaciones_candidatas": [
+        "organizacion",
+        "cliente_cuenta",
+        "proyecto",
+        "reunion",
+        "decision"
+      ],
+      "pregunta_de_prueba": "What role does this person have and what authority is proven?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "organizacion",
+      "prefijo": "ORG",
+      "representa": "External organization or unit that can take part in several relationships.",
+      "no_confundir": "An organization is not necessarily a customer, supplier, or payer.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Nature",
+        "roles in relationships",
+        "relationship owner",
+        "official systems"
+      ],
+      "relaciones_candidatas": [
+        "cliente_cuenta",
+        "proveedor",
+        "persona",
+        "proyecto"
+      ],
+      "pregunta_de_prueba": "What organization is this and what roles does it play in each relationship?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "cliente_cuenta",
+      "prefijo": "CTA",
+      "representa": "Commercial relationship with an account, prospect, or contracting party, with differentiated states.",
+      "no_confundir": "Do not confuse prospect, customer, payer, signer, user, and contracting party.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Commercial role and CRM authority",
+        "episodes and agreements",
+        "commercial history",
+        "restrictions"
+      ],
+      "relaciones_candidatas": [
+        "organizacion",
+        "persona",
+        "oferta",
+        "proyecto",
+        "propuesta_comercial",
+        "acuerdo"
+      ],
+      "pregunta_de_prueba": "Who contracts, pays, and uses, and what commercial state is demonstrated?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "propuesta_comercial",
+      "prefijo": "PCO",
+      "representa": "Particular offer communicated to a recipient at a specific version and date.",
+      "no_confundir": "Quoted does not mean accepted, contracted, invoiced, or collected.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Customer and offer",
+        "version",
+        "validity",
+        "price/scope",
+        "state and acceptance acknowledgement"
+      ],
+      "relaciones_candidatas": [
+        "cliente_cuenta",
+        "oferta",
+        "acuerdo",
+        "proyecto",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What was specifically proposed to the customer and was it accepted?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "acuerdo",
+      "prefijo": "ACU",
+      "representa": "Commitment between parties applicable in a context and period, with evidence.",
+      "no_confundir": "Do not turn an informal email or template into an executed contract.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Parties and authority",
+        "obligations",
+        "validity",
+        "exceptions",
+        "legal source",
+        "compliance"
+      ],
+      "relaciones_candidatas": [
+        "persona",
+        "organizacion",
+        "propuesta_comercial",
+        "proyecto",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What obligation exists for whom, since when, and where is the source?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "decision",
+      "prefijo": "DEC",
+      "representa": "Explicit choice or authorization on a subject, scope, and date.",
+      "no_confundir": "An agent's proposal or interpretation is never an approved decision.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Problem",
+        "alternatives",
+        "decider authority",
+        "decision or proposal",
+        "context",
+        "impacts"
+      ],
+      "relaciones_candidatas": [
+        "proyecto",
+        "oferta",
+        "modelo_negocio",
+        "fuente",
+        "protocolo"
+      ],
+      "pregunta_de_prueba": "What was decided, who had authority, and what did it replace?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "investigacion",
+      "prefijo": "INV",
+      "representa": "Analysis process with question, method, sources, limits, and findings.",
+      "no_confundir": "Analysis, observed data, hypothesis, and commercial outcome are distinct categories.",
+      "carpeta": "10_Conocimiento",
+      "contenido_minimo": [
+        "Question",
+        "method and sample",
+        "sources",
+        "results",
+        "counter-evidence",
+        "hypotheses",
+        "applications"
+      ],
+      "relaciones_candidatas": [
+        "modelo_negocio",
+        "oferta",
+        "cliente_cuenta",
+        "caso",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What evidence supports this conclusion and what are its limits?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "fuente",
+      "prefijo": "F",
+      "representa": "Record of origin, locator, permission, and reading state.",
+      "no_confundir": "The source record does not replace the original or prove validity by itself.",
+      "carpeta": "50_Fuentes",
+      "contenido_minimo": [
+        "Type and locator",
+        "event date and capture",
+        "access and authorized use",
+        "reading state"
+      ],
+      "relaciones_candidatas": [
+        "acuerdo",
+        "oferta",
+        "decision",
+        "investigacion",
+        "proyecto"
+      ],
+      "pregunta_de_prueba": "Where does the claim come from and can it be verified with permission?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "tarea",
+      "prefijo": "TAR",
+      "representa": "Action commitment with distinct owner, scheduled date, and deadline.",
+      "no_confundir": "A task is not a decision, a completed event, or a billable activity.",
+      "carpeta": "40_Seguimiento",
+      "contenido_minimo": [
+        "Action and outcome",
+        "owner",
+        "scheduled and due",
+        "project and dependencies",
+        "closure evidence"
+      ],
+      "relaciones_candidatas": [
+        "persona",
+        "proyecto",
+        "reunion",
+        "decision"
+      ],
+      "pregunta_de_prueba": "What must be done, who is responsible, and when must it be delivered?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "proveedor",
+      "prefijo": "PVD",
+      "representa": "Relationship with a third party providing resources or services with verifiable dependency.",
+      "no_confundir": "Having the contact does not imply a contract or an authorized supplier.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Organization and services",
+        "conditions/contract",
+        "risk, dependencies, and alternative"
+      ],
+      "relaciones_candidatas": [
+        "organizacion",
+        "recurso",
+        "acuerdo",
+        "proyecto"
+      ],
+      "pregunta_de_prueba": "Which supplier provides what, under what conditions, and what risk does it pose?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "recurso",
+      "prefijo": "REC",
+      "representa": "Asset, material, infrastructure, or capacity available or required.",
+      "no_confundir": "Do not confuse reported availability with certified inventory.",
+      "carpeta": "20_Entidades",
+      "contenido_minimo": [
+        "Type and capacity",
+        "location/source system",
+        "availability not guaranteed",
+        "custodian",
+        "maintenance"
+      ],
+      "relaciones_candidatas": [
+        "proveedor",
+        "herramienta",
+        "proyecto",
+        "proceso",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What resource exists and where can real availability be confirmed?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "indicador",
+      "prefijo": "KPI",
+      "representa": "Operational definition of a measure, source, frequency, and limits.",
+      "no_confundir": "A calculated or estimated value is not official data or an approved target.",
+      "carpeta": "40_Seguimiento",
+      "contenido_minimo": [
+        "Definition and formula",
+        "unit and granularity",
+        "source system",
+        "frequency",
+        "owner"
+      ],
+      "relaciones_candidatas": [
+        "modelo_negocio",
+        "proceso",
+        "proyecto",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What are we measuring, with what calculation, and which source prevails?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    },
+    {
+      "tipo": "comunicacion",
+      "prefijo": "COM",
+      "representa": "Piece or message with audience, purpose, version, and authorized claims.",
+      "no_confundir": "A copy draft is not an approved announcement or a sent communication.",
+      "carpeta": "30_Registros",
+      "contenido_minimo": [
+        "Audience and channel",
+        "intention",
+        "facts/claims",
+        "brand source",
+        "review",
+        "publication"
+      ],
+      "relaciones_candidatas": [
+        "oferta",
+        "cliente_cuenta",
+        "investigacion",
+        "decision",
+        "fuente"
+      ],
+      "pregunta_de_prueba": "What can be claimed, to whom, and with what evidence?",
+      "campos_comunes": [
+        "id",
+        "tipo",
+        "clase",
+        "estado_editorial",
+        "estado_conocimiento",
+        "vigencia",
+        "sensibilidad",
+        "fuentes",
+        "registrado_en"
+      ],
+      "estado_inicial": {
+        "estado_editorial": "borrador",
+        "estado_conocimiento": "pendiente",
+        "vigencia": "sin_verificar",
+        "sensibilidad": "interno"
+      }
+    }
+  ]
+}

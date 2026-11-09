@@ -1,0 +1,70 @@
+{
+  "version": "0.2.0-alpha",
+  "purpose": "Compatibility baseline computed from bundled synthetic fixtures; not a release certification",
+  "files": [
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Comercial.base",
+      "sha256": "1c99238cf513fa53ae13efde4d8868ed906666234f2c97763db68bb466a46332"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Comunicacion.base",
+      "sha256": "e3b05872186088d48c2d489b177d6f3bcc4154aafff89ed2d5b680cd91653207"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Decisiones.base",
+      "sha256": "fe7583f8de07356f35f36b4b4c7443ec1b7118d3572ffc3dc20925526dc98a71"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Documentos.base",
+      "sha256": "9201d7ecd843607af734ca2f28e6c08cae8b2834b3c7519bc37359c019fe8351"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Entidades.base",
+      "sha256": "60b7a13aa14e63e750ee750c461e2282a656d3f49edac8ab6c2bd4d64fd0e18d"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Fuentes.base",
+      "sha256": "e61f3575ef30e6b5721d7f5120be7c9eedd634e6f19f5c2d052b5d0aa898121d"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Fuentes_y_autoridad.base",
+      "sha256": "97369148e26501acdc13c45074c860cb9a56659ce8f45eb3583a1055a71326ac"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Indicadores.base",
+      "sha256": "79d78f100802728589b21b3ddb9f39262319da70ba11ab9305a965073b48a4a3"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Investigacion_y_aprendizajes.base",
+      "sha256": "cdf66b7a3712a5b6d860dd2eef37b2b9afde57cd038295fda5e038f7f071142d"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Ofertas.base",
+      "sha256": "bcd913e29f5b72cf93950561af67522be5b1ea9c847637198636d9dc00586a31"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Personas_y_organizaciones.base",
+      "sha256": "ecdf5f124a657d2f2f8b21c508bfd6674874b2e8831ae3283b7628f7795e1256"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Procesos_y_protocolos.base",
+      "sha256": "0af15a2c8df2f49278cada6117b07a7ca138783284959d4df99450f90f18c0a6"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Proyectos.base",
+      "sha256": "6a41e205af4c7ca70f02eeca0397cec1f4f5dc5930644cb9da3bdc3c54cb0912"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Recursos_y_dependencias.base",
+      "sha256": "1ffa0951107bce4055d85e17330c72f16d518b6bbd477c5bbfb55799e52c1c41"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Reuniones_y_sesiones.base",
+      "sha256": "d8ccfdb894d2f080c4c09720bad8ac5dde2e2b429e8436ac761475b5bd5af2a5"
+    },
+    {
+      "path": "plantilla_boveda/90_Sistema/Vistas/Tareas.base",
+      "sha256": "d23ad9058184804e0507f182a6e4cd3d2f1782689d62892ce76617eb16ece711"
+    }
+  ]
+}
