@@ -68,5 +68,5 @@ The working tree of this repository also has `skills/documentation-writer`,
 but it is **not** part of the product bundle: it is an `npx skills add`
 artifact, `.gitignore` excludes the root `skills/` directory, and
 `skills-lock.json` records it as installed from the third-party
-`github/awesome-copilot` collection. Only the 19 skills above ship with the
+`github/awesome-copilot` collection. Only the 20 skills above ship with the
 plugin (bundled under `hermes_business_brain/skills/`).
