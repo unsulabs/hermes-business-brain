@@ -1,6 +1,6 @@
 # Reference — Bundled Skills (hermes-business-brain v2)
 
-The plugin ships 19 skills under `hermes_business_brain/skills/`, each a
+The plugin ships 20 skills under `hermes_business_brain/skills/`, each a
 directory with a `SKILL.md`. At load time `register(ctx)` registers every
 such directory as a plugin skill under the qualified name
 `hermes-business-brain:<name>` (the registration is tolerant: missing or

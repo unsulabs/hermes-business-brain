@@ -145,8 +145,8 @@ keyword arguments. Full per-tool reference: [docs/reference/tools.md](docs/refer
 
 ## Bundled skills (19)
 
-The plugin ships 19 workflow skills under `hermes_business_brain/skills/`, registered at
-load time as `hermes-business-brain:<name>` — 18 `ce-*` skills (installation, discovery,
+The plugin ships 20 workflow skills under `hermes_business_brain/skills/`, registered at
+load time as `hermes-business-brain:<name>` — 19 `ce-*` skills (installation, discovery,
 query and task execution, transcripts, taxonomy, relations, knowledge changes,
 documentation, research) plus `obsidian-router`, which mandates vault resolution before
 any access.
@@ -180,7 +180,7 @@ Organized by quadrant (Diátaxis).
 
 - [Reference: Tools](docs/reference/tools.md) — the 18 tools: arguments, types,
   required/optional, engine backings, examples.
-- [Reference: Bundled Skills](docs/reference/skills.md) — the 19 bundled skills,
+- [Reference: Bundled Skills](docs/reference/skills.md) — the 20 bundled skills,
   families, when each activates.
 - [Reference: CLI](docs/reference/cli-reference.md) — `cerebro.py` subcommands not
   exposed as plugin tools (no plugin CLI launcher exists).
@@ -239,6 +239,6 @@ schemas.py                  tool JSON schemas
 tools.py                    in-process handlers over the engine api (tool layer spawns no processes)
 hermes_business_brain/engine/   native English engine (api facade + ops_vault, ops_knowledge, ops_transcripts)
 hermes_business_brain/data/     model schemas, baseline resources, vault template (English; keys/filenames preserved)
-hermes_business_brain/skills/   the 19 bundled plugin skills (loaded as hermes-business-brain:<name>)
+hermes_business_brain/skills/   the 20 bundled plugin skills (loaded as hermes-business-brain:<name>)
 tests/                      pytest suite (engine + synthetic vault cycle)
 ```

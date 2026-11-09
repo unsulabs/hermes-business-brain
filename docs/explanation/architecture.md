@@ -88,7 +88,7 @@ call-out anywhere. The plugin is fully offline by construction.
 
 ## How the bundled skills interact with the tools
 
-The 19 bundled skills (`hermes-business-brain:ce-*` plus `obsidian-router`)
+The 20 bundled skills (`hermes-business-brain:ce-*` plus `obsidian-router`)
 are procedures that tell the agent *when and how* to call the tools. Their
 interaction pattern:
 
