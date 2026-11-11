@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .registrar_boveda_codex import (
+from .registrar_boveda_obsidian import (
     FORMAT,
     NATIVE,
     REGISTRY,

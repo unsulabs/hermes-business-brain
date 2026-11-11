@@ -19,8 +19,9 @@ is privacy-first by construction:
 - **No real business data shipped.** Every template, schema and piece of demo content
   bundled here is synthetic by design.
 - **No hardcoded absolute user paths.** Every tool takes vault/bank/file paths as
-  arguments. (The vault-registry tools default to the user's own `~/.codex` / Obsidian
-  native registry files; both paths can be overridden.)
+  arguments. (The vault-registry tools work with the user's local selector registry
+  (`~/.codex/obsidian/vaults.json`, legacy Codex-compatible format) and the native
+  Obsidian registry files; both paths can be overridden.)
 
 ## Table of Contents
 
@@ -123,8 +124,8 @@ Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcript
 | `brain_create_vault` | `cerebro.py crear` | Create a new empty vault from the bundled template; never overwrites. |
 | `brain_validate_vault` | `validar_boveda.py` | Structural integrity check (ids, links, transfers) — not business truth. |
 | `brain_status` | `cerebro.py estado` | Structural company summary (counts, editorial state, templates). |
-| `brain_register_vault` | `registrar_boveda_codex.py` | Register an open vault in the Codex selector registry (needs Obsidian's native id). |
-| `brain_resolve_vault` | `resolver_boveda_codex.py` | Resolve the vault registered for a Codex project/selector. |
+| `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (legacy Codex-compatible `~/.codex` format; needs Obsidian's native id). |
+| `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_obsidian.py` | Resolve the vault registered for an agent project/selector. |
 | `brain_query` | `cerebro.py consulta-contextual` | Candidate blocks by literal text + source/date/scope filters; no semantic generation. |
 | `brain_capture` | `cerebro.py capturar` | Save preliminary findings as a draft note (not approved knowledge). |
 | `brain_knowledge_map` | `cerebro.py mapa-conocimiento` | Knowledge-map preview (Markdown/Canvas); publish only with SHA/confirmation/backup. |

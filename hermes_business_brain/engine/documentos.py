@@ -139,7 +139,7 @@ def create_document(
 
     D01-D07: one stable doc_id per family. X01-X07: its own identity Xnn-...
     Does not import legacy content; contents must have been obtained/authorized
-    by Codex.
+    by an external agent.
     """
     vault, cfg = safe_vault(vault_path)
     if class_id not in _classes():

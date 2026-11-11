@@ -1,6 +1,6 @@
 """Knowledge architecture audit before drafting or creating notes.
 
-Does not extract meaning by itself: Codex classifies units from authorized
+Does not extract meaning by itself: an external agent classifies units from authorized
 originals and this tool reviews IDENTITIES, coverage, sources and links.
 Does not modify vaults or company files, does not create notes and does not
 approve content.
@@ -75,7 +75,7 @@ def _tags(val: object, label: str) -> list[str]:
 
 
 def planificar(vault_path: Path, plan_path: Path) -> dict:
-    """Audit of a plan previously REASONED by Codex. Strictly read-only."""
+    """Audit of a plan previously REASONED by an external agent. Strictly read-only."""
     vault, cfg = safe_vault(vault_path)
     plan = _read_plan(plan_path, vault)
     purpose = _text(plan.get("pregunta"), "business question", 15, 650)

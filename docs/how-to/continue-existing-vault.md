@@ -29,7 +29,7 @@ explicit selector:
 | --- | --- |
 | `selector` | the business id (`EMPRESA-001`), a registered name, an alias, or the absolute vault path |
 
-(Alternative: `project` — the absolute path of a Codex project whose
+(Alternative: `project` — the absolute path of an agent project whose
 registered vault should be resolved. Exactly one of `selector`/`project` must
 be given.)
 

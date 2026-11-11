@@ -14,7 +14,7 @@ Result: schema_version, operation, request_id, status (`DONE`/`DONE_WITH_CONCERN
 
 ## Availability and writes
 
-These contracts enable agent flow; they don't assert that modules/commands are implemented. Before using the transcript pipeline (brain_transcript_cycle; upstream `scripts/transcripciones.py`) inspect existence and --help, the contract and pertinent tests. Only run demonstrated subcommands; the rest stays `PENDIENTE_IMPLEMENTACION`. Never invent flags nor write an improvised catalog to simulate a missing capability. Authorized private analysis/proposal may be prepared declaring limits; don't declare consolidation. Read/preview by default; a local commit doesn't grant editorial nor external permission.
+These contracts enable agent flow; they don't assert that modules/commands are implemented. Before using the transcript pipeline (brain_transcript_cycle; engine module `transcripciones.py`) inspect existence and the contract and pertinent tests. Only run demonstrated subcommands; the rest stays `PENDIENTE_IMPLEMENTACION`. Never invent flags nor write an improvised catalog to simulate a missing capability. Authorized private analysis/proposal may be prepared declaring limits; don't declare consolidation. Read/preview by default; a local commit doesn't grant editorial nor external permission.
 
 ## Context and useful output
 

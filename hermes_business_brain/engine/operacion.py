@@ -415,7 +415,7 @@ def diagnose(vault: Path|None=None) -> dict:
             'obsidian_abierto_en_interfaz':'NOT VERIFIED',
             'bases_habilitado':'NOT VERIFIED',
             'plugins_terceros':'NOT INSTALLED BY THIS PRODUCT',
-            'conectores_codex':'NOT VERIFIED',
+            'connectors':'NOT VERIFIED',
             'siguiente':'Verify real GUI/version and permissions with the owner before installing/configuring'}
     if vault:
         v,_=safe_vault(vault)

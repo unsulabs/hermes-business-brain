@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Register a vault already open in Obsidian for the local Codex router.
+"""Register a vault already open in Obsidian for the local selector router.
 
 Does not create or modify the vault nor the native Obsidian registry. It
 requires that Obsidian already assigned an ID to the path; it only updates
-the Codex selector.
+the local selector registry (legacy `~/.codex/obsidian/vaults.json` format,
+kept for compatibility).
 """
 # ruff: noqa: TRY004, UP017  (upstream-identical: ValueError semantics and timezone.utc)
 from __future__ import annotations

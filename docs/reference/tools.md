@@ -58,8 +58,8 @@ failure is returned inside the JSON, not thrown.
 | `brain_create_vault` | `create_vault` | `cerebro.py crear` | Create a new empty vault from the bundled template; fails if the destination exists. |
 | `brain_validate_vault` | `validate_vault` | `validar_boveda.py` | Structural integrity check (ids, wikilinks, transfers) — never business truth. |
 | `brain_status` | `status` | `cerebro.py estado` | Structural company summary (counts, editorial state, templates, sources). |
-| `brain_register_vault` | `register_vault` | `registrar_boveda_codex.py` | Register an open vault in the Codex selector registry (needs Obsidian's native id). |
-| `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_codex.py` | Resolve the vault registered for a Codex project/selector, verified against Obsidian's native registry. |
+| `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (legacy Codex-compatible `~/.codex` format; needs Obsidian's native id). |
+| `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_obsidian.py` | Resolve the vault registered for an agent project/selector, verified against Obsidian's native registry. |
 | `brain_query` | `query` | `cerebro.py consulta-contextual` | Candidate note blocks by literal text + topic/scope/date filters; no semantic generation. |
 | `brain_capture` | `capture` | `cerebro.py capturar` | Save preliminary findings as a draft capture note — not approved knowledge. |
 | `brain_knowledge_map` | `knowledge_map` | `cerebro.py mapa-conocimiento` (publish: `publicar-mapa`) | Knowledge-map preview (Markdown/Canvas); publish only with SHA/confirmation/backup. |
@@ -136,10 +136,11 @@ brain_status({"vault": "/Users/alice/vaults/empresa"})
 
 ## brain_register_vault
 
-Register an already-open Obsidian vault in the Codex local router so Codex
-can resolve it. Updates the Codex selector registry only; requires the vault
-to already have an id in Obsidian's native registry. May read/write the
-user's Codex and Obsidian registry files under the home directory — override
+Register an already-open Obsidian vault in the local selector router so existing
+installs can resolve it. Updates the selector registry only; requires the vault
+to already have an id in Obsidian's native registry. May read/write the user's
+selector and Obsidian registry files under the home directory (legacy
+`~/.codex/obsidian/vaults.json` format, kept for compatibility) — override
 with `registry`/`nativo`.
 
 | Argument | Type | Required | Meaning |
@@ -147,11 +148,11 @@ with `registry`/`nativo`.
 | `vault` | string | yes | Absolute path to the vault already opened in Obsidian. |
 | `name` | string | yes | Human-readable name for the vault entry. |
 | `alias` | string | yes | Business id used as an alias, e.g. `EMPRESA-001`. |
-| `registry` | string | no | Absolute path to the Codex vaults registry JSON (default `~/.codex/obsidian/vaults.json`). |
+| `registry` | string | no | Absolute path to the vaults registry JSON (default `~/.codex/obsidian/vaults.json`, legacy Codex-compatible format). |
 | `nativo` | string | no | Absolute path to the Obsidian native registry JSON (platform default). |
 | `instructions` | string | no | Vault-relative instructions file (default `90_Sistema/Como_usar.md`). |
 | `entrypoint` | string | no | Vault-relative entrypoint note (default `Inicio.md`). |
-| `proyecto` | string | no | Absolute path of the Codex project directory that should resolve this vault. |
+| `proyecto` | string | no | Absolute path of the agent project directory that should resolve this vault. |
 
 ```json
 brain_register_vault({"vault": "/Users/alice/vaults/empresa", "name": "Empresa", "alias": "EMPRESA-001"})
@@ -159,15 +160,15 @@ brain_register_vault({"vault": "/Users/alice/vaults/empresa", "name": "Empresa",
 
 ## brain_resolve_vault
 
-Resolve which registered vault a Codex project (or a selector string) maps
+Resolve which registered vault an agent project (or a selector string) maps
 to, verifying it against Obsidian's native registry. Read-only for the
 registries. Use before operating on a vault to confirm identity.
 
 | Argument | Type | Required | Meaning |
 | --- | --- | --- | --- |
 | `selector` | string | exactly one of `selector`/`project` | Selector matching a registered id, name, alias, or absolute vault path. |
-| `project` | string | exactly one of `selector`/`project` | Absolute path of the Codex project whose registered vault should be resolved. |
-| `registry` | string | no | Absolute path to the Codex vaults registry JSON (default `~/.codex/obsidian/vaults.json`). |
+| `project` | string | exactly one of `selector`/`project` | Absolute path of the agent project whose registered vault should be resolved. |
+| `registry` | string | no | Absolute path to the vaults registry JSON (default `~/.codex/obsidian/vaults.json`, legacy Codex-compatible format). |
 | `nativo` | string | no | Absolute path to the Obsidian native registry JSON (platform default). |
 
 ```json

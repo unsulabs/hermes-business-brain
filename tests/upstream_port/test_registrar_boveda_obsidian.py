@@ -1,4 +1,4 @@
-"""Ported upstream test_registrar_boveda_codex.py: local registration of a new
+"""Ported upstream test_registrar_boveda_obsidian.py: local registration of a new
 
 vault after opening it in Obsidian (native registry), with idempotency,
 collision protection and project association. Spanish error assertions are
@@ -15,7 +15,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from hermes_business_brain.engine.registrar_boveda_codex import canonical, register
+from hermes_business_brain.engine.registrar_boveda_obsidian import canonical, register
 
 
 class RegisterCodexVaultTest(unittest.TestCase):
