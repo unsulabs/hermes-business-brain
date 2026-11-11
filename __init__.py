@@ -1,7 +1,7 @@
-"""hermes-business-brain v2 plugin: 18 in-process business-brain tools + bundled skills.
+"""hermes-business-brain v2 plugin: 19 in-process business-brain tools + bundled skills.
 
 register(ctx) publishes:
-  * the 18 ``brain_*`` tools declared in plugin.yaml (handlers in tools.py call the native
+  * the 19 ``brain_*`` tools declared in plugin.yaml (handlers in tools.py call the native
     English engine hermes_business_brain.engine.api IN-PROCESS; the engine is imported lazily, so
     registration never depends on it being installed yet);
   * every SKILL.md under ``hermes_business_brain/skills/<name>/`` as a plugin skill
