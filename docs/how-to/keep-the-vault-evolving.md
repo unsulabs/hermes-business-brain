@@ -37,7 +37,7 @@ never becomes a document.
 ## 4. Revisit areas on cadence
 
 When a revisit is due, run the matching round-2 prompts from the
-[area templates](../hermes_business_brain/skills/ce-primera-sesion/references/area-templates/README.md)
+[area templates](../../hermes_business_brain/skills/ce-primera-sesion/references/area-templates/README.md)
 through the continuity skill, and capture what the owner says. The documents
 then grow by revision: new sources refine D01-D07 / X01-X07, and the vault
 outgrows the information it started with.

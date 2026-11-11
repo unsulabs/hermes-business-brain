@@ -1,8 +1,8 @@
-# Reference — cerebro.py CLI (subcommands not exposed as plugin tools)
+# Reference -- cerebro.py CLI (subcommands not exposed as plugin tools)
 
 `cerebro.py` is the native English engine's CLI front-end (29 subcommands
-registered via `add_parser`; verified: `grep -c "add_parser(" cerebro.py` →
-29). Twelve of them back plugin tools — see [`tools.md`](tools.md). The other
+registered via `add_parser`; verified: `grep -c "add_parser(" cerebro.py` ->
+29). Twelve of them back plugin tools -- see [`tools.md`](tools.md). The other
 **17** are **not exposed as a plugin tool in this release**: no `brain_*`
 tool wraps them, and the plugin ships **no subprocess launcher** (there is no
 `run_script.py`; the engine ops are called in-process). The engine may invoke
@@ -20,7 +20,7 @@ are reachable only through the engine's own `cerebro.py` CLI.
 These are CLI subcommands, not plugin tools. Their behavior, flags and
 messages are defined by the engine's `cerebro.py`. Bundled skills reference
 them only with the explicit label "upstream CLI subcommand, not exposed as a
-v2 plugin tool" — this keeps the skill layer honest: it never pretends an
+v2 plugin tool" -- this keeps the skill layer honest: it never pretends an
 unexposed subcommand is a tool, and it never invents a plugin launcher path.
 
 ## Subcommands not exposed as plugin tools (17)
@@ -28,16 +28,16 @@ unexposed subcommand is a tool, and it never invents a plugin launcher path.
 | Subcommand | Purpose (English) | Key flags (verified in cerebro.py) | Notes |
 | --- | --- | --- | --- |
 | `fuente` | Register a reference to a source without copying the original document. | `--vault --id --titulo --localizador --clase [--lectura --fecha-evento]` | Conceptually related: `brain_references` (private custody bank registry). |
-| `previsualizar-dx` | Simulate a D/X modification without writing. | `--vault --doc-id --archivo [--fuente …]` | Complements `brain_dx_apply` (which applies after authorization). |
-| `preparar-dx` | Save a D/X proposal without modifying the current document. | `--vault --doc-id --archivo [--fuente …]` | Complements `brain_dx_apply`. |
+| `previsualizar-dx` | Simulate a D/X modification without writing. | `--vault --doc-id --archivo [--fuente ...]` | Complements `brain_dx_apply` (which applies after authorization). |
+| `preparar-dx` | Save a D/X proposal without modifying the current document. | `--vault --doc-id --archivo [--fuente ...]` | Complements `brain_dx_apply`. |
 | `restaurar-dx` | Restore a D/X version as a new revision after authorization. | `--vault --doc-id --historial --sha-actual --responsable --referencia-autorizacion --respaldo` | |
-| `evaluar-dx` | Record an editorial evaluation (G1–G7) without modifying the D/X. | `--vault --doc-id --acta --sha-actual` | |
+| `evaluar-dx` | Record an editorial evaluation (G1-G7) without modifying the D/X. | `--vault --doc-id --acta --sha-actual` | |
 | `aprobar-dx` | Full editorial promotion with evaluation, authorization and backup. | `--vault --evaluacion --sha-actual --responsable --referencia-autorizacion --respaldo --confirmacion` | |
-| `relacion-proponer` | Create a typed-edge proposal; never approve it. | `--vault --origen --destino --predicado --fuente … --ambito --motivo` | |
+| `relacion-proponer` | Create a typed-edge proposal; never approve it. | `--vault --origen --destino --predicado --fuente ... --ambito --motivo` | |
 | `relacion-confirmar` | Record human ratification of a relation. | `--vault --relacion-id --sha-relacion --revisor --referencia-autorizacion --confirmacion` | |
 | `aceptacion` | Pilot preflight: structural read, not human approval. | `--vault` | |
 | `continuidad` | Record a session close to recover context later. | `--vault --resumen --siguiente [--revisado-por]` | |
-| `validar` | Validate integrity of notes, ids, links and transfers — NOT business truth. | `--vault` | See the naming trap below. |
+| `validar` | Validate integrity of notes, ids, links and transfers -- NOT business truth. | `--vault` | See the naming trap below. |
 | `buscar` | Textual search with sources, without inferences. | `--vault --texto [--limite]` | Related: `brain_query`. |
 | `autoridad` | Strict query by topic/scope/date declared in an imported contract. | `--vault --tema --ambito [--fecha]` | |
 | `importar` | Import a vNext-0.9 manifest; non-destructive. | `--vault --manifest [--permitir-real]` | |
@@ -65,7 +65,7 @@ unexposed subcommand is a tool, and it never invents a plugin launcher path.
 ## Two naming traps
 
 - **`validar` (cerebro) vs `validar_boveda.py`**: `brain_validate_vault` does
-  NOT run `cerebro.py validar` — it runs the standalone
+  NOT run `cerebro.py validar` -- it runs the standalone
   `validar_boveda.py` logic. Both check integrity; the tool's backing is the
   standalone one.
 - **`buscar` appears twice**: `cerebro.py buscar` (above, not exposed) is a

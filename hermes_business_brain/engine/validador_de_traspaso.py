@@ -148,9 +148,9 @@ if __name__ == '__main__':
     p = Path(sys.argv[1] if len(sys.argv) > 1 else 'Ejemplo_Manifiesto_Traspaso.json')
     errors, obj = check(p)
     if errors:
-        print('FAIL — ' + str(len(errors)) + ' error(s)')
+        print('FAIL -- ' + str(len(errors)) + ' error(s)')
         print('\n'.join(errors))
         sys.exit(1)
-    print('PASS — JSON Schema, references, hashes, paths, authority and block anchors')
+    print('PASS -- JSON Schema, references, hashes, paths, authority and block anchors')
     print('NOTE: ' + str(sum(x['result'] != 'aprobada_humana' for x in obj['retrieval_tests'])) +
           ' semantic retrieval test(s) NOT validated: they require the Step 2 agent')

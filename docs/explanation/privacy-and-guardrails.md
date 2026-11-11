@@ -1,4 +1,4 @@
-# Explanation — Privacy and guardrails: the product's invariants as implemented
+# Explanation -- Privacy and guardrails: the product's invariants as implemented
 
 This page states the invariants the product is built around. They are not
 aspirations: each one is enforced or mandated in code and in the bundled
@@ -11,7 +11,7 @@ and the product posture this plugin inherits.
 Nothing that touches another system starts without the user's authorization.
 
 - The *expressed request to install and build the business* authorizes the
-  necessary operations within the chosen location — permissions already
+  necessary operations within the chosen location -- permissions already
   granted are not asked again.
 - Anything beyond that is gated: **ask before publishing data, sending
   messages, installing external plugins, or using another account**
@@ -32,8 +32,8 @@ Nothing that touches another system starts without the user's authorization.
 
 Unverified is a first-class status, not a failure state to paper over.
 
-- After installation, the agent reports **six surfaces separately** — code,
-  Python, Obsidian GUI, Bases, private instance, sources/connectors — and
+- After installation, the agent reports **six surfaces separately** -- code,
+  Python, Obsidian GUI, Bases, private instance, sources/connectors -- and
   marks `NO VERIFICADO` where appropriate (`ce-instalacion`).
 - If the GUI or the router cannot confirm the vault path, the integration is
   marked `NO VERIFICADO`, the instance kept, and only independently
@@ -52,7 +52,7 @@ Authority lives in the original record, not in summary notes.
 
 - A record card (`brain_card`, the engine's `ficha` command) "locates an original,
   but doesn't substitute for it" (`ce-consulta`). `lectura: leida_completa`
-  on a card documents an *earlier* reading — it is not a reading in this
+  on a card documents an *earlier* reading -- it is not a reading in this
   session.
 - Before citing, the agent must contrast each claim against the original with
   a reading operation actually executed in this session, and separate claim
@@ -60,7 +60,7 @@ Authority lives in the original record, not in summary notes.
   currency.
 - New sources are registered with a reading status (default `no_verificada`)
   rather than assumed read (`fuente --lectura`; upstream CLI subcommand, not
-  exposed as a v2 plugin tool — `brain_references` covers the private
+  exposed as a v2 plugin tool -- `brain_references` covers the private
   custody-bank registry).
 - If only the card was opened, the answer cites the card and says the
   original was not re-checked. Nothing is cited as read unless it was read.
@@ -70,13 +70,13 @@ Authority lives in the original record, not in summary notes.
 The vault you operate on is decided by explicit identity checks, never by
 what "sounds right".
 
-- Access requires an explicit selector — name, ID, alias or absolute path —
+- Access requires an explicit selector -- name, ID, alias or absolute path --
   or an explicitly associated project. "Never select by the active window or
   guess a destination" (`obsidian-router`).
 - `brain_resolve_vault` compares the local registry's ID and path against
   Obsidian's native registry and "rejects absent/ambiguous matches and
   symlinks". It must run before any `rg`, `ls`, `cat`, CLI or other read
-  inside the vault — "the path in the prompt does not replace that check"
+  inside the vault -- "the path in the prompt does not replace that check"
   (`ce-consulta`).
 - "Never fabricate a native file or ID to pass a check." A failed resolution
   is reported exactly, with work preserved outside the vault; it is never
@@ -95,7 +95,7 @@ Rejected material has no authority and no second life.
 This repository is a product, not a warehouse.
 
 - All templates, schemas and demo content shipped are **synthetic by design**
-  — no real business data ever (README privacy invariants).
+  -- no real business data ever (README privacy invariants).
 - Captures and transcript banks must live **outside any vault and any Git
   worktree** (enforced by the engine, stated in the README invariants).
 - "Never copy `ejemplos` nor data from another instance into a real
@@ -136,7 +136,7 @@ Two additional rules from `ce-consulta` shape outputs:
 
 - **Negative-proof discipline**: an empty search result does not prove
   absence of knowledge (try synonyms, human names, the map); "without an
-  admissible financial record, express 'billing/payment not substantiated' —
+  admissible financial record, express 'billing/payment not substantiated' --
   don't record zero nor infer it didn't happen."
 - **Don't claim what wasn't exercised**: "don't claim pending CLI
   capabilities"; don't claim a Python interpreter failed if it wasn't tested

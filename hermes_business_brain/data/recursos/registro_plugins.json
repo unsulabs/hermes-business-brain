@@ -47,7 +47,7 @@
       "tipo": "third_party_archived",
       "nombre": "Obsidian Projects",
       "url": "https://github.com/obsmd-projects/obsidian-projects",
-      "decision": "referencia_de_diseño_no_instalar",
+      "decision": "referencia_de_diseno_no_instalar",
       "instalacion": "DO NOT INSTALL by default (archived and out of catalog)",
       "aplica": "table/board/calendar/gallery ideas and view templates",
       "limites": "discontinued 2025; LICENSE Apache 2.0 and package.json MIT: review before copying code"

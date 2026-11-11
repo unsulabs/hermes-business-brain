@@ -1,13 +1,13 @@
 # How to continue an existing business vault
 
-**Use this when**: you already have a business vault — you created it
+**Use this when**: you already have a business vault -- you created it
 earlier, a colleague did, or a conversation starts with "continue", "resume",
 "my company vault", or a vault path.
 
 The single most important rule, in both relevant bundled skills, is **do not
 create or reinstall**:
 
-> **ce-instalacion**: "identify whether the user already has a vault; … If it
+> **ce-instalacion**: "identify whether the user already has a vault; ... If it
 > exists, **do not create another one nor reinstall**."
 > ([`../../skills/ce-instalacion/SKILL.md`](../../skills/ce-instalacion/SKILL.md))
 
@@ -19,7 +19,7 @@ destination must not pre-exist), but the reason to avoid it is not technical:
 a vault is someone's accumulated business state, and a re-created one would
 lose identity and provenance. Recover the real state instead.
 
-## Step 1 — Resolve the vault first: `brain_resolve_vault`
+## Step 1 -- Resolve the vault first: `brain_resolve_vault`
 
 Before reading anything inside the vault, resolve *which* vault the
 conversation refers to. Ask Hermes to run `brain_resolve_vault` with an
@@ -29,7 +29,7 @@ explicit selector:
 | --- | --- |
 | `selector` | the business id (`EMPRESA-001`), a registered name, an alias, or the absolute vault path |
 
-(Alternative: `project` — the absolute path of an agent project whose
+(Alternative: `project` -- the absolute path of an agent project whose
 registered vault should be resolved. Exactly one of `selector`/`project` must
 be given.)
 
@@ -51,8 +51,7 @@ this (run against a synthetic registry, real output):
 }
 ```
 
-Two design gates worth knowing (both verified in
-[`../../_verify/tool-layer.md`](../../_verify/tool-layer.md)):
+Two design gates worth knowing:
 
 - **Exactly one match** must exist; a missing or ambiguous selector fails with
   "Destination missing or ambiguous; require one registered match".
@@ -63,10 +62,10 @@ Two design gates worth knowing (both verified in
   in Obsidian and review registration". The resolver never opens note
   contents before that native proof.
 
-## Step 2 — If it is not registered yet: `brain_register_vault`
+## Step 2 -- If it is not registered yet: `brain_register_vault`
 
 Resolution fails whenever there is no local registry entry (the common case
-for a vault that was never used through this plugin). Register it — this is
+for a vault that was never used through this plugin). Register it -- this is
 the *only* write step, and it is narrow:
 
 | Argument | Value |
@@ -76,7 +75,7 @@ the *only* write step, and it is narrow:
 | `alias` | the business id, e.g. `EMPRESA-001` |
 
 `brain_register_vault` **requires the vault to already have an id in
-Obsidian's native registry** — i.e. the folder was opened as a vault in
+Obsidian's native registry** -- i.e. the folder was opened as a vault in
 Obsidian at least once. If that identity is missing, it refuses to write
 anything (verified):
 
@@ -91,30 +90,30 @@ backup; it never alters the native registry nor the vault." After a successful
 register, run `brain_resolve_vault` again (step 1) until it reports
 `native_registry_verified: true`.
 
-## Step 3 — Re-read the real state: `brain_status` + `brain_validate_vault`
+## Step 3 -- Re-read the real state: `brain_status` + `brain_validate_vault`
 
 With the vault resolved, re-establish what is actually there. **ce-continuidad**
 requires both, and both are read-only:
 
-> "run `brain_status` and `brain_validate_vault` to re-read the real state …
+> "run `brain_status` and `brain_validate_vault` to re-read the real state ...
 > Record both results; only declare the capability unverified after that safe
 > attempt."
 
-- `brain_status --vault <path>` — current counts, editorial state, layers.
+- `brain_status --vault <path>` -- current counts, editorial state, layers.
   Remember its warning: structural count, **not** validated truth.
-- `brain_validate_vault --vault <path>` — structural integrity (ids, links,
+- `brain_validate_vault --vault <path>` -- structural integrity (ids, links,
   transfers); integrity is not business truth either.
 
 Do not trust an old summary in place of these: **ce-continuidad** says "Don't
 consider SES or an earlier summary as a substitute for originals."
 
-## Step 4 — Work with the vault's knowledge
+## Step 4 -- Work with the vault's knowledge
 
 Now you may query and operate normally:
 
-- `brain_query` — pull existing knowledge into the task as literal candidate
+- `brain_query` -- pull existing knowledge into the task as literal candidate
   blocks (`--orientar` for natural-request ordering).
-- `brain_capture` — preserve new preliminary findings as drafts (the synthesis
+- `brain_capture` -- preserve new preliminary findings as drafts (the synthesis
   file must live outside the vault and outside Git).
 - Read-only inspection: `brain_knowledge_map`, `brain_relations`.
 
@@ -138,7 +137,7 @@ Both skills insist on honest reporting when something cannot be proven:
   work outside the vault." It also says to report the six surfaces separately
   (code, Python, Obsidian GUI, Bases, private instance, sources/connectors)
   and mark each `NO VERIFICADO` where appropriate.
-- **ce-continuidad**: "don't fabricate progress" — if nothing changed, say
+- **ce-continuidad**: "don't fabricate progress" -- if nothing changed, say
   which concrete source or decision prevented it.
 
 In practice: if Obsidian is not running and you cannot confirm the vault
@@ -149,6 +148,5 @@ check passed.
 ## Evidence
 
 The resolver output, the registration refusal, and the interpreter probe
-rules above were verified on this machine; see
-[`../../_verify/tool-layer.md`](../../_verify/tool-layer.md) and
-[`../../_verify/engine-core.md`](../../_verify/engine-core.md).
+rules above were verified on this machine by the acceptance tests under
+`tests/upstream_port/`.

@@ -15,10 +15,10 @@ venv/
 .idea/
 .vscode/
 
-# skills CLI (npx skills add) artifacts — not part of the plugin
+# skills CLI (npx skills add) artifacts -- not part of the plugin
 .agents/
 skills/
 skills-lock.json
 
-# v2 bundled skills ARE part of the plugin — re-include them under the package
+# v2 bundled skills ARE part of the plugin -- re-include them under the package
 !hermes_business_brain/skills/

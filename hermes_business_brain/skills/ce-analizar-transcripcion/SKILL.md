@@ -9,7 +9,7 @@ Read the [common contract](../ce-banco-transcripciones/references/contrato-comun
 
 - **Trigger:** preserved version to analyze, correction or invalidation of an earlier analysis.
 - **Inputs:** original and hash, offset map, all parts, versioned taxonomy, canonical context with hashes and access policies. A partial version may be analyzed provisionally, without declaring it complete.
-- **Outputs:** analysis of each core, attributed claims, matter→passage→destination matrix, mechanical/semantic coverage, whole-conversation reconciliation, immutable run with dependencies. Differentiate decisions, ideas, reasons, exceptions and doubts; absent fields stay absent.
+- **Outputs:** analysis of each core, attributed claims, matter->passage->destination matrix, mechanical/semantic coverage, whole-conversation reconciliation, immutable run with dependencies. Differentiate decisions, ideas, reasons, exceptions and doubts; absent fields stay absent.
 - **Errors:** `SOURCE_CHANGED`, `OFFSET_INVALID`, `COVERAGE_GAP`, `UNSUPPORTED_ENCODING`, `ANALYSIS_INCOMPLETE`, `CONTEXT_STALE`. Don't resolve uncertain attribution by inventing identity.
 - **Gate:** partition reconstructs exact bytes; each core examined; all material matters have a destination or reasoned preservation in source; an independent judge checks a sample and passages with cross-corrections. 100% numeric coverage doesn't prove comprehension by itself.
 

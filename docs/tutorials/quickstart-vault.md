@@ -6,11 +6,11 @@ By the end of this tutorial you will have:
 - proof that it is structurally sound,
 - your first captured finding, preserved as a draft,
 - a working understanding of why a fresh vault answers queries with "no
-  candidates yet" — and that this is the designed behaviour, not a bug.
+  candidates yet" -- and that this is the designed behaviour, not a bug.
 
 This tutorial takes about 10 minutes. You need Hermes with the
 `hermes-business-brain` plugin installed and enabled
-([How to install the plugin](../how-to/install.md)) — the commands below are
+([How to install the plugin](../how-to/install.md)) -- the commands below are
 the *tools* the plugin adds. Every example in this tutorial was run, end to
 end, against a throwaway vault by calling the engine ops in-process; the
 outputs shown are the real envelopes' `stdout`.
@@ -19,15 +19,15 @@ outputs shown are the real envelopes' `stdout`.
 
 Pick three things:
 
-1. **A business id**: 2–64 characters, letters, digits, dash or underscore
+1. **A business id**: 2-64 characters, letters, digits, dash or underscore
    (`[A-Za-z0-9][A-Za-z0-9_-]{1,63}`). We use `EMPRESA-001`.
 2. **A display name**: for example `Acme Consultores`.
 3. **A destination path that does not exist yet**: for example
-   `~/empresas/acme-consultores`. The creator refuses to overwrite anything —
+   `~/empresas/acme-consultores`. The creator refuses to overwrite anything --
    if the folder already exists, the command fails (that is a safety feature,
    see step 2).
 
-## Step 1 — Check the environment with `brain_doctor`
+## Step 1 -- Check the environment with `brain_doctor`
 
 Ask Hermes to run `brain_doctor`. It is a read-only preflight: it reports
 Python, the Python dependencies, and any Obsidian installation it can find. It
@@ -54,7 +54,7 @@ never silently assumed. If `yaml`/`jsonschema` do **not** say `INSTALLED`,
 fix the Python environment first (see the
 [install guide](../how-to/install.md)).
 
-## Step 2 — Create the vault with `brain_create_vault`
+## Step 2 -- Create the vault with `brain_create_vault`
 
 Give Hermes exactly three arguments:
 
@@ -82,7 +82,7 @@ Two safety properties are worth remembering:
   folder fails with a safe-failure error. Nothing is ever overwritten, and
   you should never delete an existing folder to "make room".
 
-## Step 3 — Validate with `brain_validate_vault`
+## Step 3 -- Validate with `brain_validate_vault`
 
 Point `brain_validate_vault` at the new vault. This checks structural
 integrity only: note ids, wikilinks, transfers, frontmatter. It does **not**
@@ -104,7 +104,7 @@ Expected result for a fresh vault:
 `errores: []` and `advertencias: []` mean the skeleton is clean: 7 template
 notes (Inicio plus system notes) with valid ids and links.
 
-## Step 4 — See its state with `brain_status`
+## Step 4 -- See its state with `brain_status`
 
 `brain_status` summarizes the company: id, name, note counts per type, and
 how much is "infrastructure" versus "knowledge".
@@ -134,7 +134,7 @@ The output ends with a warning worth taking literally:
 Translation: this is a *structural count*, not validated business truth. Every
 future `brain_status` output carries the same caveat.
 
-## Step 5 — Capture a first finding with `brain_capture`
+## Step 5 -- Capture a first finding with `brain_capture`
 
 Now do some real thinking. Suppose a first conversation produced a preliminary
 finding: *the client asked for weekly review meetings and one single point of
@@ -173,11 +173,11 @@ Result:
 
 Read that JSON carefully: the note is stored as `borrador_no_autoritativo`
 (non-authoritative draft) with `aprobado: false`. **Capturing a finding is
-preserving it — it is not declaring it knowledge.** The note lands in
+preserving it -- it is not declaring it knowledge.** The note lands in
 `90_Sistema/Descubrimiento/`, the discovery area where raw material waits to
 be developed.
 
-## Step 6 — Query the vault with `brain_query`
+## Step 6 -- Query the vault with `brain_query`
 
 Now the moment of truth: pull that finding back out.
 
@@ -197,17 +197,17 @@ Result:
 }
 ```
 
-Zero candidates. Your first reaction might be "it's broken". It is not — three
+Zero candidates. Your first reaction might be "it's broken". It is not -- three
 engine rules make this the correct, expected answer on a brand-new vault:
 
 1. `brain_query` returns **candidate blocks from knowledge notes only**: notes
    of business entity types and D/X documents. A fresh vault holds only
-   infrastructure (`mapa`, `control`, `sistema`) — look back at
+   infrastructure (`mapa`, `control`, `sistema`) -- look back at
    `capas.infraestructura: 7` from step 4.
 2. Discovery captures live under `90_Sistema/Descubrimiento/`, and the query
    engine deliberately excludes the `90_Sistema` area: drafts are not yet
    searchable knowledge.
-3. The engine never fabricates an answer — `respuesta_semantica_generada` is
+3. The engine never fabricates an answer -- `respuesta_semantica_generada` is
    always `false`. What you see is literally what it matched.
 
 So an empty result does **not** prove the knowledge is absent; it proves
@@ -218,7 +218,7 @@ and drafting D/X documents) turn it into knowledge that queries can retrieve
 (see [How to use the bundled skills](../how-to/use-bundled-skills.md)).
 
 The `orientar: true` variant (`texto` = a natural request) orders candidates
-by word overlap instead of exact literal match — useful once your vault has
+by word overlap instead of exact literal match -- useful once your vault has
 knowledge notes. It still never understands meaning:
 
 ```json
@@ -228,12 +228,12 @@ brain_query({ "vault": "~/empresas/acme-consultores", "texto": "the client wants
 ## What you have now
 
 - A validated, id-bearing vault: `EMPRESA-001` / *Acme Consultores*.
-- A preserved draft finding with its own `CAP-…` id, safely outside any claim
+- A preserved draft finding with its own `CAP-...` id, safely outside any claim
   of approval.
-- The mental model: **infrastructure → captures (drafts) → knowledge**.
+- The mental model: **infrastructure -> captures (drafts) -> knowledge**.
   Queries only speak to the last layer.
 
-Open the vault in Obsidian and read `Inicio.md` — it is the vault's own
+Open the vault in Obsidian and read `Inicio.md` -- it is the vault's own
 entry point and explains the system in place. When the vault exists and you
 want to keep working, do **not** run this tutorial again: follow
 [How to continue an existing vault](../how-to/continue-existing-vault.md).

@@ -1,13 +1,13 @@
 # How to work with meeting transcripts
 
 **Use this when**: a meeting transcript, a pasted conversation, or a
-multi-part delivery arrives and must be *preserved* first, then analyzed —
+multi-part delivery arrives and must be *preserved* first, then analyzed --
 with custody, hashes, and permission checks, and without ever dumping raw
 content into the vault.
 
 The tool is `brain_transcript_cycle`. It does **not** copy a transcript into
 the vault. Instead it drives one step at a time of a custody-and-analysis
-pipeline over a **private bank** — a directory that must live outside every
+pipeline over a **private bank** -- a directory that must live outside every
 vault and outside every Git worktree.
 
 > The pipeline's operating manual is the bundled skill
@@ -29,7 +29,7 @@ Every step takes the same five base arguments (verified in `schemas.py`):
 
 Optional, per call: `audience` (required by the analysis steps), `commit`
 (apply the mutation; the default is a read-only preview), `output` (an
-immutable JSON report path — must not pre-exist), and the step-specific
+immutable JSON report path -- must not pre-exist), and the step-specific
 flags listed below.
 
 ### The profile JSON
@@ -47,7 +47,7 @@ vault"):
 ```
 
 The optional `bank` key must match the tool's `vault` argument exactly. Every
-call checks `purpose` against `allowed_purposes` first — a purpose that is
+call checks `purpose` against `allowed_purposes` first -- a purpose that is
 not allowed is refused with `PURPOSE_DENIED` and nothing runs:
 
 ```json
@@ -58,14 +58,14 @@ not allowed is refused with `PURPOSE_DENIED` and nothing runs:
 
 The bank must **already exist**; the engine validates it but never creates
 it. It must be outside any Obsidian vault and any Git worktree, and its path
-must not traverse symlinks (the engine rejects them with `UNSAFE_PATH` — on
+must not traverse symlinks (the engine rejects them with `UNSAFE_PATH` -- on
 macOS, write `/private/...` paths, because `/var` is a symlink).
 
-## The custody → analysis cycle
+## The custody -> analysis cycle
 
 The tool implements the pipeline described in its schema:
 
-> `ingresar → registrar → segmentar → analizar → cobertura → indexar`
+> `ingresar -> registrar -> segmentar -> analizar -> cobertura -> indexar`
 
 Each step is its own `brain_transcript_cycle` call. Steps that mutate (marked
 "write") run as previews until you pass `commit`; the read-only steps never
@@ -79,7 +79,7 @@ write regardless.
 | `analizar` | Consolidate agent-authored analysis | `input` (JSON payload prepared outside the vault) | yes | **yes** |
 | `cobertura` | Coverage report for an analysis run | `tr_id`, `run` | no | **yes** |
 | `indexar` | Rebuild the query index | `snapshot` (`current` for the live watermark) | yes | **yes** |
-| `buscar` | Query a context package | `request` (JSON: query/company/audience/purpose…); `output` is **required** | no (but writes the `output` report) | no |
+| `buscar` | Query a context package | `request` (JSON: query/company/audience/purpose...); `output` is **required** | no (but writes the `output` report) | no |
 
 Read-only custody steps: `estado` (pipeline summary), `verificar` (bank
 integrity), `inventario-validar` (snapshot check), `conciliar` (catalog vs
@@ -109,7 +109,7 @@ brain_transcript_cycle({
 })
 ```
 
-Result (trimmed; note the receipt paths and hashes — this is the custody
+Result (trimmed; note the receipt paths and hashes -- this is the custody
 "paper trail"):
 
 ```json
@@ -139,7 +139,7 @@ Two things to notice:
   replace bytes").
 - Every artifact carries a SHA-256. Later steps reference the transcript by
   `tr_id` and `version_id`, so nothing is re-downloaded or re-analyzed
-  wholesale — **ce-continuidad**'s "resume by job_id, attempt, version,
+  wholesale -- **ce-continuidad**'s "resume by job_id, attempt, version,
   snapshot/cursor and hashes".
 
 ### Checking state
@@ -151,7 +151,7 @@ sin_verificar`). Use it to confirm where a delivery stands before resuming.
 
 ### Searching
 
-`buscar` returns a *context package* — candidates from the index, with
+`buscar` returns a *context package* -- candidates from the index, with
 `semantic_answer_generated: false` (no invented answers). It requires
 `output` (a fresh immutable report path; `PRIVATE_OUTPUT_REQUIRED` is raised
 without it), and the request JSON's `company`/`purpose` must match the
@@ -161,15 +161,15 @@ profile's (`QUERY_SCOPE_MISMATCH` otherwise).
 
 The tool's own description ends the pipeline at `indexar` (plus `buscar` and
 the read-only custody steps). Rendering the analyzed material back into the
-vault as *knowledge cards* — the
+vault as *knowledge cards* -- the
 `render_source / prepare_batch / apply_batch` APIs in
-`transcripciones_fichas.py` — is **not** a plugin tool step. The engine
+`transcripciones_fichas.py` -- is **not** a plugin tool step. The engine
 module ships, but no `brain_*` tool exposes it; the bundled skill
 [`ce-banco-transcripciones`](../../hermes_business_brain/skills/ce-banco-transcripciones/SKILL.md)
 is explicit that integration "uses the `render_source`, `prepare_batch`,
 `apply_batch` APIs in `transcripciones_fichas.py` and
 `transcripciones_integracion.py`, not an invented
-CLI subcommand". So in v2: preserve → analyze → index → search; card
+CLI subcommand". So in v2: preserve -> analyze -> index -> search; card
 integration into the vault happens through the engine API only where the
 skill's contracts and tests document it, otherwise it is not available as a
 plugin-tool step.

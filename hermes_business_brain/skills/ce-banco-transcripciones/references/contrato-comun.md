@@ -18,6 +18,6 @@ These contracts enable agent flow; they don't assert that modules/commands are i
 
 ## Context and useful output
 
-Retrieve catalog/metadata → candidates → original passages with neighbors; broaden when meaning requires it. Declare what was read complete/partial and what remains pending. For exhaustive analysis walk all cores in batches without loading everything into one prompt. Each cited claim references version/hash and bytes [start,end), extract verified in this session; card or summary don't substitute the original. Semantics and meaning decisions belong to the agent, not to regex/FTS/deterministic classifiers.
+Retrieve catalog/metadata -> candidates -> original passages with neighbors; broaden when meaning requires it. Declare what was read complete/partial and what remains pending. For exhaustive analysis walk all cores in batches without loading everything into one prompt. Each cited claim references version/hash and bytes [start,end), extract verified in this session; card or summary don't substitute the original. Semantics and meaning decisions belong to the agent, not to regex/FTS/deterministic classifiers.
 
 Knowledge plans: maximum 30 matters and 30 units, 90,000 bytes per batch, parent manifest with global IDs and reconciliation. One logical card (ficha) per TR-ID; canonical owner notes per matter. Plan validation doesn't apply nor ratify. The D/X applier isn't a universal integrator. Regenerating the map requires its own authorization.

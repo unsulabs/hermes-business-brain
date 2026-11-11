@@ -25,7 +25,7 @@ from .validar_boveda import validate
 MAP_MD = Path("00_Mapas/Mapa_Derivado_Conocimiento.md")
 MAP_CANVAS = Path("00_Mapas/Mapa_Derivado_Conocimiento.canvas")
 MAP_ID = "SYS-MAPA-DERIVADO"
-MARKER = "<!-- cerebro-empresarial: mapa-conocimiento-generado v1 -->"
+MARKER = "<!-- hermes-business-brain: mapa-conocimiento-generado v1 -->"
 MAX_CANVAS_NODES = 100
 EXCLUDE = {"mapa","sistema","control","continuidad","registro_descubrimiento",
            "propuesta_de_cambio"}
@@ -139,8 +139,8 @@ def _render_markdown(report: dict) -> bytes:
         result.extend(["### "+typ.replace("_"," ").title(),""])
         for n in by_type[typ]:
             tags=(", ".join(n["etiquetas"]) if n["etiquetas"] else "no tags")
-            result.append("- "+_wiki(n)+" — "+n["id"]+" · "+n["estado_editorial"]+
-                          " · "+n["vigencia"]+" · topics: "+tags)
+            result.append("- "+_wiki(n)+" -- "+n["id"]+" - "+n["estado_editorial"]+
+                          " - "+n["vigencia"]+" - topics: "+tags)
         result.append("")
     if not nodes:result.append("_The company does not yet have registered business notes._")
     by_tag=defaultdict(list)
@@ -158,8 +158,8 @@ def _render_markdown(report: dict) -> bytes:
         result.append("_No typed relations registered between the notes of this map._")
     for edge in report["aristas"]:
         src,dst=by_id[edge["origen"]],by_id[edge["destino"]]
-        result.append("- "+_wiki(src)+" → "+_wiki(dst)+" · "+edge["predicado"]+
-                      " · state: "+edge["estado"]+" · scope: "+str(edge["ambito"]).replace("\n"," "))
+        result.append("- "+_wiki(src)+" -> "+_wiki(dst)+" - "+edge["predicado"]+
+                      " - state: "+edge["estado"]+" - scope: "+str(edge["ambito"]).replace("\n"," "))
     result.extend(["","## Scope","",
         "- Restricted notes omitted: "+str(report["notas_omitidas_restringidas"]),
         "- Relations omitted by sensitivity or scope: "+str(report["relaciones_omitidas_por_alcance"]),
@@ -180,7 +180,7 @@ def _render_canvas(report: dict) -> bytes:
         n["tipo"],n["titulo"].casefold(),n["id"]))[:MAX_CANVAS_NODES]
     ids={n["id"] for n in selected}
     canvas_nodes=[{"id":"nota-sistema-mapa","type":"text",
-                   "text":"DERIVED MAP — NOT A SOURCE OF AUTHORITY. "
+                   "text":"DERIVED MAP -- NOT A SOURCE OF AUTHORITY. "
                           "Relations are declarations, not verified agreements.",
                    "x":-440,"y":0,"width":350,"height":190}]
     for i,node in enumerate(selected):

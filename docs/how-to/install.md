@@ -10,7 +10,7 @@ common mistake to avoid. It was verified against Hermes Agent v0.23.0
 `hermes-business-brain` adds 19 local tools (`brain_create_vault`,
 `brain_validate_vault`, `brain_status`, `brain_query`, `brain_capture`,
 `brain_card`, `brain_document`, `brain_propose`, `brain_knowledge_plan`,
-`brain_dx_apply`, and others — see the [README](../../README.md) for the full
+`brain_dx_apply`, and others -- see the [README](../../README.md) for the full
 table) backed by a native English engine that runs **in-process**, plus a set
 of 21 bundled workflow skills
 ([How to use the bundled skills](use-bundled-skills.md)). Everything runs
@@ -18,7 +18,7 @@ locally, with no network access. The manifest declares two Python
 dependencies, `PyYAML==6.0.3` and `jsonschema>=4.23,<5`, which Hermes' plugin
 manager installs when the plugin is enabled (it asks for your consent first).
 
-## Path A — from the catalog (once published)
+## Path A -- from the catalog (once published)
 
 When the plugin is published to the Hermes catalog, install it with:
 
@@ -35,7 +35,7 @@ hermes plugins install unsulabs/hermes-business-brain --enable
 > "No catalog entries matched 'hermes-business-brain'". Until it is
 > published, use Path B below; keep this command for later.
 
-## Path B — local symlink (development / testing)
+## Path B -- local symlink (development / testing)
 
 Clone or copy the repository (`hermes-business-brain-unsulabs` in the
 development prefix), then link it into the plugin directory and enable it:
@@ -60,14 +60,14 @@ dependency changes: *"run `hermes pm repair`, then restart Hermes."*
 
 Two read-only checks:
 
-1. **List installed plugins** — you should see the plugin with status
+1. **List installed plugins** -- you should see the plugin with status
    `enabled`:
 
    ```bash
    hermes plugins list
    ```
 
-2. **Run the plugin doctor** — validates the manifest, imports and tool/skill
+2. **Run the plugin doctor** -- validates the manifest, imports and tool/skill
    registration:
 
    ```bash
@@ -86,7 +86,7 @@ Two read-only checks:
    ```
    Plugin Doctor: /Users/you/hermes-business-brain-unsulabs
      manifest: hermes-business-brain 0.2.0 (standalone)
-     WARN: declared python_dependencies not installed: PyYAML==6.0.3 — install and
+     WARN: declared python_dependencies not installed: PyYAML==6.0.3 -- install and
      enable the plugin with hermes plugins. For an enabled plugin, run hermes pm
      repair, then restart Hermes.
      OK: runtime discovery, manifest parsing, import, and registration passed
@@ -97,7 +97,7 @@ Two read-only checks:
    dependencies were never installed (the plugin is not enabled there); it is
    expected, not an error. Enable the plugin (Path A or B) and the
    dependencies get installed. Doctor exits 0 with `--ci` when registration
-   passes — that is the gate.
+   passes -- that is the gate.
 
 ## What is NOT supported
 
@@ -105,7 +105,7 @@ Installing by a **local filesystem path** with `hermes plugins install` is not
 supported:
 
 ```bash
-# ✗ WRONG — the CLI parses this as owner/repo, not as a path:
+# X WRONG -- the CLI parses this as owner/repo, not as a path:
 hermes plugins install /Users/you/hermes-business-brain
 ```
 
@@ -116,5 +116,5 @@ Path B.
 ## Next steps
 
 Follow the [quickstart tutorial](../tutorials/quickstart-vault.md) to create
-your first business vault. The doctor run behind this guide is recorded in
-[`../../_verify/tool-layer.md`](../../_verify/tool-layer.md).
+your first business vault. Run `hermes plugins doctor . --ci` to reproduce
+the doctor checks behind this guide.

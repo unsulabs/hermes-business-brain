@@ -9,6 +9,6 @@ access: interno
 # Oferta ficticia OFR-BRISA-001
 ## 04 Precio, condiciones y fechas
 <!-- kb:id=X01-BRISA-001-B001 -->
-Monto de referencia: MXN 12,000 + IVA, vigente en el escenario sintético desde 01/10/2026 para módulo estándar, fabricación y entrega local; no incluye instalación [F-0101]. No incluye sábado [F-0100].
-## Fuentes y límites
-- [F-0101]: tarifa aprobada sintética. - [F-0100]: conversación sintética.
+Monto de referencia: MXN 12,000 + IVA, vigente en el escenario sintetico desde 01/10/2026 para modulo estandar, fabricacion y entrega local; no incluye instalacion [F-0101]. No incluye sabado [F-0100].
+## Fuentes y limites
+- [F-0101]: tarifa aprobada sintetica. - [F-0100]: conversacion sintetica.

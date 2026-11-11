@@ -190,7 +190,7 @@ def render_source(tr_id, run_id, profile):
     else:
         occupied = {p.casefold() for p in snapshot}
         if path.casefold() in occupied:
-            path = '50_Fuentes/' + filename[:-3] + ' — ' + sha256_bytes(tr_id.encode())[:8] + '.md'
+            path = '50_Fuentes/' + filename[:-3] + ' -- ' + sha256_bytes(tr_id.encode())[:8] + '.md'
         if path.casefold() in occupied or any(_front(t).get('id') == fid for t in snapshot.values()):
             raise ModelError('SOURCE_ID_COLLISION')
     sensitivities = profile.get('source_sensitivity', {})
@@ -248,8 +248,8 @@ def render_source(tr_id, run_id, profile):
             excerpt = raw[span['start']:span['end']]
             if sha256_bytes(excerpt) != span['excerpt_sha256']:
                 raise ModelError('PASSAGE_CHANGED')
-            body += f"Bytes [{span['start']}, {span['end']}) · SHA `{span['excerpt_sha256']}`\n\n^{key}\n\n"
-            body += _literal(excerpt.decode('utf-8')) + '\n' + _link(local, 'Full text', 'Full text') + ' · ' + _link(path, 'Back to record') + '\n\n'
+            body += f"Bytes [{span['start']}, {span['end']}) - SHA `{span['excerpt_sha256']}`\n\n^{key}\n\n"
+            body += _literal(excerpt.decode('utf-8')) + '\n' + _link(local, 'Full text', 'Full text') + ' - ' + _link(path, 'Back to record') + '\n\n'
         for rep, headered in _representations(bank, tr, vid, raw, scope):
             representation_ids.append(rep['representation_id'])
             body += '\n## Provider labels ' + rep['representation_id'] + '\n\n'
@@ -299,20 +299,20 @@ def render_source(tr_id, run_id, profile):
                 body += '**' + label + ':** ' + '; '.join(_text(x) for x in subject[field]) + '\n\n'
         body += '**Proposed categories:** ' + ', '.join(_text(c['axis'] + ': ' + c['category_id']) for c in subject['classifications']) + '\n\n'
         dest = subject['destination']
-        body += '**Proposed destination:** ' + _text(dest['kind'] + ' / ' + dest['id'] + ' — ' + dest['reason']) + '\n\n'
+        body += '**Proposed destination:** ' + _text(dest['kind'] + ' / ' + dest['id'] + ' -- ' + dest['reason']) + '\n\n'
         for claim in bundle['claims']:
             if claim['claim_id'] not in subject['claim_ids']:
                 continue
             body += '- ' + _text(claim['content']) + ' (' + _text(claim['kind'] + '; ' + claim['editorial_state'] + '; ' + claim['validity_state']) + ').\n'
             body += '  Attribution: ' + _text(str(claim['speaker_label']) + ' / ' + claim['attribution_state']) + '; scope: ' + _text(claim['scope']) + '.\n'
-            body += '  ' + ' · '.join(passage(s) for s in claim['evidence_spans']) + '\n'
+            body += '  ' + ' - '.join(passage(s) for s in claim['evidence_spans']) + '\n'
             if claim['limitations']:
                 body += '  Limitations: ' + '; '.join(_text(s) for s in claim['limitations']) + '\n'
-        body += '\n' + ' · '.join(passage(s) for s in subject['evidence_spans']) + '\n\n'
+        body += '\n' + ' - '.join(passage(s) for s in subject['evidence_spans']) + '\n\n'
     body += '## Proposed relations\n\n'
     for rel in bundle['relations']:
-        body += '- ' + _text(rel['source_ref']['id'] + ' → ' + rel['predicate'] + ' → ' + rel['target_ref']['id']) + ': ' + _text(rel['rationale']) + '\n'
-        body += '  Scope: ' + _text(rel['scope']) + '; state: ' + _text(rel['editorial_state']) + '. ' + ' · '.join(passage(s) for s in rel['source_evidence'] + rel['target_evidence']) + '\n'
+        body += '- ' + _text(rel['source_ref']['id'] + ' -> ' + rel['predicate'] + ' -> ' + rel['target_ref']['id']) + ': ' + _text(rel['rationale']) + '\n'
+        body += '  Scope: ' + _text(rel['scope']) + '; state: ' + _text(rel['editorial_state']) + '. ' + ' - '.join(passage(s) for s in rel['source_evidence'] + rel['target_evidence']) + '\n'
     body += '\n## Conflicts and limitations\n\n'
     for value in reconciliation['open_conflicts'] + reconciliation['limitations']:
         body += '- ' + _text(value) + '\n'

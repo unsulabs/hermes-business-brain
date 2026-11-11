@@ -5,7 +5,7 @@ description: "Differentiate entity types and build verifiable relations in Obsid
 
 # ce-modelo-relaciones
 
-**0. Architecture first:** activate `ce-arquitectura-conocimiento`. Do not create a note per mention. Decide what has its own identity and lifecycle, what exists, what stays in the source and what is a link. Validate with the product's knowledge-planning flow read-only via `brain_knowledge_plan` (the v2 plugin tool wrapping the upstream `plan-conocimiento` subcommand); tags are for navigation, edges with source/scope for modeling relations — do not confuse the two.
+**0. Architecture first:** activate `ce-arquitectura-conocimiento`. Do not create a note per mention. Decide what has its own identity and lifecycle, what exists, what stays in the source and what is a link. Validate with the product's knowledge-planning flow read-only via `brain_knowledge_plan` (the v2 plugin tool wrapping the upstream `plan-conocimiento` subcommand); tags are for navigation, edges with source/scope for modeling relations -- do not confuse the two.
 
 1. Consult `modelo/tipos_entidad.json`, the D/X catalog and the vNext-0.9 handover contract. The registry is a candidate: justify separations by identity, changes, history, permissions, reuse and query.
 2. Before creating, check whether the entity already exists by ID, authoritative system, alias and context. A mention does NOT force a note.

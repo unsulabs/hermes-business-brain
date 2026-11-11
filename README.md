@@ -37,10 +37,10 @@ is privacy-first by construction:
 
 ## Background
 
-Obsidian users often keep a "business brain": a local vault of company knowledge —
+Obsidian users often keep a "business brain": a local vault of company knowledge --
 entities, sources, decisions, transcripts, typed relations. This plugin brings that
 workflow to Hermes as plain tools an agent can call, with one hard rule: **nothing
-leaves your machine.** No API calls, no telemetry, no cloud — a business
+leaves your machine.** No API calls, no telemetry, no cloud -- a business
 decision stays a local file until *you* move it. The engine's only out-of-process
 call is the system `git` CLI (argv-only, no shell, no network) for bank/transfer
 location probes and product export.
@@ -64,10 +64,10 @@ ln -s /path/to/hermes-business-brain-unsulabs ~/.hermes/plugins/hermes-business-
 hermes plugins enable hermes-business-brain
 ```
 
-> **Note (verified 2026-11-06):** the catalog entry does not exist yet — use path (b)
+> **Note (verified 2026-11-06):** the catalog entry does not exist yet -- use path (b)
 > until the plugin is published.
 
-`hermes plugins install` with a local filesystem path is **not** supported — the CLI
+`hermes plugins install` with a local filesystem path is **not** supported -- the CLI
 parses the argument as `owner/repo`. After enabling, **restart Hermes** so the tools and
 skills load. To confirm the installation (both read-only):
 
@@ -89,29 +89,29 @@ Ask Hermes to run the tools; each step names the tool arguments so you can verif
 against the [reference](docs/reference/tools.md). The full guided walkthrough is the
 [quickstart tutorial](docs/tutorials/quickstart-vault.md) (about 10 minutes).
 
-**1. Preflight** — `brain_doctor` checks Python, dependencies and Obsidian, read-only,
+**1. Preflight** -- `brain_doctor` checks Python, dependencies and Obsidian, read-only,
 installing nothing.
 
-**2. Create a vault** — `brain_create_vault` with three arguments (`id`, `name`,
-`dest`). It never overwrites: if the destination already exists, the tool fails —
+**2. Create a vault** -- `brain_create_vault` with three arguments (`id`, `name`,
+`dest`). It never overwrites: if the destination already exists, the tool fails --
 that is a safety feature.
 
 | Argument | Value |
 | --- | --- |
-| `id` | `EMPRESA-001` (2–64 chars, letters/digits/dash/underscore) |
+| `id` | `EMPRESA-001` (2-64 chars, letters/digits/dash/underscore) |
 | `name` | `Acme Consultores` |
 | `dest` | `~/empresas/acme-consultores` (must **not** exist) |
 
-**3. Validate** — `brain_validate_vault` checks structural integrity (ids, wikilinks,
-transfers, frontmatter) — never business truth.
+**3. Validate** -- `brain_validate_vault` checks structural integrity (ids, wikilinks,
+transfers, frontmatter) -- never business truth.
 
-**4. Inspect** — `brain_status` prints a structural summary: company id/name, note
+**4. Inspect** -- `brain_status` prints a structural summary: company id/name, note
 counts by type, editorial state, templates.
 
-**5. Query** — `brain_query` returns candidate note blocks matched by literal text,
+**5. Query** -- `brain_query` returns candidate note blocks matched by literal text,
 optionally filtered by `tema` / `ambito` / `fecha`, with `limite` candidates (default
 10). Use `orientar: true` to order results by the terms of a natural request. A fresh
-vault answers "no candidates yet" — that is designed behaviour, not a bug.
+vault answers "no candidates yet" -- that is designed behaviour, not a bug.
 
 Continue with an existing vault: [docs/how-to/continue-existing-vault.md](docs/how-to/continue-existing-vault.md).
 Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcripts.md](docs/how-to/work-transcripts.md).
@@ -122,7 +122,7 @@ Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcript
 | --- | --- | --- |
 | `brain_doctor` | `cerebro.py doctor` | Read-only environment preflight (Python, deps, Obsidian). |
 | `brain_create_vault` | `cerebro.py crear` | Create a new empty vault from the bundled template; never overwrites. |
-| `brain_validate_vault` | `validar_boveda.py` | Structural integrity check (ids, links, transfers) — not business truth. |
+| `brain_validate_vault` | `validar_boveda.py` | Structural integrity check (ids, links, transfers) -- not business truth. |
 | `brain_status` | `cerebro.py estado` | Structural company summary (counts, editorial state, templates). |
 | `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (`~/.config/hermes-business-brain/vaults.json`; needs Obsidian's native id). |
 | `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_obsidian.py` | Resolve the vault registered for an agent project/selector. |
@@ -132,13 +132,13 @@ Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcript
 | `brain_relations` | `cerebro.py relaciones` | Query typed relations and their real state. |
 | `brain_references` | `plugin_references.py` (wrap of `referencias_externas.py`) | Local versioned external-reference registry: metadata only, no content import, no network. |
 | `brain_naming` | `nombres_legibles.py` | Plan (default) or apply readable filename changes from a spec JSON. |
-| `brain_transcript_cycle` | `transcripciones.py` | One step of the transcript custody→analysis pipeline (`ingresar → registrar → segmentar → analizar → cobertura → indexar`, plus read-only custody steps and `buscar`). |
+| `brain_transcript_cycle` | `transcripciones.py` | One step of the transcript custody->analysis pipeline (`ingresar -> registrar -> segmentar -> analizar -> cobertura -> indexar`, plus read-only custody steps and `buscar`). |
 | `brain_propose` | `cerebro.py proponer` | Register a suggested change in the tray; does NOT touch the original note. |
 | `brain_card` | `cerebro.py ficha` | Create a draft record card (ficha) from a candidate-model type; never invents data. |
-| `brain_document` | `cerebro.py documento` | Register a developed D01–D07 / X01–X07 document without approving it. |
+| `brain_document` | `cerebro.py documento` | Register a developed D01-D07 / X01-X07 document without approving it. |
 | `brain_knowledge_plan` | `cerebro.py plan-conocimiento` | Read-only note-map/tags/relations audit BEFORE drafting, from a structured JSON plan. |
 | `brain_dx_apply` | `cerebro.py aplicar-dx` | Apply a D/X modification after specific authorization and backups (SHA-256-gated). |
-| `brain_evolution_scan` | `evolution_scan` (engine op; no upstream CLI) | Read-only evolution scan: promotion candidates and due revisits — never applies. |
+| `brain_evolution_scan` | `evolution_scan` (engine op; no upstream CLI) | Read-only evolution scan: promotion candidates and due revisits -- never applies. |
 
 All handlers call the engine in-process and return a JSON string with `stdout`,
 `stderr`, `exit_code` and an English `summary` (0 = success, 2 = engine refused,
@@ -161,55 +161,55 @@ with them.
 
 ## Documentation
 
-Organized by quadrant (Diátaxis).
+Organized by quadrant (Diataxis).
 
-**Tutorial** — learn by doing:
+**Tutorial** -- learn by doing:
 
-- [Tutorial: create your first business vault](docs/tutorials/quickstart-vault.md) — the
+- [Tutorial: create your first business vault](docs/tutorials/quickstart-vault.md) -- the
   10-minute walkthrough from preflight to first query.
 
-**How-to** — task-oriented guides:
+**How-to** -- task-oriented guides:
 
-- [How to install the plugin](docs/how-to/install.md) — both install paths, restart,
+- [How to install the plugin](docs/how-to/install.md) -- both install paths, restart,
   confirmation, and the local-path gotcha.
-- [How to continue an existing vault](docs/how-to/continue-existing-vault.md) — resume,
+- [How to continue an existing vault](docs/how-to/continue-existing-vault.md) -- resume,
   dependency troubleshooting, the `NO VERIFICADO` discipline.
-- [How to work with transcripts](docs/how-to/work-transcripts.md) — the custody and
+- [How to work with transcripts](docs/how-to/work-transcripts.md) -- the custody and
   analysis pipeline.
 - [How to use the bundled skills](docs/how-to/use-bundled-skills.md).
 - [How to keep the vault evolving](docs/how-to/keep-the-vault-evolving.md) - the daily
   capture, periodic scan, approved-promotion and revisit loop.
 
-**Reference** — the machinery, as a dictionary:
+**Reference** -- the machinery, as a dictionary:
 
-- [Reference: Tools](docs/reference/tools.md) — the 19 tools: arguments, types,
+- [Reference: Tools](docs/reference/tools.md) -- the 19 tools: arguments, types,
   required/optional, engine backings, examples.
 - [Reference: Evolution](docs/reference/evolution.md) - the brain_evolution_scan tool,
   the promotion rulebook and the revisit cadence table.
 - [Reference: Bundled Skills](docs/reference/skills.md) - the 21 bundled skills,
   families, when each activates.
-- [Reference: CLI](docs/reference/cli-reference.md) — `cerebro.py` subcommands not
+- [Reference: CLI](docs/reference/cli-reference.md) -- `cerebro.py` subcommands not
   exposed as plugin tools (no plugin CLI launcher exists).
 
-**Explanation** — how and why:
+**Explanation** -- how and why:
 
-- [Explanation: Architecture](docs/explanation/architecture.md) — native English
+- [Explanation: Architecture](docs/explanation/architecture.md) -- native English
   in-process engine (`api.py` facade over `ops_vault`/`ops_knowledge`/`ops_transcripts`);
   read-only data; no network; skills interaction.
-- [Explanation: Privacy and guardrails](docs/explanation/privacy-and-guardrails.md) —
+- [Explanation: Privacy and guardrails](docs/explanation/privacy-and-guardrails.md) --
   the invariants as implemented: authorization gates, `NO VERIFICADO`, source over
-  summary, ID resolution, rejected legacy, provided-path-only, proposal ≠ decision.
+  summary, ID resolution, rejected legacy, provided-path-only, proposal != decision.
 
 ## Security
 
-The privacy invariants above are enforced in code, not just documented — the details
+The privacy invariants above are enforced in code, not just documented -- the details
 and the failure modes are in
 [docs/explanation/privacy-and-guardrails.md](docs/explanation/privacy-and-guardrails.md).
 Key points:
 
-- **No real business data ever** — everything bundled is synthetic.
-- **No absolute user paths** in the engine — operations only touch paths you pass in.
-- **In-process by construction** — no shell, no network. The engine invokes the
+- **No real business data ever** -- everything bundled is synthetic.
+- **No absolute user paths** in the engine -- operations only touch paths you pass in.
+- **In-process by construction** -- no shell, no network. The engine invokes the
   system `git` CLI for two structural checks only (argv-only command lists,
   never a shell): bank/existing-Git location probes (`transcripciones_modelo.py`)
   and product export via `git archive` (`exportar_producto.py`).
@@ -219,8 +219,8 @@ Key points:
 
 ## Contributing
 
-Contributions are welcome. For the Hermes plugin itself — tool schemas, handlers,
-bundled skills, docs, tests — open an issue or pull request **in this repository**.
+Contributions are welcome. For the Hermes plugin itself -- tool schemas, handlers,
+bundled skills, docs, tests -- open an issue or pull request **in this repository**.
 
 ### Development setup and tests
 
@@ -234,7 +234,7 @@ To validate the manifest and registration in place: `hermes plugins doctor . --c
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT -- see [LICENSE](LICENSE).
 
 ## Layout
 

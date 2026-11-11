@@ -121,8 +121,8 @@ def transition(bank, path, previous_text, next_meta, next_body, snapshot, scope)
     history.append(dict(version_id=previous, run_id=old['run_id'], source_sha256=sha256_bytes(previous_text.encode()),
                         view_path=old.get('view_path', f'50_Fuentes/Transcripciones/{tr}/{previous}.md')))
     merged['historial_fuentes'] = history
-    archive = '\n\n## Proposal history — not the current version\n\n'
-    archive += f"Version `{previous}` · analysis `{old['run_id']}`. Text preserved, not reinterpreted.\n\n"
+    archive = '\n\n## Proposal history -- not the current version\n\n'
+    archive += f"Version `{previous}` - analysis `{old['run_id']}`. Text preserved, not reinterpreted.\n\n"
     archive += literal(managed if marked else oldbody)
     body = prefix + START + next_body + END + suffix + archive
     proof = dict(path=path, tr_id=tr, previous_version_id=previous, next_version_id=current,

@@ -34,6 +34,8 @@ from hermes_business_brain.engine import ops_transcripts as ops  # noqa: E402
 
 # Spanish accented letters (and common diacritics) that must not appear in
 # user-facing strings of the native English modules.
+# Intentional non-ASCII: a Unicode character set used as test DATA for the
+# engine's id/filename accent handling, not prose. All other repo files are ASCII-only.
 ACCENTED = frozenset("áéíóúÁÉÍÓÚñÑüÜàèìòùäëïöüâêîôûçãõåæœ")
 
 # Byte-identity constants in importar_traspaso.py: they must match the verbatim

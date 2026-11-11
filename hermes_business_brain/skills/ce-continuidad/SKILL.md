@@ -5,7 +5,7 @@ description: "Resume and maintain a business vault daily in the face of conversa
 
 # ce-continuidad
 
-New conversation/pending parts → [ce-banco-transcripciones](../ce-banco-transcripciones/SKILL.md). Resume the batch by job_id, attempt, version, snapshot/cursor and hashes; don't re-download nor re-analyze indiscriminately. Correction/category/permission → [ce-revisar-antecedentes](../ce-revisar-antecedentes/SKILL.md), invalidate the affected derivatives and keep the unaffected ones. Installation acceptance applies to installation/migration, not to every query or daily maintenance; recover only pertinent state and sources. A new original source doesn't imply editorial approval.
+New conversation/pending parts -> [ce-banco-transcripciones](../ce-banco-transcripciones/SKILL.md). Resume the batch by job_id, attempt, version, snapshot/cursor and hashes; don't re-download nor re-analyze indiscriminately. Correction/category/permission -> [ce-revisar-antecedentes](../ce-revisar-antecedentes/SKILL.md), invalidate the affected derivatives and keep the unaffected ones. Installation acceptance applies to installation/migration, not to every query or daily maintenance; recover only pertinent state and sources. A new original source doesn't imply editorial approval.
 
 **First recover the real state:** if a vault already exists, resolve obsidian-router (brain_resolve_vault, per the [obsidian-router skill](../obsidian-router/SKILL.md)) and its instructions, then locate the pertinent state and sources without modifications. In installation/migration acceptance continue the existing instance without reinstalling. Don't consider SES or an earlier summary as a substitute for originals. Don't re-run create nor regenerate existing notes.
 

@@ -180,7 +180,7 @@ def consulta(vault_path:Path, literal:str, *, tema:str|None=None,
                     continue
             txt=block["texto"]
             span_start=raw.find(txt.encode('utf8'))
-            excerpt=txt[:900] + ("…" if len(txt)>900 else "")
+            excerpt=txt[:900] + ("..." if len(txt)>900 else "")
             row={
                 "doc_id":str(doc_id),"bloque_id":block["id"],
                 "tipo_fragmento":("seccion_derivada_sin_id_estable" if derived_sections

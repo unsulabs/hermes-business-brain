@@ -11,7 +11,7 @@ New transcripts pass first through [ce-banco-transcripciones](../ce-banco-transc
 
 Activate it WITHOUT the user asking when:
 - An interview, account or transcript contains two or more matters with a life of their own (strategy, offering, process, decision, case, research).
-- Creating/reviewing D01–D07/X01–X07 is requested and part of the knowledge deserves other specialized notes.
+- Creating/reviewing D01-D07/X01-X07 is requested and part of the knowledge deserves other specialized notes.
 - A generic draft mixing prices, processes, strategy and cases in a single section was produced.
 
 For a small correction or literal query of one concrete note, no need to re-plan the whole business.

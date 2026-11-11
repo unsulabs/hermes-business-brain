@@ -15,7 +15,7 @@ TEMPLATE = REPO / 'plantilla_boveda'
 
 def create(company_id: str, name: str, dest: Path) -> Path:
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{1,63}', company_id):
-        raise ValueError('The ID must have 2–64 characters: letters, digits, hyphen or underscore')
+        raise ValueError('The ID must have 2-64 characters: letters, digits, hyphen or underscore')
     if not name.strip() or '\n' in name or '\r' in name:
         raise ValueError('Empty company name or contains line breaks')
     dest = dest.expanduser().resolve()

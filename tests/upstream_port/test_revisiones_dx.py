@@ -1,4 +1,4 @@
-"""Ported upstream test_revisiones_dx.py: non-destructive D/X revision cycle —
+"""Ported upstream test_revisiones_dx.py: non-destructive D/X revision cycle --
 
 preview, authorization, history and restoration. Spanish prose fixtures and
 message regexes are translated to the engine's English equivalents; JSON keys,

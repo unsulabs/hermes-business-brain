@@ -9,7 +9,7 @@
       "encabezados": [
         "00 Executive brief and as-of date",
         "01 The business as actually observed",
-        "02 Value creation–delivery–capture model",
+        "02 Value creation-delivery-capture model",
         "03 Strategic choices and trade-offs",
         "04 Activity system and sustainable advantages",
         "05 Priorities, metrics, and boundaries",
@@ -78,7 +78,7 @@
         "04 Commercial path from opportunity to agreement",
         "05 Authorized materials, claims, and objections",
         "06 Exceptions, discounts, and changes",
-        "07 Commercial–operational delivery rules"
+        "07 Commercial-operational delivery rules"
       ],
       "elicitacion": [
         "How does the company build a price when the work does not match a standard offer?",
@@ -117,7 +117,7 @@
         "What early signal lets you anticipate that delivery may go wrong?",
         "Which part can follow a checklist and which part requires expert judgment?",
         "Which error is costly/hard to fix and which control prevents it?",
-        "What does «done» or «accepted» mean for the company in practice?"
+        "What does 'done' or 'accepted' mean for the company in practice?"
       ],
       "contenido_obligatorio": [
         "Entry promise, acceptance criteria, and sales handoff",
@@ -217,7 +217,7 @@
       ],
       "contenido_obligatorio": [
         "Material obligations and legal/documentary source without substituting a contract",
-        "Risk: event, cause, impact on customer/cash/continuity, reasoned probability or «not estimated»",
+        "Risk: event, cause, impact on customer/cash/continuity, reasoned probability or 'not estimated'",
         "Existing versus proposed controls, warning signals, and owner",
         "Suppliers/systems/resources whose loss interrupts the offer",
         "Sensitive data, classification, access, retention, and limits",
@@ -332,7 +332,7 @@
         "02 Timeline of milestones/sources",
         "03 Proposal, agreement, and changes",
         "04 Execution and evidence",
-        "05 Delivery, collection, and closure — separately",
+        "05 Delivery, collection, and closure -- separately",
         "06 Problems, causes, and hypotheses",
         "07 Lessons, scope, and recommended actions",
         "08 History and references"

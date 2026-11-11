@@ -80,7 +80,7 @@ def collect_changes(manifest: Path, vault: Path, allow_real: bool = False) -> tu
         original = (manifest.parent / doc['path']).read_text(encoding='utf8')
         match = re.search(r'(?m)^# +(.+)$', original)
         label = match.group(1).strip() if match else 'Document ' + doc['doc_type']
-        label = re.sub(r'^(?:D\d{2}|X\d{2}[-_A-Za-z0-9]+)\s*[—:-]\s*', '', label)
+        label = re.sub(r'^(?:D\d{2}|X\d{2}[-_A-Za-z0-9]+)\s*[--:-]\s*', '', label)
         doc['_relative'] = '10_Conocimiento/' + visible_filename(label)
         locations[doc_id] = doc['_relative']
     for source in obj['sources']:

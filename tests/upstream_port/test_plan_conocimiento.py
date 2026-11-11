@@ -1,4 +1,4 @@
-"""Ported upstream test_plan_conocimiento.py: knowledge planning — identity,
+"""Ported upstream test_plan_conocimiento.py: knowledge planning -- identity,
 
 relations, sources and no over-creation (read-only audit). Structure and all
 JSON keys stay verbatim; Spanish free text and assertion strings are

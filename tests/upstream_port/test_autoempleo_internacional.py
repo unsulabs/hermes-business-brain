@@ -4,7 +4,7 @@ context (Portugal, EUR) must not acquire regional defaults; no extraction by
 guessing (moneda stays por_definir, impuestos por_verificar). Adaptation: the
 upstream fixture locator pointed at upstream ejemplos/escenarios/...; the v2
 plugin repo ships no ejemplos, so the scenario file is created in the temp
-directory (behavior unchanged — the source is a record card, not a parser).
+directory (behavior unchanged -- the source is a record card, not a parser).
 """
 from pathlib import Path
 import sys

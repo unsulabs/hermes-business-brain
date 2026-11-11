@@ -1,4 +1,4 @@
-# Reference — Tools (hermes-business-brain v2)
+# Reference -- Tools (hermes-business-brain v2)
 
 This is the dictionary of the 18 plugin tools. Every argument name, type and
 required/optional status below is taken from `schemas.py`, and every engine
@@ -9,7 +9,7 @@ schema (and, behind it, the engine op it mirrors) wins.
 ## How a tool runs
 
 Every tool is a handler in `tools.py` that calls one op of the native English
-engine (`hermes_business_brain/engine/api.py`) **in-process** — the tool layer
+engine (`hermes_business_brain/engine/api.py`) **in-process** -- the tool layer
 spawns no subprocess and there is no launcher script (no shell, no network).
 The engine ops themselves may invoke the system `git` binary, argv-only with
 no shell, for two structural checks: bank/existing-Git location probes
@@ -35,7 +35,7 @@ failure is returned inside the JSON, not thrown.
 
 ## Conventions
 
-- Argument names mirror each engine op's keyword arguments — the native
+- Argument names mirror each engine op's keyword arguments -- the native
   English spelling wins where the engine CLI's flag was Spanish
   (`name` not `--nombre`, `title`/`source` not `--titulo`/`--archivo`,
   `registry` not `--registro`).
@@ -56,20 +56,20 @@ failure is returned inside the JSON, not thrown.
 | --- | --- | --- | --- |
 | `brain_doctor` | `doctor` | `cerebro.py doctor` | Read-only environment preflight (Python, deps, Obsidian); never installs or writes. |
 | `brain_create_vault` | `create_vault` | `cerebro.py crear` | Create a new empty vault from the bundled template; fails if the destination exists. |
-| `brain_validate_vault` | `validate_vault` | `validar_boveda.py` | Structural integrity check (ids, wikilinks, transfers) — never business truth. |
+| `brain_validate_vault` | `validate_vault` | `validar_boveda.py` | Structural integrity check (ids, wikilinks, transfers) -- never business truth. |
 | `brain_status` | `status` | `cerebro.py estado` | Structural company summary (counts, editorial state, templates, sources). |
 | `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (`~/.config/hermes-business-brain/vaults.json`; needs Obsidian's native id). |
 | `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_obsidian.py` | Resolve the vault registered for an agent project/selector, verified against Obsidian's native registry. |
 | `brain_query` | `query` | `cerebro.py consulta-contextual` | Candidate note blocks by literal text + topic/scope/date filters; no semantic generation. |
-| `brain_capture` | `capture` | `cerebro.py capturar` | Save preliminary findings as a draft capture note — not approved knowledge. |
+| `brain_capture` | `capture` | `cerebro.py capturar` | Save preliminary findings as a draft capture note -- not approved knowledge. |
 | `brain_knowledge_map` | `knowledge_map` | `cerebro.py mapa-conocimiento` (publish: `publicar-mapa`) | Knowledge-map preview (Markdown/Canvas); publish only with SHA/confirmation/backup. |
 | `brain_relations` | `relations` | `cerebro.py relaciones` | Query typed relations and their real state (proposals, confirmations). |
 | `brain_references` | `references` | `plugin_references.py` (wrapper of `referencias_externas.py`) | Local versioned external-reference registry: metadata only, no content import, no network. |
 | `brain_naming` | `naming` | `nombres_legibles.py` | Plan (default) or apply readable filename changes from a spec JSON. |
-| `brain_transcript_cycle` | `transcript_cycle` | `transcripciones.py` | One step of the transcript custody→analysis pipeline. |
+| `brain_transcript_cycle` | `transcript_cycle` | `transcripciones.py` | One step of the transcript custody->analysis pipeline. |
 | `brain_propose` | `propose` | `cerebro.py proponer` | Register a suggested change in the tray; does NOT touch the original note. |
 | `brain_card` | `card` | `cerebro.py ficha` | Create a draft record card (ficha) from a candidate-model type; never invents data. |
-| `brain_document` | `document` | `cerebro.py documento` | Register a developed D01–D07 / X01–X07 document without approving it. |
+| `brain_document` | `document` | `cerebro.py documento` | Register a developed D01-D07 / X01-X07 document without approving it. |
 | `brain_knowledge_plan` | `knowledge_plan` | `cerebro.py plan-conocimiento` | Read-only note-map/tags/relations audit BEFORE drafting, from a structured JSON plan. |
 | `brain_dx_apply` | `dx_apply` | `cerebro.py aplicar-dx` | Apply a D/X modification after specific authorization and backups (SHA-256-gated). |
 | `brain_evolution_scan` | `evolution_scan` | (no upstream CLI) | Read-only evolution scan: promotion candidates and due revisits. See [evolution.md](evolution.md). |
@@ -100,7 +100,7 @@ overwrites: fails if the destination already exists.
 
 | Argument | Type | Required | Meaning |
 | --- | --- | --- | --- |
-| `id` | string | yes | Company id, 2–64 chars: letters, digits, dash or underscore. |
+| `id` | string | yes | Company id, 2-64 chars: letters, digits, dash or underscore. |
 | `name` | string | yes | Display name for the company (no newlines). |
 | `dest` | string | yes | Absolute path where the new vault directory will be created; must not exist. |
 
@@ -111,7 +111,7 @@ brain_create_vault({"id": "EMPRESA-001", "name": "Acme Consultores", "dest": "/U
 ## brain_validate_vault
 
 Validate the structural integrity of a business vault: note ids, wikilinks,
-transfers, frontmatter. Integrity only — never business truth.
+transfers, frontmatter. Integrity only -- never business truth.
 
 | Argument | Type | Required | Meaning |
 | --- | --- | --- | --- |
@@ -140,7 +140,7 @@ brain_status({"vault": "/Users/alice/vaults/empresa"})
 Register an already-open Obsidian vault in the local selector router so existing
 installs can resolve it. Updates the selector registry only; requires the vault
 to already have an id in Obsidian's native registry. May read/write the user's
-selector and Obsidian registry files under the home directory — override
+selector and Obsidian registry files under the home directory -- override
 with `registry`/`nativo`.
 
 | Argument | Type | Required | Meaning |
@@ -180,7 +180,7 @@ brain_resolve_vault({"selector": "/Users/alice/vaults/empresa"})
 Contextual consultation over a vault: candidate note blocks matched by
 literal text, with topic/scope/date filters and an optional limit; set
 `orientar` to order candidates by the terms of a natural request. Returns
-candidates only — never a generated semantic answer.
+candidates only -- never a generated semantic answer.
 
 | Argument | Type | Required | Meaning |
 | --- | --- | --- | --- |
@@ -253,7 +253,7 @@ brain_relations({"vault": "/Users/alice/vaults/empresa", "id": "EMP-0001"})
 
 Local versioned external-reference registry over a private bank directory
 (custody area outside any vault and any Git worktree). Registers metadata
-only — never imports content, never touches the network. Records are prepared
+only -- never imports content, never touches the network. Records are prepared
 as JSON files outside the vault, then committed here.
 
 | Argument | Type | Required | Meaning |
@@ -300,7 +300,7 @@ brain_naming({"vault": "/Users/alice/vaults/empresa", "spec": "/Users/alice/tmp/
 
 Drive one step of the transcript custody and analysis pipeline over a private
 transcript bank (custody area outside any vault and Git worktree). The full
-cycle is `ingresar → registrar → segmentar → analizar → cobertura → indexar`,
+cycle is `ingresar -> registrar -> segmentar -> analizar -> cobertura -> indexar`,
 plus read-only custody steps (`estado`, `verificar`, `inventario-validar`,
 `conciliar`), `buscar`, and the bookkeeping steps (`permiso`, `taxonomia`,
 `revisar-antecedentes`). Profile JSON must contain `company_id` and
@@ -383,14 +383,14 @@ brain_card({"vault": "/Users/alice/vaults/empresa", "tipo": "empresa", "titulo":
 
 ## brain_document
 
-Register a developed D01–D07 / X01–X07 document **without** approving it.
+Register a developed D01-D07 / X01-X07 document **without** approving it.
 The markdown must be prepared outside the vault and Git; sources, if any,
 must already be registered.
 
 | Argument | Type | Required | Meaning |
 | --- | --- | --- | --- |
 | `vault` | string | yes | Absolute path to the vault directory. |
-| `clase` | string | yes | Document class, one of D01–D07 / X01–X07. |
+| `clase` | string | yes | Document class, one of D01-D07 / X01-X07. |
 | `titulo` | string | yes | Title of the document note. |
 | `archivo` | string | yes | Absolute path to the developed Markdown prepared outside the vault and Git. |
 | `doc_id` | string | no | Optional identity `Xnn-...`; for Dnn classes it coincides with the class. |

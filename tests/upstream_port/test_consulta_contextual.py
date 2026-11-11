@@ -40,7 +40,7 @@ class ContextualQueryTest(unittest.TestCase):
             "## 02 Quality\n\n<!-- kb:id=D01-B002 -->\n"
             "The owners verify delivery and its documentation without confusing "
             "technical tests with commercial approval.\n\n"
-            "## CONTROL — source and limits\n\n"
+            "## CONTROL -- source and limits\n\n"
             "SOLO_CONTROL_TEST: this text must not be confused with business knowledge.\n",
             encoding="utf8", newline='\n')
         result = create_document(self.vault, "D01", "Fictitious model", self.body,
@@ -116,7 +116,7 @@ class ContextualQueryTest(unittest.TestCase):
             "# Imaginary offer\n\n## Background\n\n"
             "A historical price of 125 pesos was mentioned for a pilot; "
             "the current rate is not decided.\n\n"
-            "## CONTROL — sources\n\n"
+            "## CONTROL -- sources\n\n"
             "SOLO_CONTROL_OFERTA: this locator is not commercial text.\n",
             encoding="utf8", newline='\n')
         item = create_ficha(self.vault, "oferta", "Imaginary offer",

@@ -59,7 +59,7 @@ def doctor(*, vault=None) -> dict:
 def create_vault(*, id: str, name: str, dest) -> dict:
     """Create a new company vault from the bundled template; never overwrites.
 
-    ``id`` must match ``[A-Za-z0-9][A-Za-z0-9_-]{1,63}`` (2–64 characters).
+    ``id`` must match ``[A-Za-z0-9][A-Za-z0-9_-]{1,63}`` (2-64 characters).
     """
     try:
         path = crear_instancia.create(id, name, Path(dest))

@@ -17,7 +17,7 @@
       "access": "interno",
       "coverage_by_question": [
         {
-          "question": "¿Qué oferta base es cotizable?",
+          "question": "?Que oferta base es cotizable?",
           "status": "suficiente_para_tarea",
           "source_ids": [
             "F-0101"
@@ -25,7 +25,7 @@
           "note": ""
         },
         {
-          "question": "¿Existe entrega sabatina aprobada?",
+          "question": "?Existe entrega sabatina aprobada?",
           "status": "parcial",
           "source_ids": [
             "F-0100"
@@ -33,7 +33,7 @@
           "note": "No se ha aprobado"
         }
       ],
-      "checksum_sha256": "e036e0aee91a6c563023e62b354a9ae040773c19bf0bacc4376154b8dc9d59ce"
+      "checksum_sha256": "04d89327cf4a71e0c2bac37ab832f16aa778c7cc0a4c998b500fc1515b794050"
     },
     {
       "doc_id": "X01-BRISA-001",
@@ -45,7 +45,7 @@
       "access": "interno",
       "coverage_by_question": [
         {
-          "question": "¿Cuál es el alcance/precio de módulo estándar?",
+          "question": "?Cual es el alcance/precio de modulo estandar?",
           "status": "suficiente_para_tarea",
           "source_ids": [
             "F-0101"
@@ -53,7 +53,7 @@
           "note": ""
         }
       ],
-      "checksum_sha256": "26df25315e0d7095b1430facead132ed03435affebdfc4400daf49a42496ee40"
+      "checksum_sha256": "f6b5989db0802531c1b23708b810d90e09dd416a588e0b1ad31880c676590ce3"
     },
     {
       "doc_id": "X04-BRISA-001",
@@ -65,7 +65,7 @@
       "access": "interno",
       "coverage_by_question": [
         {
-          "question": "¿Qué sucedió realmente en la llamada?",
+          "question": "?Que sucedio realmente en la llamada?",
           "status": "suficiente_para_tarea",
           "source_ids": [
             "F-0100"
@@ -73,7 +73,7 @@
           "note": ""
         }
       ],
-      "checksum_sha256": "2cbcff00499fb7472c87ff57f59cf72b676f8c7e91162f7d6cf2c03cb22f12c2"
+      "checksum_sha256": "308e387ec17f58c0811d9f33522684aec557b5f366fb42e9ca3a543ff4de705f"
     },
     {
       "doc_id": "X07-BRISA-001",
@@ -85,15 +85,15 @@
       "access": "interno",
       "coverage_by_question": [
         {
-          "question": "¿Se autorizó experimento o nueva política?",
+          "question": "?Se autorizo experimento o nueva politica?",
           "status": "parcial",
           "source_ids": [
             "F-0100"
           ],
-          "note": "Interés expresado; falta decisión"
+          "note": "Interes expresado; falta decision"
         }
       ],
-      "checksum_sha256": "d767ad3c522f0280eb7b6cc7a4ca76746608cb3a82bc80654cf6b4a7c19c7000"
+      "checksum_sha256": "3ed7b4b355ff6a282b85a1bcb6dcadbff563c62057c865f33405d216a03a50ab"
     }
   ],
   "sources": [
@@ -105,7 +105,7 @@
       "captured_at": "2026-10-25T21:00:00-06:00",
       "access": "interno",
       "read_status": "leida_completa",
-      "checksum_sha256": "ac81189383b12aa998d683355d529154c38bf02e3eb9445f1aceb235abb22642",
+      "checksum_sha256": "70986a1e2a6b2cf02298b37f4c6a19bcc10aa7230cdb1b5d19dccad02f1ed3ef",
       "permitted_uses": [
         "documentar",
         "probar_metodologia"
@@ -119,7 +119,7 @@
       "captured_at": "2026-10-25T21:10:00-06:00",
       "access": "interno",
       "read_status": "leida_completa",
-      "checksum_sha256": "1a70c8b52724e76cf669b9d65e6f91d647040436dd8e0592e1581d8e47c42185",
+      "checksum_sha256": "abdd142bbe94b90621b7d132ae1d2f332ddb5a77a82ed9a7d57d385e1d7de29a",
       "permitted_uses": [
         "documentar",
         "probar_metodologia"
@@ -194,7 +194,7 @@
       "block_id": "X04-BRISA-001-B001",
       "doc_id": "X04-BRISA-001",
       "heading_path": [
-        "02 Línea temporal de hitos y fuentes"
+        "02 Linea temporal de hitos y fuentes"
       ],
       "semantic_type": "episodio",
       "knowledge_state": "hecho_observado",
@@ -215,7 +215,7 @@
       "block_id": "X07-BRISA-001-B001",
       "doc_id": "X07-BRISA-001",
       "heading_path": [
-        "04 Autoridad, decisión o hipótesis"
+        "04 Autoridad, decision o hipotesis"
       ],
       "semantic_type": "experimento_propuesto",
       "knowledge_state": "hipotesis",
@@ -242,7 +242,7 @@
       "temporal_status": "vigente",
       "valid_from": "2026-10-01",
       "valid_to": null,
-      "reason": "Oferta específica determina precio/alcance; D03 solo enlaza"
+      "reason": "Oferta especifica determina precio/alcance; D03 solo enlaza"
     }
   ],
   "relationships": [
@@ -277,23 +277,23 @@
   "pending": [
     {
       "id": "PEND-001",
-      "question": "¿Se aprueba experimentar dos entregas sabatinas y quién autoriza?",
+      "question": "?Se aprueba experimentar dos entregas sabatinas y quien autoriza?",
       "priority": "media",
       "affected_doc_ids": [
         "D03",
         "X07-BRISA-001"
       ],
-      "blocking_task": "Publicar o cotizar sábado como política"
+      "blocking_task": "Publicar o cotizar sabado como politica"
     },
     {
       "id": "PEND-002",
-      "question": "¿Cuál sería costo/operador disponible?",
+      "question": "?Cual seria costo/operador disponible?",
       "priority": "alta",
       "affected_doc_ids": [
         "X07-BRISA-001",
         "D03"
       ],
-      "blocking_task": "Determinar precio y rentabilidad del sábado"
+      "blocking_task": "Determinar precio y rentabilidad del sabado"
     }
   ],
   "historicals": [
@@ -310,13 +310,13 @@
       "id": "RES-01",
       "target_id": "F-0100",
       "access": "interno",
-      "handling": "Datos 100 % sintéticos; si fuese una conversación real, verificar consentimiento y minimización antes de compartir"
+      "handling": "Datos 100 % sinteticos; si fuese una conversacion real, verificar consentimiento y minimizacion antes de compartir"
     }
   ],
   "retrieval_tests": [
     {
       "test_id": "Q-01",
-      "question": "¿Cuál es precio vigente y qué excluye el módulo estándar?",
+      "question": "?Cual es precio vigente y que excluye el modulo estandar?",
       "expected_block_ids": [
         "X01-BRISA-001-B001"
       ],
@@ -325,11 +325,11 @@
       ],
       "expected_state": "decision_aprobada",
       "result": "no_ejecutada",
-      "evidence": "Test semántico pendiente de agente del Paso 2; esquema no garantiza respuesta"
+      "evidence": "Test semantico pendiente de agente del Paso 2; esquema no garantiza respuesta"
     },
     {
       "test_id": "Q-02",
-      "question": "¿Se aprobó cobrar cuatro mil pesos por entrega sabatina?",
+      "question": "?Se aprobo cobrar cuatro mil pesos por entrega sabatina?",
       "expected_block_ids": [
         "D03-B004"
       ],
@@ -342,7 +342,7 @@
     },
     {
       "test_id": "Q-03",
-      "question": "¿El cliente contrató entrega de sábado el 18 de octubre?",
+      "question": "?El cliente contrato entrega de sabado el 18 de octubre?",
       "expected_block_ids": [
         "X04-BRISA-001-B001"
       ],
@@ -351,7 +351,7 @@
       ],
       "expected_state": "hecho_observado",
       "result": "no_ejecutada",
-      "evidence": "Debe responder que no consta contratación"
+      "evidence": "Debe responder que no consta contratacion"
     }
   ]
 }
