@@ -3,7 +3,7 @@
 Creates a synthetic vault through the engine vault-creation path, seeds
 capture-like notes under 90_Sistema/Descubrimiento, and asserts that the
 evolution scan returns the expected result shape, fires the promotion rules
-only when the required evidence exists, marks thin evidence as ``parcial``,
+only when the required evidence exists, marks thin evidence as ``partial``,
 reports due revisits for areas without documents, and that the new evolution
 files are ASCII-only and carry no private-key detection literal.
 """
@@ -48,26 +48,26 @@ class TestEvolutionScan(unittest.TestCase):
             vault = _create_vault(Path(td))
             result = ops_evolution.evolution_scan(vault=str(vault))
             self.assertEqual(result["vault"], str(vault))
-            for key in ("fecha", "resumen", "candidatos", "visitas_vencidas"):
+            for key in ("date", "summary", "candidates", "due_visits"):
                 self.assertIn(key, result)
-            self.assertEqual(result["resumen"]["fuentes"], 0)
-            self.assertEqual(result["candidatos"], [])
+            self.assertEqual(result["summary"]["sources"], 0)
+            self.assertEqual(result["candidates"], [])
 
     def test_rule_r01_fires_with_two_episodes_and_not_with_one(self):
         with tempfile.TemporaryDirectory() as td:
             vault = _create_vault(Path(td))
             _seed(vault, "one.md", "The owner stated a criterion about budget adjustments in one event.")
             result = ops_evolution.evolution_scan(vault=str(vault))
-            r01 = [c for c in result["candidatos"] if c["regla_id"] == "R01"]
+            r01 = [c for c in result["candidates"] if c["rule_id"] == "R01"]
             self.assertEqual(len(r01), 1)
-            self.assertEqual(r01[0]["estado"], "parcial")
+            self.assertEqual(r01[0]["status"], "partial")
             _seed(vault, "two.md", "A second event confirms the same criterion with a real episode.")
             _seed(vault, "three.md", "A third event repeats the criterion pattern again.")
             result = ops_evolution.evolution_scan(vault=str(vault))
-            r01 = [c for c in result["candidatos"] if c["regla_id"] == "R01"]
+            r01 = [c for c in result["candidates"] if c["rule_id"] == "R01"]
             self.assertEqual(len(r01), 1)
-            self.assertEqual(r01[0]["estado"], "listo")
-            self.assertGreaterEqual(len(r01[0]["evidencia"]), 2)
+            self.assertEqual(r01[0]["status"], "ready")
+            self.assertGreaterEqual(len(r01[0]["evidence"]), 2)
 
     def test_rule_r04_fires_when_all_figures_present(self):
         with tempfile.TemporaryDirectory() as td:
@@ -78,29 +78,29 @@ class TestEvolutionScan(unittest.TestCase):
                 "Full case: quote total $100000, gastos listados, cobrado con saldo pendiente.",
             )
             result = ops_evolution.evolution_scan(vault=str(vault))
-            r04 = [c for c in result["candidatos"] if c["regla_id"] == "R04"]
+            r04 = [c for c in result["candidates"] if c["rule_id"] == "R04"]
             self.assertEqual(len(r04), 1)
-            self.assertEqual(r04[0]["estado"], "listo")
+            self.assertEqual(r04[0]["status"], "ready")
 
-    def test_thin_evidence_is_parcial(self):
+    def test_thin_evidence_is_partial(self):
         with tempfile.TemporaryDirectory() as td:
             vault = _create_vault(Path(td))
             _seed(vault, "quote.md", "One quote with $15000 of flowers.")
             result = ops_evolution.evolution_scan(vault=str(vault))
-            r02 = [c for c in result["candidatos"] if c["regla_id"] == "R02"]
+            r02 = [c for c in result["candidates"] if c["rule_id"] == "R02"]
             self.assertEqual(len(r02), 1)
-            self.assertEqual(r02[0]["estado"], "parcial")
-            self.assertIn("only 1 of 2", r02[0]["por_que_no"])
+            self.assertEqual(r02[0]["status"], "partial")
+            self.assertIn("only 1 of 2", r02[0]["why_not"])
 
     def test_due_visits_reported_for_stale_areas(self):
         with tempfile.TemporaryDirectory() as td:
             vault = _create_vault(Path(td))
             result = ops_evolution.evolution_scan(vault=str(vault))
-            self.assertGreater(len(result["visitas_vencidas"]), 0)
-            first = result["visitas_vencidas"][0]
-            for key in ("area", "ultima_revision", "cadencia_dias", "principal", "sugerencia"):
+            self.assertGreater(len(result["due_visits"]), 0)
+            first = result["due_visits"][0]
+            for key in ("area", "last_review", "cadence_days", "primary", "suggestion"):
                 self.assertIn(key, first)
-            self.assertEqual(first["ultima_revision"], "never")
+            self.assertEqual(first["last_review"], "never")
 
     def test_new_files_are_ascii_and_pem_free(self):
         pem_parts = ("PRIVATE KEY", "BEGIN")

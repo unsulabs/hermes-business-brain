@@ -6,7 +6,7 @@ CONTROL notes) and returns a structured plan of evolution *candidates* and
 *due revisits*. The scan writes nothing: candidates are proposals for the owner
 to confirm, and promotions are applied later through the existing proposal and
 apply machinery. Heuristics are conservative: thin evidence is reported as
-``parcial``, a candidate is never invented, and every candidate cites the files
+``partial``, a candidate is never invented, and every candidate cites the files
 that already exist in the vault.
 """
 from __future__ import annotations
@@ -41,7 +41,7 @@ def _load_rules() -> tuple[list[dict], dict]:
         data = json.loads(_RULES_PATH.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return [], {}
-    return data.get("reglas", []), data.get("cadencia", {})
+    return data.get("rules", []), data.get("cadence", {})
 
 
 def _scan_sources(vault: Path) -> dict[str, str]:
@@ -93,16 +93,16 @@ def _count_contains(texts: dict[str, str], markers: tuple[str, ...]) -> list[str
 
 def _candidate(regla: dict, paths: list[str], required: int) -> dict:
     """Build a candidate dict for one rule given the evidence paths."""
-    listo = len(paths) >= required
+    ready = len(paths) >= required
     return {
-        "regla_id": regla.get("id", ""),
-        "nombre": regla.get("nombre", ""),
-        "accion_propuesta": regla.get("accion_propuesta", ""),
-        "evidencia": paths[:5],
-        "estado": "listo" if listo else "parcial",
-        "por_que_no": (
+        "rule_id": regla.get("id", ""),
+        "name": regla.get("name", ""),
+        "proposed_action": regla.get("proposed_action", ""),
+        "evidence": paths[:5],
+        "status": "ready" if ready else "partial",
+        "why_not": (
             ""
-            if listo
+            if ready
             else f"only {len(paths)} of {required} required distinct sources were found"
         ),
     }
@@ -159,16 +159,16 @@ def _due_visits(vault: Path, docs: list[str], cadence: dict, control: str) -> li
     today = date.today()
     visits: list[dict] = []
     for area, spec in cadence.items():
-        principal = spec.get("principal", "")
+        primary = spec.get("primary", "")
         last: date | None = None
         for path in docs:
-            if Path(path).name.startswith(principal):
+            if Path(path).name.startswith(primary):
                 try:
                     last = date.fromtimestamp(Path(path).stat().st_mtime)
                 except OSError:
                     last = None
                 break
-        days = int(spec.get("dias", 0))
+        days = int(spec.get("days", 0))
         if last is None:
             visits.append(_visit(area, spec, "never", today))
             continue
@@ -181,17 +181,17 @@ def _due_visits(vault: Path, docs: list[str], cadence: dict, control: str) -> li
 def _visit(area: str, spec: dict, ultima: str, today: date) -> dict:
     return {
         "area": area,
-        "ultima_revision": ultima,
-        "cadencia_dias": spec.get("dias"),
-        "principal": spec.get("principal"),
-        "sugerencia": spec.get("sugerencia", ""),
+        "last_review": ultima,
+        "cadence_days": spec.get("days"),
+        "primary": spec.get("primary"),
+        "suggestion": spec.get("suggestion", ""),
     }
 
 
 def plan_evolucion(*, vault, **kwargs) -> dict:
     """Read-only evolution scan for one vault.
 
-    Returns: ``{fecha, vault, resumen, candidatos, visitas_vencidas}``.
+    Returns: ``{date, vault, summary, candidates, due_visits}``.
     Writes nothing; candidates need owner confirmation before any document
     is created or promoted.
     """
@@ -201,16 +201,16 @@ def plan_evolucion(*, vault, **kwargs) -> dict:
     entities = _scan_entities(vault_path)
     control = _control_text(vault_path)
     rules, cadence = _load_rules()
-    candidatos = _evaluate(sources, rules)
-    visitas = _due_visits(vault_path, docs, cadence, control)
+    candidates_list = _evaluate(sources, rules)
+    visits = _due_visits(vault_path, docs, cadence, control)
     return {
-        "fecha": date.today().isoformat(),
+        "date": date.today().isoformat(),
         "vault": str(vault_path),
-        "resumen": {
-            "fuentes": len(sources),
-            "documentos": len(docs),
-            "entidades": len(entities),
+        "summary": {
+            "sources": len(sources),
+            "documents": len(docs),
+            "entities": len(entities),
         },
-        "candidatos": candidatos,
-        "visitas_vencidas": visitas,
+        "candidates": candidates_list,
+        "due_visits": visits,
     }

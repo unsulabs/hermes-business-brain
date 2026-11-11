@@ -11,10 +11,10 @@ The evolution scan is how a business vault keeps maturing after onboarding. The 
 
 **2. Read the candidates as proposals, not decisions.** The scan returns:
 
-- `candidatos`: each item says which promotion rule fired (`regla_id`), what action it proposes (`accion_propuesta`), the evidence paths that triggered it (`evidencia`), and a state: `listo` (enough distinct evidence per the rule) or `parcial` (thin evidence - keep the material in source and keep collecting).
-- `visitas_vencidas`: areas whose revisit cadence is due (`area`, `ultima_revision`, `cadencia_dias`, `principal`, `sugerencia`).
+- `candidates`: each item says which promotion rule fired (`rule_id`), what action it proposes (`proposed_action`), the evidence paths that triggered it (`evidence`), and a state: `ready` (enough distinct evidence per the rule) or `partial` (thin evidence - keep the material in source and keep collecting).
+- `due_visits`: areas whose revisit cadence is due (`area`, `last_review`, `cadence_days`, `primary`, `suggestion`).
 
-A `listo` candidate is a *candidate*, never an instruction. A `parcial` candidate must stay in source; promoting it now would repeat the classic error of turning one anecdote into a document.
+A `ready` candidate is a *candidate*, never an instruction. A `partial` candidate must stay in source; promoting it now would repeat the classic error of turning one anecdote into a document.
 
 **3. Owner confirmation protocol.** Present the candidates to the owner one by one with their evidence paths and the exact proposed action. Nothing is applied automatically:
 
@@ -24,7 +24,7 @@ A `listo` candidate is a *candidate*, never an instruction. A `parcial` candidat
 
 **4. Record the evolution log.** After any promotion, append a short line to the vault CONTROL note (the same note used by ce-descubrimiento): date, rule id, target document, and the evidence paths. The log is what later scans use to avoid re-proposing the same promotion twice.
 
-**5. Tie revisits to continuity.** When `visitas_vencidas` lists an area, schedule the follow-up through [ce-continuidad](../ce-continuidad/SKILL.md): next focus = the area's `sugerencia` plus the round-2 prompts in the matching [area template](../ce-primera-sesion/references/area-templates/README.md). The cadence lives in `reglas_evolucion.json` and is itself a versioned file - improving the rules improves every vault that uses the plugin.
+**5. Tie revisits to continuity.** When `due_visits` lists an area, schedule the follow-up through [ce-continuidad](../ce-continuidad/SKILL.md): next focus = the area's `suggestion` plus the round-2 prompts in the matching [area template](../ce-primera-sesion/references/area-templates/README.md). The cadence lives in `reglas_evolucion.json` and is itself a versioned file - improving the rules improves every vault that uses the plugin.
 
 **6. Close with a runnable task.** After presenting candidates and confirming the accepted set, finish with one concrete next action from the knowledge (a question via [ce-consulta](../ce-consulta/SKILL.md), a draft to prepare, a revisit to schedule) and report paths, IDs and evidence. Do not declare the session complete for having run the scan.
 
@@ -32,6 +32,6 @@ A `listo` candidate is a *candidate*, never an instruction. A `parcial` candidat
 
 - **Read-only scan:** `brain_evolution_scan` never writes to the vault.
 - **Proposal is not decision:** every promotion needs the owner's explicit word; apply only via the existing proposal/apply flow with backup.
-- **Parcial stays in source:** thin evidence is a K2/K3 gap, not a document slot.
+- **Partial stays in source:** thin evidence is a K2/K3 gap, not a document slot.
 - **No double promotion:** the CONTROL evolution log prevents re-proposing what was already promoted or rejected.
-- **NO_VERIFICADO:** anything the owner has not confirmed stays unverified, even inside a `listo` candidate.
+- **NO_VERIFICADO:** anything the owner has not confirmed stays unverified, even inside a `ready` candidate.

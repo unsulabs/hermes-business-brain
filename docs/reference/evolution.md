@@ -11,17 +11,17 @@ Writes nothing.
 
 Returns a JSON document with four sections:
 
-- `fecha` - scan date (ISO).
+- `date` - scan date (ISO).
 - `vault` - the scanned path.
-- `resumen` - `fuentes` (capture notes under `90_Sistema/Descubrimiento/`),
-  `documentos` (`10_Conocimiento/`), `entidades` (`20_Entidades/`).
-- `candidatos` - one entry per promotion rule that found any evidence:
-  `regla_id`, `nombre`, `accion_propuesta`, `evidencia` (first 5 paths),
-  `estado` (`listo` when the rule's required evidence count is met, `parcial`
-  otherwise), `por_que_no` (shortfall explanation for `parcial`).
-- `visitas_vencidas` - areas whose revisit cadence is due: `area`,
-  `ultima_revision` (ISO date or `never`), `cadencia_dias`, `principal`,
-  `sugerencia`.
+- `summary` - `sources` (capture notes under `90_Sistema/Descubrimiento/`),
+  `documents` (`10_Conocimiento/`), `entities` (`20_Entidades/`).
+- `candidates` - one entry per promotion rule that found any evidence:
+  `rule_id`, `name`, `proposed_action`, `evidence` (first 5 paths),
+  `status` (`ready` when the rule's required evidence count is met, `partial`
+  otherwise), `why_not` (shortfall explanation for `partial`).
+- `due_visits` - areas whose revisit cadence is due: `area`,
+  `last_review` (ISO date or `never`), `cadence_days`, `primary`,
+  `suggestion`.
 
 Candidates are proposals, never instructions: promotion happens later through
 the existing proposal and apply machinery, only after the owner confirms.
@@ -31,10 +31,10 @@ the existing proposal and apply machinery, only after the owner confirms.
 Versioned rulebook at `hermes_business_brain/data/modelo/reglas_evolucion.json`,
 loaded at scan time. Two sections:
 
-- `reglas` - promotion rules with `id`, `nombre`, `descripcion`, `condicion`,
-  `evidencia_requerida`, `accion_propuesta`, `no_aplicar_si`.
-- `cadencia` - per-area revisit cadence with `dias`, `principal` (the D/X that
-  anchors the area), `sugerencia`.
+- `rules` - promotion rules with `id`, `name`, `description`, `condition`,
+  `required_evidence`, `proposed_action`, `do_not_apply`.
+- `cadence` - per-area revisit cadence with `days`, `primary` (the D/X that
+  anchors the area), `suggestion`.
 
 ## Cadence table
 

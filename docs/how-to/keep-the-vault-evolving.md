@@ -21,16 +21,16 @@ Run `brain_evolution_scan` on the resolved vault (see the
 - before closing a working session,
 - on the cadence of each area.
 
-The scan is read-only; it returns `candidatos` (promotion rules that fired,
-with evidence paths and `listo`/`parcial` state) and `visitas_vencidas`
+The scan is read-only; it returns `candidates` (promotion rules that fired,
+with evidence paths and `ready`/`partial` state) and `due_visits`
 (areas whose revisit is due).
 
 ## 3. Approve promotions, never auto-apply
 
-A `listo` candidate is a proposal. Draft the proposed document with
+A `ready` candidate is a proposal. Draft the proposed document with
 `brain_document` in `en_revision` state citing the evidence files, present it
 to the owner, and apply changes only through `brain_propose` plus
-`brain_dx_apply` after explicit authorization and a backup. `parcial`
+`brain_dx_apply` after explicit authorization and a backup. `partial`
 candidates stay in source until more evidence arrives - a single anecdote
 never becomes a document.
 
