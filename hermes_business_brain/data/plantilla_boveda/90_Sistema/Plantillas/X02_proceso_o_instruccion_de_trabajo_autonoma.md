@@ -6,9 +6,9 @@ clase: X02
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# X02 — Process or autonomous work instruction
+# X02 - Process or autonomous work instruction
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - Ask the executor to reconstruct a real run and point out decisions that are not in the checklist.

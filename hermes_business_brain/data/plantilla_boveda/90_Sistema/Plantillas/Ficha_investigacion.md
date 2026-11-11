@@ -14,7 +14,7 @@ alcance_muestra: ""
 ---
 # Research title
 
-> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer `python scripts/cerebro.py ficha` for a unique identity.
+> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer the `brain_card` tool for a unique identity.
 
 **Represents:** Analysis process with question, method, sources, limits, and findings.
 

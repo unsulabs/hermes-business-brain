@@ -6,9 +6,9 @@ clase: X01
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# X01 — Living record for an individual offer
+# X01 - Living record for an individual offer
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - What must the buyer be able to understand without extra conversation in order to hire this offer?

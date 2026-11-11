@@ -12,7 +12,7 @@ registrado_en: ""
 ---
 # Consulting title
 
-> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer `python scripts/cerebro.py ficha` for a unique identity.
+> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer the `brain_card` tool for a unique identity.
 
 **Represents:** Professional service modality based on expert judgment and agreed deliverables.
 

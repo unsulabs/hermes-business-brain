@@ -12,7 +12,7 @@ registrado_en: ""
 ---
 # Company title
 
-> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer `python scripts/cerebro.py ficha` for a unique identity.
+> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer the `brain_card` tool for a unique identity.
 
 **Represents:** Legal/operational entity with its own identity and boundaries.
 

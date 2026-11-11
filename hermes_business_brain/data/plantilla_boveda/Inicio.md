@@ -6,13 +6,13 @@ sensibilidad: interno
 ---
 # Business Brain of {{EMPRESA_NOMBRE}}
 
-> **Welcome.** Your company develops with Codex; this page is a consultation point, not a form nor a source of truth by itself. Identifier: `{{EMPRESA_ID}}`.
+> **Welcome.** Your company develops with hermes-business-brain; this page is a consultation point, not a form nor a source of truth by itself. Identifier: `{{EMPRESA_ID}}`.
 
-## Start or continue with Codex
+## Start or continue the first session
 
-1. If this is the first time, use the `iniciar-empresa` flow from the master repository.
-2. Describe what business you have and what you want to develop; Codex **retrieves sources before asking you**.
-3. Codex retrieves sources and proposes **which notes should exist, which to reuse, and how to link them** before drafting D/X. It uses vNext and K1–K4, without inventing facts or producing empty templates.
+1. If this is the first time, run the `ce-instalacion` flow to create and register the vault.
+2. Describe what business you have and what you want to develop; the agent **retrieves sources before asking you**.
+3. The agent retrieves sources and proposes **which notes should exist, which to reuse, and how to link them** before drafting D/X. It uses the K1-K4 gap model, without inventing facts or producing empty templates.
 4. Consult the [[00_Mapas/Mapa_de_empresa|business map]] and your approved notes; never confuse a draft with a current offer.
 5. For another session, read the latest notes in `90_Sistema/Continuidad/` and verify their sources.
 
@@ -33,7 +33,7 @@ sensibilidad: interno
 
 ## Dynamic knowledge map (when authorized)
 
-The note-and-relationship network can be browsed with a Markdown view and a derived Canvas, created by Codex after running `mapa-conocimiento` and obtaining authorization to `publicar-mapa` with a backup. The intended path is 00_Mapas/Mapa_Derivado_Conocimiento.md, alongside its .canvas pair. These files are not created automatically and are not a source of truth. The 16 Bases above let you query notes by type and properties.
+The note-and-relationship network can be browsed with a Markdown view and a derived Canvas, created by the agent after running a read-only knowledge map and obtaining authorization to publish it with a backup. The intended path is 00_Mapas/Mapa_Derivado_Conocimiento.md, alongside its .canvas pair. These files are not created automatically and are not a source of truth. The 16 Bases above let you query notes by type and properties.
 
 ## Authority, open items, and evidence
 
