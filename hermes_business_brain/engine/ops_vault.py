@@ -97,8 +97,8 @@ def register_vault(*, vault, name, alias, proyecto=None, nativo=None,
     ``proyecto`` is the agent project directory that must resolve the vault;
     ``nativo`` is the native Obsidian registry path. Neither the vault nor the
     native registry is created or modified. ``registry``/``instructions``/
-    ``entrypoint`` default to the selector registry (legacy Codex-compatible
-    ``~/.codex`` paths preserved) and the instance files
+    ``entrypoint`` default to the selector registry
+    ``~/.config/hermes-business-brain/vaults.json`` and the instance files
     ``90_Sistema/Como_usar.md`` / ``Inicio.md`` like the upstream CLI flags.
     """
     try:

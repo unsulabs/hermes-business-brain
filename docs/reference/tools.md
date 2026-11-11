@@ -45,7 +45,7 @@ failure is returned inside the JSON, not thrown.
   identifiers as machine contracts (the documented flags rule). The tools'
   `summary` fields and this documentation always provide the English text.
 - Paths are always user-provided absolute paths. The engine touches nothing
-  outside them except the Codex/Obsidian registry files, whose locations are
+  outside them except the selector registry and Obsidian's native registry files, whose locations are
   overridable (`registry`/`nativo`).
 - Boolean arguments are flags: `true` means the behavior is enabled.
 - Repeatable arguments (`sources`, `etiquetas`) are passed as arrays.
@@ -58,7 +58,7 @@ failure is returned inside the JSON, not thrown.
 | `brain_create_vault` | `create_vault` | `cerebro.py crear` | Create a new empty vault from the bundled template; fails if the destination exists. |
 | `brain_validate_vault` | `validate_vault` | `validar_boveda.py` | Structural integrity check (ids, wikilinks, transfers) — never business truth. |
 | `brain_status` | `status` | `cerebro.py estado` | Structural company summary (counts, editorial state, templates, sources). |
-| `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (legacy Codex-compatible `~/.codex` format; needs Obsidian's native id). |
+| `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (`~/.config/hermes-business-brain/vaults.json`; needs Obsidian's native id). |
 | `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_obsidian.py` | Resolve the vault registered for an agent project/selector, verified against Obsidian's native registry. |
 | `brain_query` | `query` | `cerebro.py consulta-contextual` | Candidate note blocks by literal text + topic/scope/date filters; no semantic generation. |
 | `brain_capture` | `capture` | `cerebro.py capturar` | Save preliminary findings as a draft capture note — not approved knowledge. |
@@ -139,8 +139,7 @@ brain_status({"vault": "/Users/alice/vaults/empresa"})
 Register an already-open Obsidian vault in the local selector router so existing
 installs can resolve it. Updates the selector registry only; requires the vault
 to already have an id in Obsidian's native registry. May read/write the user's
-selector and Obsidian registry files under the home directory (legacy
-`~/.codex/obsidian/vaults.json` format, kept for compatibility) — override
+selector and Obsidian registry files under the home directory — override
 with `registry`/`nativo`.
 
 | Argument | Type | Required | Meaning |
@@ -148,7 +147,7 @@ with `registry`/`nativo`.
 | `vault` | string | yes | Absolute path to the vault already opened in Obsidian. |
 | `name` | string | yes | Human-readable name for the vault entry. |
 | `alias` | string | yes | Business id used as an alias, e.g. `EMPRESA-001`. |
-| `registry` | string | no | Absolute path to the vaults registry JSON (default `~/.codex/obsidian/vaults.json`, legacy Codex-compatible format). |
+| `registry` | string | no | Absolute path to the vaults registry JSON (default `~/.config/hermes-business-brain/vaults.json`). |
 | `nativo` | string | no | Absolute path to the Obsidian native registry JSON (platform default). |
 | `instructions` | string | no | Vault-relative instructions file (default `90_Sistema/Como_usar.md`). |
 | `entrypoint` | string | no | Vault-relative entrypoint note (default `Inicio.md`). |
@@ -168,7 +167,7 @@ registries. Use before operating on a vault to confirm identity.
 | --- | --- | --- | --- |
 | `selector` | string | exactly one of `selector`/`project` | Selector matching a registered id, name, alias, or absolute vault path. |
 | `project` | string | exactly one of `selector`/`project` | Absolute path of the agent project whose registered vault should be resolved. |
-| `registry` | string | no | Absolute path to the vaults registry JSON (default `~/.codex/obsidian/vaults.json`, legacy Codex-compatible format). |
+| `registry` | string | no | Absolute path to the vaults registry JSON (default `~/.config/hermes-business-brain/vaults.json`). |
 | `nativo` | string | no | Absolute path to the Obsidian native registry JSON (platform default). |
 
 ```json

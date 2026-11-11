@@ -34,7 +34,7 @@ registered vault should be resolved. Exactly one of `selector`/`project` must
 be given.)
 
 `brain_resolve_vault` is **read-only for both registries**: it reads the local
-vault registry (`~/.codex/obsidian/vaults.json` by default, overridable with
+vault registry (`~/.config/hermes-business-brain/vaults.json` by default, overridable with
 `registry`/`nativo`) and cross-checks the match against Obsidian's native
 registry. It only *reports*; it writes nothing. A verified success looks like
 this (run against a synthetic registry, real output):

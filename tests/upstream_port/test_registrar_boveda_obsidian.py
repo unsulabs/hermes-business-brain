@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from hermes_business_brain.engine.registrar_boveda_obsidian import canonical, register
 
 
-class RegisterCodexVaultTest(unittest.TestCase):
+class RegisterVaultTest(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
@@ -30,7 +30,7 @@ class RegisterCodexVaultTest(unittest.TestCase):
         (self.vault / "Inicio.md").write_text("# Home\n", encoding='utf-8', newline='\n')
         self.native = self.root / "obsidian.json"
         self.registry = self.root / "vaults.json"
-        self.project = canonical(self.root / "Codex Project")
+        self.project = canonical(self.root / "Agent Project")
         self.project.mkdir()
         self.native.write_text(json.dumps({"vaults": {"abc123": {"path": str(self.vault)}}}),
                                encoding='utf-8', newline='\n')
@@ -56,7 +56,7 @@ class RegisterCodexVaultTest(unittest.TestCase):
         self.assertFalse(self.registry.exists())
 
     def test_collision_preserves_existing_registry(self):
-        self.registry.write_text(json.dumps({"format": "codex-obsidian-vaults/1",
+        self.registry.write_text(json.dumps({"format": "hermes-obsidian-vaults/1",
                                              "vaults": [{"name": "Other company", "id": "xyz",
                                                          "aliases": ["EMP-FIC"],
                                                          "path": str(self.root / "Other")}]}) + "\n",
@@ -67,7 +67,7 @@ class RegisterCodexVaultTest(unittest.TestCase):
         self.assertEqual(before, self.registry.read_bytes())
 
     def test_existing_registry_is_backed_up(self):
-        self.registry.write_text('{"format":"codex-obsidian-vaults/1","vaults":[]}\n',
+        self.registry.write_text('{"format":"hermes-obsidian-vaults/1","vaults":[]}\n',
                                  encoding='utf-8', newline='\n')
         before = self.registry.read_bytes()
         result = self.call_register()
@@ -100,7 +100,7 @@ class RegisterCodexVaultTest(unittest.TestCase):
         other = {"name": "Other company", "id": "xyz", "aliases": ["OTRA"],
                  "path": str(self.root / "Other"),
                  "projects": [str(self.project)]}
-        self.registry.write_text(json.dumps({"format": "codex-obsidian-vaults/1",
+        self.registry.write_text(json.dumps({"format": "hermes-obsidian-vaults/1",
                                              "vaults": [other]}) + "\n",
                                  encoding='utf-8', newline='\n')
         before = self.registry.read_bytes()

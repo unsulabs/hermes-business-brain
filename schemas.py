@@ -97,9 +97,9 @@ TOOL_SCHEMAS: dict[str, dict] = {
         "name": "brain_register_vault",
         "description": (
             "Register an already-open Obsidian vault in the local selector router so existing "
-            "installs can resolve it. Updates the selector registry (the legacy "
-            "~/.codex/obsidian/vaults.json format) only; requires the vault to already have an id "
-            "in Obsidian's native registry. May read/write the user's Codex and Obsidian registry "
+            "installs can resolve it. Updates the selector registry (the "
+            "~/.config/hermes-business-brain/vaults.json format) only; requires the vault to already have an id "
+            "in Obsidian's native registry. May read/write the user's selector and Obsidian registry "
             "files under the home directory - override with registro/nativo. Engine op: "
             "register_vault."
         ),
@@ -122,7 +122,7 @@ TOOL_SCHEMAS: dict[str, dict] = {
                     "type": "string",
                     "description": (
                         "Absolute path to the vaults registry JSON "
-                        "(default ~/.codex/obsidian/vaults.json, legacy Codex-compatible format)."
+                        "(default ~/.config/hermes-business-brain/vaults.json)."
                     ),
                 },
                 "nativo": {
@@ -175,7 +175,7 @@ TOOL_SCHEMAS: dict[str, dict] = {
                     "type": "string",
                     "description": (
                         "Absolute path to the vaults registry JSON "
-                        "(default ~/.codex/obsidian/vaults.json, legacy Codex-compatible format)."
+                        "(default ~/.config/hermes-business-brain/vaults.json)."
                     ),
                 },
                 "nativo": {
