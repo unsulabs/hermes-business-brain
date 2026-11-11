@@ -96,9 +96,10 @@ TOOL_SCHEMAS: dict[str, dict] = {
     "brain_register_vault": {
         "name": "brain_register_vault",
         "description": (
-            "Register an already-open Obsidian vault in the Codex local router so Codex can resolve "
-            "it. Updates the Codex selector registry only; requires the vault to already have an id "
-            "in Obsidian's native registry. May read/write the user's Codex and Obsidian registry "
+            "Register an already-open Obsidian vault in the local selector router so existing "
+            "installs can resolve it. Updates the selector registry (the "
+            "~/.config/hermes-business-brain/vaults.json format) only; requires the vault to already have an id "
+            "in Obsidian's native registry. May read/write the user's selector and Obsidian registry "
             "files under the home directory - override with registro/nativo. Engine op: "
             "register_vault."
         ),
@@ -120,8 +121,8 @@ TOOL_SCHEMAS: dict[str, dict] = {
                 "registry": {
                     "type": "string",
                     "description": (
-                        "Absolute path to the Codex vaults registry JSON "
-                        "(default ~/.codex/obsidian/vaults.json)."
+                        "Absolute path to the vaults registry JSON "
+                        "(default ~/.config/hermes-business-brain/vaults.json)."
                     ),
                 },
                 "nativo": {
@@ -139,7 +140,7 @@ TOOL_SCHEMAS: dict[str, dict] = {
                 "proyecto": {
                     "type": "string",
                     "description": (
-                        "Absolute path of the Codex project directory that should resolve this vault."
+                        "Absolute path of the agent project directory that should resolve this vault."
                     ),
                 },
             },
@@ -149,7 +150,7 @@ TOOL_SCHEMAS: dict[str, dict] = {
     "brain_resolve_vault": {
         "name": "brain_resolve_vault",
         "description": (
-            "Resolve which registered vault a Codex project (or a selector string) maps to, "
+            "Resolve which registered vault an agent project (or a selector string) maps to, "
             "verifying it against Obsidian's native registry. Read-only for the registries. Use "
             "before operating on a vault to confirm identity. Engine op: resolve_vault."
         ),
@@ -166,15 +167,15 @@ TOOL_SCHEMAS: dict[str, dict] = {
                 "project": {
                     "type": "string",
                     "description": (
-                        "Absolute path of the Codex project whose registered vault should be "
+                        "Absolute path of the agent project whose registered vault should be "
                         "resolved (exactly one of selector/project must be given)."
                     ),
                 },
                 "registry": {
                     "type": "string",
                     "description": (
-                        "Absolute path to the Codex vaults registry JSON "
-                        "(default ~/.codex/obsidian/vaults.json)."
+                        "Absolute path to the vaults registry JSON "
+                        "(default ~/.config/hermes-business-brain/vaults.json)."
                     ),
                 },
                 "nativo": {
@@ -861,6 +862,27 @@ TOOL_SCHEMAS: dict[str, dict] = {
                 "referencia_autorizacion",
                 "backup_dir",
             ],
+        },
+    },
+    "brain_evolution_scan": {
+        "name": "brain_evolution_scan",
+        "description": (
+            "Read-only evolution scan for a business vault: evaluates the promotion rules "
+            "in reglas_evolucion.json against captured sources, D/X documents, entity cards "
+            "and CONTROL notes, and returns evolution candidates (status ready/partial with "
+            "evidence paths) plus areas whose revisit cadence is due. Writes nothing; "
+            "candidates are proposals for the owner to confirm, never applied automatically. "
+            "Engine op: evolution_scan."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vault": {
+                    "type": "string",
+                    "description": "Absolute path to the business vault to scan.",
+                },
+            },
+            "required": ["vault"],
         },
     },
 }

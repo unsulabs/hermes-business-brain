@@ -14,9 +14,9 @@ registered at load time by the plugin's `__init__.py`
 skills** under the `hermes-business-brain:` namespace — the same convention
 as the tools.
 
-There are 20 bundled skill folders, grouped as:
+There are 21 bundled skill folders, grouped as:
 
-| Group | Skills (19 `ce-*`) | When the family activates |
+| Group | Skills (20 `ce-*`) | When the family activates |
 | --- | --- | --- |
 | Installation & continuity | `ce-instalacion`, `ce-continuidad` | First set-up of a vault; resuming daily work on an existing one |
 | Consultation | `ce-consulta`, `ce-evaluar-recuperacion`, `ce-evaluar-recurso`, `ce-revisar-antecedentes` | Queries, drafts, decisions, pilots, fidelity failures, new sources |
@@ -31,7 +31,7 @@ There are 20 bundled skill folders, grouped as:
   `ce-instalacion`, `ce-consulta` and `ce-continuidad` skills all route
   through it (`brain_register_vault` / `brain_resolve_vault`).
 
-The plugin's "20 bundled skills" figure counts the business-brain set: the 19
+The plugin's "21 bundled skills" figure counts the business-brain set: the 20
 `ce-*` plus `obsidian-router`. (A root-level `skills/documentation-writer`
 folder exists in the working tree but is an `npx skills add` artifact — not
 bundled, never registered.)

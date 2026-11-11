@@ -12,7 +12,7 @@ registrado_en: ""
 ---
 # Service title
 
-> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer `python scripts/cerebro.py ficha` for a unique identity.
+> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer the `brain_card` tool for a unique identity.
 
 **Represents:** Work or service delivery with outcome, scope, and delivery modality.
 

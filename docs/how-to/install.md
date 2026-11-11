@@ -12,7 +12,7 @@ common mistake to avoid. It was verified against Hermes Agent v0.23.0
 `brain_card`, `brain_document`, `brain_propose`, `brain_knowledge_plan`,
 `brain_dx_apply`, and others — see the [README](../../README.md) for the full
 table) backed by a native English engine that runs **in-process**, plus a set
-of 20 bundled workflow skills
+of 21 bundled workflow skills
 ([How to use the bundled skills](use-bundled-skills.md)). Everything runs
 locally, with no network access. The manifest declares two Python
 dependencies, `PyYAML==6.0.3` and `jsonschema>=4.23,<5`, which Hermes' plugin

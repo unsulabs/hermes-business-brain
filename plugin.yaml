@@ -3,10 +3,11 @@ version: 0.2.0
 manifest_version: 2
 requires_hermes: ">=0.23.0"
 description: >-
-  Offline Obsidian "business brain" toolkit with a native English engine: 18 local,
-  network-free Hermes tools that create, validate and query private knowledge vaults, plus 19
-  bundled workflow skills. Every tool runs the engine in-process against user-provided paths
-  only; nothing leaves the machine and no business data is bundled.
+  Offline Obsidian "business brain" toolkit with a native English engine: 19 local,
+  network-free Hermes tools that create, validate and query private knowledge vaults (including
+  a read-only evolution scan), plus 21 bundled workflow skills. Every tool runs the engine
+  in-process against user-provided paths only; nothing leaves the machine and no business
+  data is bundled.
 author: unsulabs
 license: MIT
 homepage: https://github.com/unsulabs/hermes-business-brain
@@ -32,3 +33,4 @@ provides_tools:
   - brain_document
   - brain_knowledge_plan
   - brain_dx_apply
+  - brain_evolution_scan

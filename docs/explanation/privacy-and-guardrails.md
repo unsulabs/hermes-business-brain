@@ -107,7 +107,7 @@ The engine has no hardcoded absolute user paths (verified: no `Users/`-style
 paths in `hermes_business_brain/engine/`).
 
 - Every tool takes vault/bank/file paths as arguments; nothing is touched
-  implicitly except the Codex/Obsidian registries, whose paths can be
+  implicitly except the selector and Obsidian native registries, whose paths can be
   overridden with `registry`/`nativo`.
 - Banks are validated to be outside any vault and Git worktree
   (`UNSAFE_PATH` is a defined pipeline error in `ce-banco-transcripciones`).

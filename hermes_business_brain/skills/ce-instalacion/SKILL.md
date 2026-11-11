@@ -5,9 +5,9 @@ description: "Install and configure the Business Brain for the first time with t
 
 # ce-instalacion
 
-**0. Branch before installing:** identify whether the user already has a vault; before reading its content resolve `obsidian-router` and its instructions ([obsidian-router skill](../obsidian-router/SKILL.md)). Then check `90_Sistema/config_empresa.yaml` and D/X or sources. If it exists, **do not create another one nor reinstall**: activate the guide `guia/ACEPTACION_REAL_CODEX_INSTANCIA_EXISTENTE.md`, check the checkout without destroying changes and run `aceptacion_integracion_local.py` in read-only mode. Updating code does not modify the instance; migrations require additional authorization.
+**0. Branch before installing:** identify whether the user already has a vault; before reading its content resolve `obsidian-router` and its instructions ([obsidian-router skill](../obsidian-router/SKILL.md)). Then check `90_Sistema/config_empresa.yaml` and D/X or sources. If it exists, **do not create another one nor reinstall**: continue the existing instance per the [ce-continuidad skill](../ce-continuidad/SKILL.md); never modify content without explicit authorization, and migrations require additional authorization.
 
-1. Read `guia/PRIMERA_EMPRESA_CON_CODEX.md`, C0–C2; verify the repo root and don't confuse `master` with an instance.
+1. Follow the [ce-primera-sesion skill](../ce-primera-sesion/SKILL.md) first-session steps; verify the repo root and don't confuse the repository with an instance.
 2. READ-ONLY diagnostics: `brain_doctor` and Obsidian version verified via GUI/CLI if available; don't trust a path as proof of function.
 3. Communicate real requirements and blockers. The expressed request to install and build the business authorizes the necessary operations within the chosen location; don't repeat permissions already granted. Ask before publishing data, sending messages, installing external plugins or using another account. Don't install `obsidian-projects` (archived) or TaskNotes automatically. Native Bases and Templates first.
 4. Install Python dependencies into a venv if the commission already authorizes it, and check the plugin with `hermes plugins doctor hermes-business-brain --ci` (or run the plugin repo tests via its `.venv`: `python -m pytest tests/ -q`). If there is no internet, don't invent an installation.

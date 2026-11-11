@@ -6,9 +6,9 @@ sensibilidad: interno
 ---
 # Business needs map of {{EMPRESA_NOMBRE}}
 
-This map lists **business questions**; it does not force 12 departments, nor does it create fictitious notes. Ask Codex to develop the priority need with the vNext guide.
+This map lists **business questions**; it does not force 12 departments, nor does it create fictitious notes. Ask the agent to develop the priority need with the bundled skills.
 
-| Perspective | Question for Codex | Usual sources |
+| Perspective | Question for the agent | Usual sources |
 |---|---|---|
 | Direction and strategy | Why does the business exist, where does it create value, what does it choose not to do? | Owner/decision maker and dated decisions |
 | Market and brand | What do we know about real customers versus hypotheses? | Interviews, sales, studies, and episodes |

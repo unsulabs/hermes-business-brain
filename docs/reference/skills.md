@@ -1,6 +1,6 @@
 # Reference — Bundled Skills (hermes-business-brain v2)
 
-The plugin ships 20 skills under `hermes_business_brain/skills/`, each a
+The plugin ships 21 skills under `hermes_business_brain/skills/`, each a
 directory with a `SKILL.md`. At load time `register(ctx)` registers every
 such directory as a plugin skill under the qualified name
 `hermes-business-brain:<name>` (the registration is tolerant: missing or
@@ -31,6 +31,7 @@ the activation language the frontmatter description itself carries.
 | `hermes-business-brain:ce-investigacion` | "Research market needs, competition, clients and methodologies for a business without inventing data or passing hypotheses off as facts." | Research | Market, competition, client or methodology research. |
 | `hermes-business-brain:ce-evaluar-recurso` | "Analyze plugins, repositories, tutorials, templates and external frameworks before incorporating them into the Business Brain." | External resource evaluation | Evaluating plugins, repositories, tutorials, templates or frameworks before incorporation. |
 | `hermes-business-brain:ce-calidad-repositorio` | "Audit, improve or evolve the master repository's code with tests, migrations and preservation of existing functionality." | Repository quality & ops | Auditing, improving or evolving the master repository's code. |
+| `hermes-business-brain:ce-evolucion` | "Scan a business vault for knowledge ready to evolve: promotion candidates from captured sources, areas whose revisit cadence is due; proposals are presented to the owner, never applied automatically." | Evolution | Running the evolution scan and confirming promotions so the vault matures with use. |
 | `hermes-business-brain:obsidian-router` | "Resolve this product's private vault through explicit local registration and native Obsidian identity before access." | Vault routing & identity | Before ANY access to a vault: resolution first, registration on authorized new instances. |
 
 ## Family index
@@ -47,6 +48,7 @@ the activation language the frontmatter description itself carries.
   `ce-arquitectura-conocimiento`
 - **Research & resource evaluation**: `ce-investigacion`, `ce-evaluar-recurso`
 - **Repository quality & ops**: `ce-calidad-repositorio`
+- **Evolution**: `ce-evolucion`
 - **Routing**: `obsidian-router`
 
 ## How skills relate to tools
@@ -68,5 +70,5 @@ The working tree of this repository also has `skills/documentation-writer`,
 but it is **not** part of the product bundle: it is an `npx skills add`
 artifact, `.gitignore` excludes the root `skills/` directory, and
 `skills-lock.json` records it as installed from the third-party
-`github/awesome-copilot` collection. Only the 20 skills above ship with the
+`github/awesome-copilot` collection. Only the 21 skills above ship with the
 plugin (bundled under `hermes_business_brain/skills/`).

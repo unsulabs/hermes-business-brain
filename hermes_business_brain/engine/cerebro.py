@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Business Brain: local CLI operable by Codex. No network calls or automatic installations.
+"""Business Brain: local CLI operable by an agent. No network calls or automatic installations.
 
-Usage: python scripts/cerebro.py --help
+Usage: python -m hermes_business_brain.engine.cerebro --help
 """
 from __future__ import annotations
 

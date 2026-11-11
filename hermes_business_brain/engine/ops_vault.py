@@ -12,8 +12,8 @@ import json
 from pathlib import Path
 
 from . import crear_instancia, doctor_preflight, operacion, validar_boveda
-from . import registrar_boveda_codex as registrar
-from . import resolver_boveda_codex as resolver
+from . import registrar_boveda_obsidian as registrar
+from . import resolver_boveda_obsidian as resolver
 
 __all__ = [
     "BrainError",
@@ -92,12 +92,13 @@ def status(*, vault) -> dict:
 
 def register_vault(*, vault, name, alias, proyecto=None, nativo=None,
                    registry=None, instructions=None, entrypoint=None) -> dict:
-    """Register a vault already open in Obsidian for the local Codex router.
+    """Register a vault already open in Obsidian for the local selector router.
 
-    ``proyecto`` is the Codex project directory that must resolve the vault;
+    ``proyecto`` is the agent project directory that must resolve the vault;
     ``nativo`` is the native Obsidian registry path. Neither the vault nor the
     native registry is created or modified. ``registry``/``instructions``/
-    ``entrypoint`` default to the Codex registry and the instance files
+    ``entrypoint`` default to the selector registry
+    ``~/.config/hermes-business-brain/vaults.json`` and the instance files
     ``90_Sistema/Como_usar.md`` / ``Inicio.md`` like the upstream CLI flags.
     """
     try:
@@ -118,8 +119,8 @@ def resolve_vault(*, selector=None, project=None, nativo=None, registry=None) ->
     """Resolve an explicit vault selector or project against the registries.
 
     Provide exactly one of ``selector`` (a registered id/name/alias or
-    absolute path) or ``project`` (a Codex project directory). ``nativo`` is
-    the native Obsidian registry path; ``registry`` defaults to the Codex
+    absolute path) or ``project`` (an agent project directory). ``nativo`` is
+    the native Obsidian registry path; ``registry`` defaults to the selector
     registry. Read-only; opens no vault contents.
     """
     try:

@@ -5,7 +5,7 @@ description: "Audit, improve or evolve the master repository's code with tests, 
 
 # ce-calidad-repositorio
 
-1. Read `guia/EVOLUCION_PARA_CODEX.md`, architecture/roadmap docs and Git state; identify the base version and foreign changes.
+1. Read the repository's architecture and roadmap docs and Git state; identify the base version and foreign changes.
 2. Run the full suite and create a synthetic instance; never use private data for tests without approval.
 3. Choose a reproducible failure linked to a requirement or acceptance case; design a positive and a negative test, and evaluate existing alternatives.
 4. Implement the minimal change, updating validators/schemas/templates coherently; do not remove vNext nor change its meaning to ease parsing.

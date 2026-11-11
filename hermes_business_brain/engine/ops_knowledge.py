@@ -212,7 +212,7 @@ def document(*, vault, clase, titulo, archivo, doc_id=None, estado="borrador",
 # ---------------------------------------------------------------------------
 
 def knowledge_plan(*, vault, archivo) -> dict:
-    """Read-only audit of a knowledge plan previously reasoned by Codex."""
+    """Read-only audit of a knowledge plan previously reasoned by an external agent."""
     mod = _load("plan_conocimiento")
     return _handle(mod.planificar, _path(vault), _path(archivo))
 

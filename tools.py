@@ -54,6 +54,7 @@ OP_BY_TOOL: dict[str, str] = {
     "brain_document": "document",
     "brain_knowledge_plan": "knowledge_plan",
     "brain_dx_apply": "dx_apply",
+    "brain_evolution_scan": "evolution_scan",
 }
 
 _EMOJI = "\U0001f9e0"  # brain

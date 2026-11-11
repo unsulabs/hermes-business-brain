@@ -6,9 +6,9 @@ clase: X05
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# X05 — Standalone agreement or obligation
+# X05 - Standalone agreement or obligation
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - Which obligations matter most operationally, and which exact source proves them?

@@ -7,8 +7,8 @@ sensibilidad: interno
 # How to use this vault
 
 - **Not an ERP nor a transactional CRM.** Obsidian reflects and links knowledge; each official system keeps its own authority.
-- **First session:** check `guia/PRIMERA_EMPRESA_CON_CODEX.md` in the repository and start in Codex.
-- **For fichas with a correct ID:** use `python scripts/cerebro.py ficha`, never copy a template without replacing `PENDIENTE_ID_UNICO`.
+- **First session:** run the `ce-instalacion` and `ce-primera-sesion` flows of the hermes-business-brain plugin.
+- **For fichas with a correct ID:** use the `brain_card` tool, never copy a template without replacing `PENDIENTE_ID_UNICO`.
 - **Evidence and sources:** every material claim needs origin, context, date, and permission. A source ficha is not the original.
 - **Authority:** subject + entity + scope + date + source. Never choose by filename or because a note is newer.
 - **Four independent axes:** editorial approval, coverage, knowledge state, and validity.

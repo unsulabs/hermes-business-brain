@@ -1,0 +1,70 @@
+{
+  "version": "0.1.0",
+  "description": "Promotion rules and revisit cadence that drive vault evolution. The scan tool evaluates these read-only and proposes candidates; nothing is applied automatically.",
+  "rules": [
+    {
+      "id": "R01",
+      "name": "criterion confirmed by episodes",
+      "description": "An owner criterion (K1) becomes an explicit criterion when at least two distinct captured sources support it with episodes.",
+      "condition": "at least two capture notes mention a criterion together with an episode marker (event, job, decision, ceremony)",
+      "required_evidence": "2 distinct sources",
+      "proposed_action": "propose explicit criterion in the matching D/X, owner-confirmed",
+      "do_not_apply": "single anecdote, unverified figure, or a criterion the owner never stated"
+    },
+    {
+      "id": "R02",
+      "name": "repeated offer line",
+      "description": "An offer line that appears in at least two distinct quotes or proposals deserves its own living record.",
+      "condition": "at least two capture notes contain price or quote markers for the same service line",
+      "required_evidence": "2 distinct quotes",
+      "proposed_action": "propose an X01 living offer record",
+      "do_not_apply": "one-off historical job with no current activity"
+    },
+    {
+      "id": "R03",
+      "name": "decision with decider and date",
+      "description": "A direction choice that has a decider and a date is a decision record.",
+      "condition": "a capture note contains a decision marker and a date token, or an agreement/contract marker",
+      "required_evidence": "decider plus date (or a written agreement)",
+      "proposed_action": "propose an X07 decision record",
+      "do_not_apply": "a stated intention with no decider or date"
+    },
+    {
+      "id": "R04",
+      "name": "closed case with figures",
+      "description": "An event that has sale, costs and collected amounts all present is ready for a per-event financial analysis.",
+      "condition": "a capture note contains price markers together with cost markers and payment/balance markers",
+      "required_evidence": "sale, costs and collected amounts",
+      "proposed_action": "propose a D05 case analysis with the real result",
+      "do_not_apply": "partial figures, or a case still open with pending amounts"
+    },
+    {
+      "id": "R05",
+      "name": "recurring segment or channel",
+      "description": "A segment or channel that shows up across at least three distinct jobs is a real market position.",
+      "condition": "at least three capture notes describe distinct jobs or events through the same segment or channel",
+      "required_evidence": "3 distinct jobs",
+      "proposed_action": "propose a D02 segment record with episodes",
+      "do_not_apply": "single mention or a channel the owner never confirmed"
+    },
+    {
+      "id": "R06",
+      "name": "repeated supplier timing rule",
+      "description": "A timing rule for suppliers or purchases that repeats across events becomes an operational rule.",
+      "condition": "at least two capture notes mention supplier or purchase timing (when things must be ordered)",
+      "required_evidence": "2 distinct events",
+      "proposed_action": "propose a D04 working rule with its episode",
+      "do_not_apply": "a one-time timing detail with no observed repetition"
+    }
+  ],
+  "cadence": {
+    "business_model": {"days": 75, "primary": "D01", "suggestion": "run the business-model template round or review D01 revisions"},
+    "market_customers": {"days": 75, "primary": "D02", "suggestion": "run the market template round or review D02 revisions"},
+    "offer_commercial": {"days": 75, "primary": "D03", "suggestion": "run the offer template round or review D03 revisions"},
+    "execution_processes": {"days": 90, "primary": "D04", "suggestion": "run the execution template round or review D04 revisions"},
+    "economy_finance": {"days": 30, "primary": "D05", "suggestion": "run the economy template round or review the last closed event"},
+    "people_roles": {"days": 180, "primary": "D06", "suggestion": "run the people template round after any hire or departure"},
+    "risks_commitments": {"days": 90, "primary": "D07", "suggestion": "run the risks template round before high-value events"},
+    "direction_decisions": {"days": 90, "primary": "X07", "suggestion": "run the direction template round after each strategic decision"}
+  }
+}

@@ -19,8 +19,9 @@ is privacy-first by construction:
 - **No real business data shipped.** Every template, schema and piece of demo content
   bundled here is synthetic by design.
 - **No hardcoded absolute user paths.** Every tool takes vault/bank/file paths as
-  arguments. (The vault-registry tools default to the user's own `~/.codex` / Obsidian
-  native registry files; both paths can be overridden.)
+  arguments. (The vault-registry tools work with the user's local selector registry
+  (`~/.config/hermes-business-brain/vaults.json`) and the native
+  Obsidian registry files; both paths can be overridden.)
 
 ## Table of Contents
 
@@ -123,8 +124,8 @@ Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcript
 | `brain_create_vault` | `cerebro.py crear` | Create a new empty vault from the bundled template; never overwrites. |
 | `brain_validate_vault` | `validar_boveda.py` | Structural integrity check (ids, links, transfers) — not business truth. |
 | `brain_status` | `cerebro.py estado` | Structural company summary (counts, editorial state, templates). |
-| `brain_register_vault` | `registrar_boveda_codex.py` | Register an open vault in the Codex selector registry (needs Obsidian's native id). |
-| `brain_resolve_vault` | `resolver_boveda_codex.py` | Resolve the vault registered for a Codex project/selector. |
+| `brain_register_vault` | `register_vault` | `registrar_boveda_obsidian.py` | Register an open vault in the local selector registry (`~/.config/hermes-business-brain/vaults.json`; needs Obsidian's native id). |
+| `brain_resolve_vault` | `resolve_vault` | `resolver_boveda_obsidian.py` | Resolve the vault registered for an agent project/selector. |
 | `brain_query` | `cerebro.py consulta-contextual` | Candidate blocks by literal text + source/date/scope filters; no semantic generation. |
 | `brain_capture` | `cerebro.py capturar` | Save preliminary findings as a draft note (not approved knowledge). |
 | `brain_knowledge_map` | `cerebro.py mapa-conocimiento` | Knowledge-map preview (Markdown/Canvas); publish only with SHA/confirmation/backup. |
@@ -143,10 +144,10 @@ All handlers call the engine in-process and return a JSON string with `stdout`,
 1 = unexpected error). Each schema lists the argument flags; they mirror the engine op's
 keyword arguments. Full per-tool reference: [docs/reference/tools.md](docs/reference/tools.md).
 
-## Bundled skills (19)
+## Bundled skills (21)
 
-The plugin ships 20 workflow skills under `hermes_business_brain/skills/`, registered at
-load time as `hermes-business-brain:<name>` — 19 `ce-*` skills (installation, discovery,
+The plugin ships 21 workflow skills under `hermes_business_brain/skills/`, registered at
+load time as `hermes-business-brain:<name>` - 20 `ce-*` skills (installation, discovery,
 query and task execution, transcripts, taxonomy, relations, knowledge changes,
 documentation, research) plus `obsidian-router`, which mandates vault resolution before
 any access.
@@ -175,12 +176,16 @@ Organized by quadrant (Diátaxis).
 - [How to work with transcripts](docs/how-to/work-transcripts.md) — the custody and
   analysis pipeline.
 - [How to use the bundled skills](docs/how-to/use-bundled-skills.md).
+- [How to keep the vault evolving](docs/how-to/keep-the-vault-evolving.md) - the daily
+  capture, periodic scan, approved-promotion and revisit loop.
 
 **Reference** — the machinery, as a dictionary:
 
-- [Reference: Tools](docs/reference/tools.md) — the 18 tools: arguments, types,
+- [Reference: Tools](docs/reference/tools.md) — the 19 tools: arguments, types,
   required/optional, engine backings, examples.
-- [Reference: Bundled Skills](docs/reference/skills.md) — the 20 bundled skills,
+- [Reference: Evolution](docs/reference/evolution.md) - the brain_evolution_scan tool,
+  the promotion rulebook and the revisit cadence table.
+- [Reference: Bundled Skills](docs/reference/skills.md) - the 21 bundled skills,
   families, when each activates.
 - [Reference: CLI](docs/reference/cli-reference.md) — `cerebro.py` subcommands not
   exposed as plugin tools (no plugin CLI launcher exists).
@@ -239,6 +244,6 @@ schemas.py                  tool JSON schemas
 tools.py                    in-process handlers over the engine api (tool layer spawns no processes)
 hermes_business_brain/engine/   native English engine (api facade + ops_vault, ops_knowledge, ops_transcripts)
 hermes_business_brain/data/     model schemas, baseline resources, vault template (English; keys/filenames preserved)
-hermes_business_brain/skills/   the 20 bundled plugin skills (loaded as hermes-business-brain:<name>)
+hermes_business_brain/skills/   the 21 bundled plugin skills (loaded as hermes-business-brain:<name>)
 tests/                      pytest suite (engine + synthetic vault cycle)
 ```

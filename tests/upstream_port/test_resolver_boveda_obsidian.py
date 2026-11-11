@@ -1,4 +1,4 @@
-"""Ported upstream test_resolver_boveda_codex.py: synthetic-only routing and
+"""Ported upstream test_resolver_boveda_obsidian.py: synthetic-only routing and
 
 clean-install failure regressions (selectors, project association, malformed
 registries fail closed, symlink and traversal rejection, native-mismatch
@@ -16,13 +16,13 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from hermes_business_brain.engine.registrar_boveda_codex import (
+from hermes_business_brain.engine.registrar_boveda_obsidian import (
     canonical, native_registry_path, register,
 )
-from hermes_business_brain.engine.resolver_boveda_codex import resolve
+from hermes_business_brain.engine.resolver_boveda_obsidian import resolve
 from hermes_business_brain.engine.validar_boveda import validate
 
-REGISTER_MOD = 'hermes_business_brain.engine.registrar_boveda_codex'
+REGISTER_MOD = 'hermes_business_brain.engine.registrar_boveda_obsidian'
 
 
 class RoutingTest(unittest.TestCase):
@@ -118,7 +118,7 @@ class RoutingTest(unittest.TestCase):
             resolve(self.registry, alias / 'obsidian.json', selector='EMP-A')
 
     def test_cli_missing_native_returns_error(self):
-        # Upstream ran scripts/resolver_boveda_codex.py (exit 2, status error).
+        # Upstream ran scripts/resolver_boveda_obsidian.py (exit 2, status error).
         # In-process equivalent: a missing native registry fails closed.
         self.native.unlink()
         with self.assertRaises(ValueError):

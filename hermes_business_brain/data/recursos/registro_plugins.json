@@ -29,7 +29,7 @@
       "url": "https://obsidian.md/help/cli",
       "decision": "evaluar_en_destino",
       "instalacion": "requires a compatible installer, the Obsidian GUI, and explicit activation",
-      "aplica": "drive Obsidian from the terminal with local Codex",
+      "aplica": "drive Obsidian from the terminal (external CLI)",
       "limites": "not available on every machine or remote surface"
     },
     {

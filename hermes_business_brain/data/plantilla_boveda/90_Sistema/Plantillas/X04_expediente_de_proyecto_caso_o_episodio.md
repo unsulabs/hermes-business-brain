@@ -6,9 +6,9 @@ clase: X04
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# X04 — Project, case, or episode file
+# X04 - Project, case, or episode file
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - What changed materially during the case, and why?
@@ -39,7 +39,7 @@ sensibilidad: interno
 
 <!-- write only after retrieving/cross-checking sources and expert judgment -->
 
-### 05 Delivery, collection, and closure — separately
+### 05 Delivery, collection, and closure - separately
 
 <!-- write only after retrieving/cross-checking sources and expert judgment -->
 

@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .registrar_boveda_codex import (
+from .registrar_boveda_obsidian import (
     FORMAT,
     NATIVE,
     REGISTRY,
@@ -24,7 +24,7 @@ def resolve(registry_path: Path, native_path: Path, *, selector: str | None = No
     registry = read_json(registry_path)
     entries = registry.get("vaults")
     if registry.get("format") != FORMAT or not isinstance(entries, list):
-        raise ValueError("Unknown Codex registry format")
+        raise ValueError("Unknown selector registry format")
     matches = []
     for entry in entries:
         if not isinstance(entry, dict):

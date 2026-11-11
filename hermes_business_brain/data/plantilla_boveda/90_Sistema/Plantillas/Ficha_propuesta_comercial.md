@@ -15,7 +15,7 @@ estado_comercial: ""
 ---
 # Commercial proposal title
 
-> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer `python scripts/cerebro.py ficha` for a unique identity.
+> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer the `brain_card` tool for a unique identity.
 
 **Represents:** Particular offer communicated to a recipient at a specific version and date.
 

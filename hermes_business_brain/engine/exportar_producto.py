@@ -10,17 +10,11 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 DIRECTORIES = {
-    '.agents', '.cursor', 'contratos', 'docs', 'ejemplos', 'guia',
-    'investigacion', 'metodologia', 'modelo', 'plantilla_boveda',
-    'recursos', 'scripts', 'tests',
+    'docs', 'hermes_business_brain', 'tests',
 }
 FILES = {
-    '.gitignore', '.gitattributes', 'AGENTS.md', 'README.md', 'EMPIEZA_AQUI.md',
-    'CHANGELOG.md', 'PROMPT_INICIO_CODEX.md',
-    'PROMPT_RECUPERAR_EMPRESA_EXISTENTE_CODEX.md',
-    'PROMPT_SUBIR_A_GITHUB.md', 'LICENSE', 'CONTRIBUTING.md',
-    'requirements.txt', 'README.es.md', '.cursor-init.yaml', 'THIRD_PARTY_NOTICES.md',
-    'START_HERE.md', 'GET_STARTED_WITH_CODEX.md', 'CONTINUE_WITH_CODEX.md',
+    '.gitignore', '.gitattributes', 'README.md', 'LICENSE', '__init__.py',
+    'plugin.yaml', 'schemas.py', 'tools.py',
 }
 MANIFEST = 'PRODUCT_MANIFEST.json'
 # Also excluded below allowed folders and even where Git accepted them with
@@ -52,8 +46,8 @@ def exportar(root: Path, destino: Path) -> dict:
     selected = [p for p in tracked
                 if (p in FILES or p.split('/')[0] in DIRECTORIES)
                 and not es_ruta_privada(p)]
-    if not {'AGENTS.md', 'README.md', 'scripts/cerebro.py',
-            '.agents/skills/ce-instalacion/SKILL.md'} <= set(selected):
+    if not {'README.md', 'plugin.yaml', 'hermes_business_brain/engine/cerebro.py',
+            'hermes_business_brain/skills/ce-instalacion/SKILL.md'} <= set(selected):
         raise ValueError('Essential product files are missing')
     if not selected:
         raise ValueError('No product files found')

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Register a vault already open in Obsidian for the local Codex router.
+"""Register a vault already open in Obsidian for the local selector router.
 
 Does not create or modify the vault nor the native Obsidian registry. It
 requires that Obsidian already assigned an ID to the path; it only updates
-the Codex selector.
+the local selector registry.
 """
 # ruff: noqa: TRY004, UP017  (upstream-identical: ValueError semantics and timezone.utc)
 from __future__ import annotations
@@ -19,7 +19,7 @@ from pathlib import Path, PureWindowsPath
 
 from .platform_fs import is_link_or_reparse
 
-REGISTRY = Path.home() / ".codex" / "obsidian" / "vaults.json"
+REGISTRY = Path.home() / ".config" / "hermes-business-brain" / "vaults.json"
 def native_registry_path() -> Path:
     if sys.platform == "darwin":
         return Path.home() / "Library/Application Support/obsidian/obsidian.json"
@@ -29,7 +29,7 @@ def native_registry_path() -> Path:
 
 
 NATIVE = native_registry_path()
-FORMAT = "codex-obsidian-vaults/1"
+FORMAT = "hermes-obsidian-vaults/1"
 
 
 def canonical(value: str | Path) -> Path:
@@ -80,7 +80,7 @@ def write_registry(registry_path: Path, registry: dict, original: bytes | None) 
     try:
         current = registry_path.read_bytes() if registry_path.exists() else None
         if current != original:
-            raise ValueError("The Codex registry changed during the operation; nothing was overwritten")
+            raise ValueError("The selector registry changed during the operation; nothing was overwritten")
         os.replace(temp_path, registry_path)
     finally:
         temp_path.unlink(missing_ok=True)
@@ -132,19 +132,19 @@ def register(vault: Path, name: str, alias: str, registry_path: Path,
 
     registry_path = canonical(registry_path)
     if registry_path.is_symlink():
-        raise ValueError("Codex registry is a symbolic link")
+        raise ValueError("Selector registry is a symbolic link")
     original = registry_path.read_bytes() if registry_path.exists() else None
     if original is not None:
         registry = read_json(registry_path)
         if registry.get("format") != FORMAT or not isinstance(registry.get("vaults"), list):
-            raise ValueError("Unknown Codex registry format")
+            raise ValueError("Unknown selector registry format")
     else:
         registry = {"format": FORMAT, "vaults": []}
 
     entries = registry["vaults"]
     for entry in entries:
         if not isinstance(entry, dict):
-            raise ValueError("Invalid entry in the Codex registry")
+            raise ValueError("Invalid entry in the selector registry")
         if entry.get("path") == str(vault) and entry.get("id") == ident:
             if (entry.get("name") == name and alias in entry.get("aliases", [])
                     and entry.get("instructions") == instructions
@@ -188,7 +188,7 @@ def main() -> int:
     parser.add_argument("--instrucciones", default="90_Sistema/Como_usar.md")
     parser.add_argument("--inicio", default="Inicio.md")
     parser.add_argument("--proyecto", type=Path,
-                        help="Codex project directory that must resolve this vault")
+                        help="agent project directory that must resolve this vault")
     args = parser.parse_args()
     try:
         result = register(args.vault, args.nombre, args.alias, args.registro,

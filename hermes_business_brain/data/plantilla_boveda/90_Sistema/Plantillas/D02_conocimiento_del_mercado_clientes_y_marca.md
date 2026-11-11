@@ -6,9 +6,9 @@ clase: D02
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# D02 — Market knowledge, customers, and brand
+# D02 - Market knowledge, customers, and brand
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - Compare excellent and problematic customers: what signals appear before they hire?

@@ -17,7 +17,7 @@ from hermes_business_brain.engine import (
     api,
     cerebro,
     ops_vault,
-    resolver_boveda_codex,
+    resolver_boveda_obsidian,
 )
 
 ENGINE_DIR = Path(api.__file__).resolve().parent
@@ -36,8 +36,8 @@ CORE_MODULES = [
     "lib_ce.py",
     "operacion.py",
     "platform_fs.py",
-    "resolver_boveda_codex.py",
-    "registrar_boveda_codex.py",
+    "resolver_boveda_obsidian.py",
+    "registrar_boveda_obsidian.py",
     "validar_boveda.py",
     "windows_fs.py",
 ]
@@ -185,7 +185,7 @@ class TestEnglishOnly(unittest.TestCase):
     def test_resolver_missing_selector_error_is_english(self):
         # The first validation in resolve() runs before any registry read.
         with self.assertRaises(ValueError) as ctx:
-            resolver_boveda_codex.resolve(Path("/nonexistent/registry.json"), Path("/nonexistent/native.json"))
+            resolver_boveda_obsidian.resolve(Path("/nonexistent/registry.json"), Path("/nonexistent/native.json"))
         message = str(ctx.exception)
         self.assertNotIn("á", message)
         self.assertIn("selector", message)

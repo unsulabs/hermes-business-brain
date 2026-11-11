@@ -12,7 +12,7 @@ registrado_en: ""
 ---
 # Client account title
 
-> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer `python scripts/cerebro.py ficha` for a unique identity.
+> GUIDED TEMPLATE: if copied manually, replace ID, title, and dates; prefer the `brain_card` tool for a unique identity.
 
 **Represents:** Commercial relationship with an account, prospect, or contracting party, with differentiated states.
 

@@ -1,6 +1,6 @@
 """Ported upstream test_aceptacion_integracion_local.py (all methods skipped).
 
-Upstream produces the Codex report for a REAL local-instance acceptance flow
+Upstream produces a local-instance acceptance report
 (scripts/aceptacion_integracion_local.py: zip report over a real Obsidian
 instance without publishing notes). The v2 plugin repo ships no
 aceptacion_integracion_local module and the flow requires a real user vault /

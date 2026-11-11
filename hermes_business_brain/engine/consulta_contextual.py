@@ -229,5 +229,5 @@ def consulta(vault_path:Path, literal:str, *, tema:str|None=None,
         "respuesta_semantica_generada":False,
         "limite":("Word match without semantic understanding or proof of relevance. Review the full note, the original source, scope, authority and counter-evidence before answering."
                   if orientar else
-                  "Literal candidates. Review the original source, scope, authority, permissions and counter-evidence with Codex before answering the user."),
+                  "Literal candidates. Review the original source, scope, authority, permissions and counter-evidence with the owner or an external agent before answering the user."),
     }

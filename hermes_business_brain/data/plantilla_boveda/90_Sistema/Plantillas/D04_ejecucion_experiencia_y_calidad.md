@@ -6,16 +6,16 @@ clase: D04
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# D04 — Execution, experience, and quality
+# D04 - Execution, experience, and quality
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - Reconstruct a real difficult job from confirmation to close: where were the critical decisions?
 - What early signal lets you anticipate that delivery may go wrong?
 - Which part can follow a checklist and which part requires expert judgment?
 - Which error is costly/hard to fix and which control prevents it?
-- What does «done» or «accepted» mean for the company in practice?
+- What does "done" or "accepted" mean for the company in practice?
 
 ## Synthesis structure (develop from evidence)
 

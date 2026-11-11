@@ -6,9 +6,9 @@ clase: D03
 estado_editorial: borrador
 sensibilidad: interno
 ---
-# D03 — Portfolio and commercial system
+# D03 - Portfolio and commercial system
 
-> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1–G7, and run P03 A–K per the vNext guide.
+> WORKING TEMPLATE, not a finished document. Do not duplicate as an empty file or claim validity without sources. Before writing, retrieve material, distinguish K1/K2/K3/K4, interview the expert on K1, validate gates G1-G7.
 
 ## Expert questions for this class
 - How does the company build a price when the work does not match a standard offer?
@@ -47,7 +47,7 @@ sensibilidad: interno
 
 <!-- write only after retrieving/cross-checking sources and expert judgment -->
 
-### 07 Commercial–operational delivery rules
+### 07 Commercial-operational delivery rules
 
 <!-- write only after retrieving/cross-checking sources and expert judgment -->
 
