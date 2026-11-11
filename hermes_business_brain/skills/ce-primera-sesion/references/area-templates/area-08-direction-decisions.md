@@ -45,3 +45,28 @@ Capture the strategic boundaries, priorities and the decision record - what was 
 - **K2:** an actual decision record, experiment log, or the dated message where the change was announced.
 - **K3:** whether a future direction will pay off - no evidence exists yet.
 - **K4:** strategic theory the owner never applies to a real choice.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- The decision trail so far: each direction choice already taken recorded with who decided and when (X07), and future lines named but kept distinct from current operations (X04 when explored).
+- Selection criteria for future moves as stated by the owner (K1 if missing), and unverified hopes marked K3.
+- No future line is presented as current reality - it stays a named intention until there is evidence.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Which decision changed the business most last year, and what would you do differently with what you know now?
+2. Which future line would you greenlight tomorrow if cash were ready, and what evidence would kill it?
+3. Who is involved when a big decision is made, and is that recorded anywhere?
+4. What would make you stop a current line that still brings money?
+5. What is the one number you want to know twelve months from now?
+
+### What grows from here (triggers)
+- A decision made with a decider and date becomes an X07 decision record; its boundary updates the relevant D/X.
+- A future line with real exploration (a test, a quote, a market contact) becomes an X04 or investigation record with sources.
+- A direction change updates D01; a direction intention without action stays K3.
+- A stated resolution without a decider or date is a gap, not a document.
+
+### Revisit cadence
+- Revisit after every strategic decision and at least quarterly as the direction review, through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: decisions are recorded with decider, date and evidence, and future lines are visibly separated from current operations.

@@ -46,3 +46,28 @@ Establish who actually does what and who can decide what, based on observed func
 - **K2:** an actual delegation document, access log, or the person's own testimony where authorized.
 - **K3:** how a substitution would actually work - it has never been tested end to end.
 - **K4:** personal details irrelevant to roles, responsibilities and continuity.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- A D06 draft under review with sources: the real people the business runs on (fixed core vs per-event), the payroll structure (weekly base vs piecework extras) as actually run, and who decides what - commercial, design, administration, execution.
+- Authority episodes: who can commit money, change scope, or make promises to a client when the owner is absent.
+- Each role traced to a real task or event; open authority questions marked K1.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Map every role you leaned on last year: which were fixed, which per event, which trusted with money?
+2. Who can make a commitment to a client when you are absent, and what is the rule for when they should not?
+3. What would each key person say they are responsible for, in their own words?
+4. Which task can only you do, and what would it take to hand it off?
+5. How do you decide someone's rate, and is that decision recorded anywhere?
+
+### What grows from here (triggers)
+- A role with real responsibilities becomes an entity card for the person or role (persona, tarea), with sources.
+- An authority episode becomes an explicit D06 authority statement (owner-confirmed) - who may and who may not commit.
+- A hand-off feasibility explored in episodes becomes a future line for D04 or D08, not a promise.
+- A single mention of a person without a real role stays in source.
+
+### Revisit cadence
+- Revisit after any hire, departure or shift in responsibilities, and at least twice a year through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: someone else can open D06 and know exactly who decides what and who may commit what.

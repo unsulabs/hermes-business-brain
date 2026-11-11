@@ -46,3 +46,28 @@ Understand how money moves through the business and which figures the owner actu
 - **K2:** the accounting system, bank records, invoices, quotes and contracts - recoverable figures; demand the source, not the remembered number.
 - **K3:** projections for a scenario never measured (e.g. a big payment permanently lost).
 - **K4:** accounting refinements the business does not use to decide anything.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- A D05 draft under review with sources: the payment rule actually in force (advance, balance and timing), the sale vs collected vs balance vs costs vs result distinctions as the owner experiences them, and the cost categories that recur (materials, rentals, labor, commissions, operating).
+- A case-level account (sale minus commissions minus costs minus labor) only where the figures exist; K2 for the missing records.
+- Nothing invented where a figure is missing - a pending amount stays pending.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Walk the money of the last completed event: what was the real result against what was quoted?
+2. Which cost category drifts the most between quote and actual?
+3. How do you know an event will be profitable BEFORE the event week?
+4. Which cash timing squeezes you (advances vs supplier deadlines) and what rule relieves it?
+5. What would the top three highest-margin events tell you that the revenue ranking hides?
+
+### What grows from here (triggers)
+- An event with complete figures becomes a case analysis the owner can reuse for the next similar event (result per event with receipts).
+- A payment rule the owner states from episodes becomes an explicit D05 criterion (owner-confirmed).
+- A commission or discount stays a per-event recorded item - never a fixed constant in the brain.
+- A single figure without a source stays K2; it never becomes a D05 claim.
+
+### Revisit cadence
+- Revisit after every closed event (cierre) and at least monthly for cash timing, through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: the result of each event is computed from recorded numbers, and costs are tied to real receipts.

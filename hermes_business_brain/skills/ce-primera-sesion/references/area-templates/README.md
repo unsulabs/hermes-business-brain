@@ -1,6 +1,6 @@
 # Area templates - first session
 
-Eight guided-open-question templates, one per business area, used by the [ce-primera-sesion](../../SKILL.md) skill. Run them one by one, starting wherever the owner has most to say; each template is a guide, never a form to be filled in.
+Eight guided-open-question templates, one per business area, used by the [ce-primera-sesion](../../SKILL.md) skill. Run them one by one, starting wherever the owner has most to say; each template is a guide, never a form to be filled in. Each template is a **base, not the finish line**: the first session extracts the usable minimum for the vault, and the `Base and development loop` section inside every template defines how the area keeps growing - round 2+ deepening prompts, triggers that promote material into documents (K1 to explicit criterion, a repeated offer line to X01, a made decision to X07), and the revisit cadence the vault follows through [ce-continuidad](../../../ce-continuidad/SKILL.md).
 
 | # | Area | Template | One-line summary |
 |---|------|----------|------------------|

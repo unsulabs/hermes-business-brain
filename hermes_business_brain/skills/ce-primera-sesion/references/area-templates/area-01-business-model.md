@@ -46,3 +46,29 @@ Understand how the business actually creates, delivers and captures value today 
 - **K2:** real invoices, contracts, price lists, bank or accounting records they authorize; the actual figures behind the money story.
 - **K3:** whether a future line will work; untested assumptions about a new market or offer.
 - **K4:** idealized mission statements; details of competitors the owner has never actually met in the market.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+
+### Base - end of first round (what the vault should already hold)
+- A D01 draft under review with sources: the observed money loop, the segments the owner actually works with, the payment rule, and the owner's own fit/decline criteria as stated (no external positioning, no aspirational pitch).
+- Each fit/decline criterion traced to an episode (a real yes, a real no, a real costly job), or marked as a K1 gap if not yet stated.
+- Pending figures recorded as K2 (invoices, price lists, bank records) with nothing invented in their place.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Walk the order-to-money loop again through a *second recent job* and compare: what differed, and which step is usually the tightest?
+2. What was the most expensive mistake in the last year, and what rule exists now so it does not repeat?
+3. Which customer recently chose something else instead of you - what did they choose, and at what price?
+4. If revenue doubled without adding any working time, how would that look? Which part of the loop would change?
+5. What do you know today about this business that you could not have proven a year ago - and what changed it?
+
+### What grows from here (triggers)
+- A fit criterion confirmed by a second episode moves from K1 to an explicit D01 criterion (still owner-confirmed).
+- An offer line sold more than once becomes a candidate X01 (living record) instead of a source anecdote.
+- A direction choice made with a decider and date becomes an X07 decision record; its resulting boundary updates D01.
+- A single anecdote, aspiration or unverified figure stays in source - it never opens a document by itself.
+
+### Revisit cadence
+- Revisit this area after any significant commercial change (new segment, changed payment rule, a major loss or win) and at least every two to three months through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: the D01, re-read by someone else, describes the *observed* model with sources - not a pitch and not a questionnaire.

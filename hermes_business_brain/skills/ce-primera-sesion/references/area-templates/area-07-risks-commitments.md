@@ -46,3 +46,28 @@ Identify what would genuinely hurt if it failed and which commitments are proven
 - **K2:** the actual contract, permit, invoice or policy document; the recoverable paper behind each commitment.
 - **K3:** whether a control would actually work - it has never been tested end to end.
 - **K4:** risks the owner has explicitly decided not to manage.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- A D07 draft under review with sources: the commitments actually in force (client agreements, supplier arrangements, deposits or guarantees), and the dependencies that matter (single suppliers, timing-critical inputs).
+- Risk criteria as episodes: what went wrong once (a late payment, a lost deposit, a cancellation) and what rule exists so it does not repeat.
+- Agreements the owner mentions are recorded as K2 until the originals are recoverable.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Which current commitment would hurt most if it broke, and what protects you today?
+2. Which supplier has no backup, and what happens if they fail at short notice?
+3. What went wrong once with a client or supplier, and what rule now exists?
+4. Which relationship is worth more than any single job - and how is it protected?
+5. What risk are you carrying right now that nobody else knows about?
+
+### What grows from here (triggers)
+- A real agreement (client or supplier) becomes a D07 commitment entry with the original as source.
+- A single-supplier dependency confirmed by episodes becomes an explicit D07 dependency with a mitigation or an accepted risk.
+- A loss episode that created a rule updates D07; a loss episode with no rule yet stays as a K1 gap.
+- A hypothetical risk with no episode stays K3; it never becomes a D07 claim.
+
+### Revisit cadence
+- Revisit before every high-value event, after any cancellation or breach, and at least quarterly through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: commitments and dependencies are listed with mitigations where episodes exist, and the open risks are owned by someone.

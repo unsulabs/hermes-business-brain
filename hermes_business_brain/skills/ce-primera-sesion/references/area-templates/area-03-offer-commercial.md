@@ -46,3 +46,28 @@ Establish what can be contracted today - scope, exclusions, price rules and vali
 - **K2:** the last proposals, price lists, or the quote/estimates files - a recoverable commercial source.
 - **K3:** whether a planned offer will sell; the right price for a line never actually sold.
 - **K4:** marketing decorations that never influence a single transaction.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- A D03 draft under review with sources: the offer lines actually sold (with price examples from real quotes), the way the owner prices (global, per unit, per area), and the proposal-to-acceptance flow actually used.
+- Any commission or referral mechanic recorded as variable by event, never as a fixed constant.
+- Price references only from real quotes or invoices the owner recognizes; K2 for a real price list if absent.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. List every service line actually sold in the last twelve months; which are recurring and which are one-offs?
+2. When does a proposal become a booked event - what has to happen between sending and accepting?
+3. How do you handle a client who keeps adjusting scope or budget? Where is the line, and who decides it?
+4. Which of your prices would you defend to a friend, and which are guesswork?
+5. What would it take to sell a known line again without rebuilding it from scratch?
+
+### What grows from here (triggers)
+- An offer line sold more than once becomes a candidate X01 (living record) instead of a source anecdote.
+- A pricing rule the owner states from episodes becomes an explicit D03 criterion (owner-confirmed).
+- A variability in commissions stays a recorded pattern in D03 - never hard-coded into the brain.
+- A single quote or one-time job stays in source; it does not open a document by itself.
+
+### Revisit cadence
+- Revisit after any change in how the owner quotes or sells, and at least every three months through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: the offer lines, pricing logic and acceptance flow are described from real quotes and episodes, and the reader can price a new lead the way the owner would.

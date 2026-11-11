@@ -46,3 +46,28 @@ Capture how the work actually happens - the observed workflow with its triggers,
 - **K2:** a real example file, delivery log, incident record, or the tool's own history - recoverable execution evidence.
 - **K3:** how a process would behave under a scenario never actually tried.
 - **K4:** steps that never happen in practice and are not needed to understand delivery.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- A D04 draft under review with sources: the real production loop (order to prep to mount to dismount to returns), who executes each step, and the staffing structure actually run (fixed core vs per-event extras).
+- Quality criteria as episodes: what made an event go well and what made one heavy - each traced to a real event.
+- Supplier timing rules the owner states (what must be ordered when) recorded as observed rules, with K2 for the real purchase orders.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Walk the production of the last event again: what was ordered when, and where did it almost break?
+2. Which supplier timing has burned you, and what rule now prevents it?
+3. What did staff do differently that saved or cost you money?
+4. Where does the team improvise because no format or checklist covers it?
+5. What quality check happens before the client ever sees the result?
+
+### What grows from here (triggers)
+- A timing rule confirmed by more than one event becomes an explicit D04 working rule with its episode.
+- A recurring improvisation spot becomes a candidate format or checklist in D04 (still owner-approved).
+- A staffing structure episode (fixed core vs extras) feeds D04 and links to D06 for the people side.
+- A single production anecdote stays in source; it does not open a document by itself.
+
+### Revisit cadence
+- Revisit after each peak season and after any change in how work is produced, at least every three months through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: the loop is described with names, timings and owners, and quality criteria are episodes someone can apply.

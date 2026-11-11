@@ -46,3 +46,28 @@ Map who buys and why - real customers and prospects reconstructed from concrete 
 - **K2:** CRM or email records, customer messages, reviews where authorized; a documented case or account file.
 - **K3:** why a segment behaves the way it does - nobody has evidence yet, only hypotheses.
 - **K4:** demographic detail the owner never uses to decide anything.
+
+## Base and development loop
+
+This template is a **base**, not the finish line. The first session extracts the usable minimum for the vault; the business brain is expected to keep growing from it, and later rounds deepen what the first round seeded.
+### Base - end of first round (what the vault should already hold)
+- A D02 draft under review with sources: the segments the owner actually serves (who buys vs who decides), the channels that demonstrably bring work, and the reputation episodes that explain why owners are chosen.
+- Each segment or channel claim traced to a real encounter (a client, a referral, a declined job), or marked as a K1 gap if not yet stated.
+- Market observations come from real encounters, never from polls the owner has not run.
+
+### Round 2+ - deepening prompts (run in later sessions, one at a time)
+1. Which segment brought the most revenue in the last year, and which brought the most headaches? Compare the two.
+2. Where did the last three new clients come from, and what did they already know about you before contacting you?
+3. Who almost became a client but did not, and what did they choose instead?
+4. What do your best referrers actually say when they recommend you? Find out - that is the brand claim with evidence.
+5. Which segment that you serve would you serve less, and which more, if you could shape demand?
+
+### What grows from here (triggers)
+- A channel or segment confirmed by multiple jobs becomes an explicit D02 segment record with episodes.
+- A repeated referral pattern feeds the D02 brand claim; a single referral stays in source.
+- A price or positioning objection heard more than once becomes a D02 observation with a source, not a fix.
+- A persona description with no real encounter stays a K3 hypothesis, never a document.
+
+### Revisit cadence
+- Revisit when a new-client wave happens, when a channel becomes louder or quieter, and at least every three months through [ce-continuidad](../../../ce-continuidad/SKILL.md).
+- Maturity marker: segments and channels are described from episodes with named sources, and the owner can explain why clients choose them - from evidence, not impressions.
