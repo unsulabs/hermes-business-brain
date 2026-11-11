@@ -15,6 +15,7 @@ the activation language the frontmatter description itself carries.
 | --- | --- | --- | --- |
 | `hermes-business-brain:ce-instalacion` | "Install and configure the Business Brain for the first time with the Hermes agent. Activate when a person asks to install, start, configure or continue the first installation of Obsidian/business." | Installation & bootstrap | First-time install, start, configuration, or continuation of the first Obsidian/business installation. |
 | `hermes-business-brain:ce-desarrollo-empresa` | "Orchestrate the installation, construction, daily use and maintenance of the second brain of a new or existing business, venture or self-employment activity. Activate when asked to create, continue or complete the vault, transfer criteria to people/agents or use the knowledge for real work." | Installation & daily operation | Asked to create, continue or complete the vault; transfer criteria; use vault knowledge for real work. |
+| `hermes-business-brain:ce-primera-sesion` | "First session onboarding: interview the owner across the eight key business areas, capture sources, map the knowledge architecture and open the justified D/X documents, so new or existing vaults start producing usable business knowledge." | Installation & bootstrap | First session with the owner: eight-area interview, sources, knowledge architecture, justified D/X start. |
 | `hermes-business-brain:ce-descubrimiento` | "Listen to the free braindump of a business, venture or self-employment activity, recover its sources and turn the owner's episodes and patterns into documents and operational work. Activate when building or expanding a vault, even if it already has notes." | Discovery | Building or expanding a vault from the owner's free-form talk, even with existing notes. |
 | `hermes-business-brain:ce-consulta` | "Use the business brain to answer and perform concrete work with criteria, sources, time and permissions. Activate for queries, drafting, commercial preparation, execution, decisions, contracts, prices, projects or history." | Query & task execution | Queries, drafting, commercial preparation, execution, decisions, contracts, prices, projects, or history questions. |
 | `hermes-business-brain:ce-continuidad` | "Resume and maintain a business vault daily in the face of conversations, clients, files, decisions, corrections and tasks, without losing sources nor re-interviewing the owner." | Continuity | Daily resumption and upkeep of a business vault. |
@@ -36,7 +37,7 @@ the activation language the frontmatter description itself carries.
 
 ## Family index
 
-- **Installation & bootstrap**: `ce-instalacion`, `ce-desarrollo-empresa`
+- **Installation & bootstrap**: `ce-instalacion`, `ce-desarrollo-empresa`, `ce-primera-sesion`
 - **Discovery**: `ce-descubrimiento`
 - **Query & task execution**: `ce-consulta`
 - **Continuity**: `ce-continuidad`

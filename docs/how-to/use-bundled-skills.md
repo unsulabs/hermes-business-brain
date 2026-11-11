@@ -80,7 +80,7 @@ resolving the vault before any read inside it).
 
 **Honest limits:**
 
-- **Skills are not tools.** The plugin exposes exactly 18 `brain_*` tools (see
+- **Skills are not tools.** The plugin exposes exactly 19 `brain_*` tools (see
   the [README](../../README.md) and [`tools.md`](../reference/tools.md)). Five
   positions are now first-class tools: `ficha` →
   `brain_card`, `proponer` → `brain_propose`, `documento` →

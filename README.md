@@ -28,8 +28,8 @@ is privacy-first by construction:
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
-- [Tools (18)](#tools-18)
-- [Bundled skills (19)](#bundled-skills-19)
+- [Tools (19)](#tools-19)
+- [Bundled skills (21)](#bundled-skills-21)
 - [Documentation](#documentation)
 - [Security](#security)
 - [Contributing](#contributing)
@@ -116,7 +116,7 @@ vault answers "no candidates yet" — that is designed behaviour, not a bug.
 Continue with an existing vault: [docs/how-to/continue-existing-vault.md](docs/how-to/continue-existing-vault.md).
 Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcripts.md](docs/how-to/work-transcripts.md).
 
-## Tools (18)
+## Tools (19)
 
 | Tool | CLI backing | Purpose |
 | --- | --- | --- |
