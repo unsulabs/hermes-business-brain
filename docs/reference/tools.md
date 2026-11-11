@@ -72,6 +72,7 @@ failure is returned inside the JSON, not thrown.
 | `brain_document` | `document` | `cerebro.py documento` | Register a developed D01–D07 / X01–X07 document without approving it. |
 | `brain_knowledge_plan` | `knowledge_plan` | `cerebro.py plan-conocimiento` | Read-only note-map/tags/relations audit BEFORE drafting, from a structured JSON plan. |
 | `brain_dx_apply` | `dx_apply` | `cerebro.py aplicar-dx` | Apply a D/X modification after specific authorization and backups (SHA-256-gated). |
+| `brain_evolution_scan` | `evolution_scan` | (no upstream CLI) | Read-only evolution scan: promotion candidates and due revisits. See [evolution.md](evolution.md). |
 
 Subcommands of the engine's CLI that are **not** exposed as plugin tools
 are documented in [cli-reference.md](cli-reference.md).
@@ -438,3 +439,19 @@ and a backup directory; never edits without authorization evidence.
 ```json
 brain_dx_apply({"vault": "/Users/alice/vaults/empresa", "propuesta": "/Users/alice/tmp/propuesta.md", "sha_original": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "sha_candidato": "0a08f15d6c15b0f00a089f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822c", "responsable": "Alice", "referencia_autorizacion": "AUT-001", "backup_dir": "/Users/alice/backups"})
 ```
+
+## brain_evolution_scan
+
+Read-only evolution scan of one vault: promotion candidates for knowledge
+ready to evolve (capture/rules driven) and areas whose revisit cadence is
+due. Results are **presented to the owner for confirmation**; the tool never
+applies a promotion. Full rulebook, cadence table and output shape live in
+[evolution.md](evolution.md).
+
+| Argument | Type | Required | Meaning |
+| --- | --- | --- | --- |
+| `vault` | string | yes | Absolute path to the vault directory. |
+
+Returns `summary` (sources/documents/entities counts), `candidates` (`rule_id`,
+`proposed_action`, `evidence`, `status`: `ready`/`partial`) and `due_visits`
+(`area`, cadence, suggestion).

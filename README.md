@@ -7,7 +7,7 @@ Offline Obsidian "business-brain" toolkit: 18 network-free Hermes tools with a n
 [![Docs: English](https://img.shields.io/badge/docs-English-blue.svg)](docs/)
 
 `hermes-business-brain` is an offline Python toolkit for Obsidian "business
-brain" vaults, shipped as a Hermes plugin: **18 local tools** backed by a
+brain" vaults, shipped as a Hermes plugin: **19 local tools** backed by a
 **native English engine** (`hermes_business_brain/engine/`). Every tool runs
 the engine **in-process** against **user-provided paths only**. The plugin
 is privacy-first by construction:
@@ -138,6 +138,7 @@ Capture transcripts and drive the custody pipeline: [docs/how-to/work-transcript
 | `brain_document` | `cerebro.py documento` | Register a developed D01–D07 / X01–X07 document without approving it. |
 | `brain_knowledge_plan` | `cerebro.py plan-conocimiento` | Read-only note-map/tags/relations audit BEFORE drafting, from a structured JSON plan. |
 | `brain_dx_apply` | `cerebro.py aplicar-dx` | Apply a D/X modification after specific authorization and backups (SHA-256-gated). |
+| `brain_evolution_scan` | `evolution_scan` (engine op; no upstream CLI) | Read-only evolution scan: promotion candidates and due revisits — never applies. |
 
 All handlers call the engine in-process and return a JSON string with `stdout`,
 `stderr`, `exit_code` and an English `summary` (0 = success, 2 = engine refused,

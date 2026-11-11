@@ -7,7 +7,7 @@ common mistake to avoid. It was verified against Hermes Agent v0.23.0
 
 ## What you are installing
 
-`hermes-business-brain` adds 18 local tools (`brain_create_vault`,
+`hermes-business-brain` adds 19 local tools (`brain_create_vault`,
 `brain_validate_vault`, `brain_status`, `brain_query`, `brain_capture`,
 `brain_card`, `brain_document`, `brain_propose`, `brain_knowledge_plan`,
 `brain_dx_apply`, and others — see the [README](../../README.md) for the full
