@@ -863,4 +863,25 @@ TOOL_SCHEMAS: dict[str, dict] = {
             ],
         },
     },
+    "brain_evolution_scan": {
+        "name": "brain_evolution_scan",
+        "description": (
+            "Read-only evolution scan for a business vault: evaluates the promotion rules "
+            "in reglas_evolucion.json against captured sources, D/X documents, entity cards "
+            "and CONTROL notes, and returns evolution candidates (estado listo/parcial with "
+            "evidence paths) plus areas whose revisit cadence is due. Writes nothing; "
+            "candidates are proposals for the owner to confirm, never applied automatically. "
+            "Engine op: evolution_scan."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vault": {
+                    "type": "string",
+                    "description": "Absolute path to the business vault to scan.",
+                },
+            },
+            "required": ["vault"],
+        },
+    },
 }

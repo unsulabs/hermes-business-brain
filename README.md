@@ -143,10 +143,10 @@ All handlers call the engine in-process and return a JSON string with `stdout`,
 1 = unexpected error). Each schema lists the argument flags; they mirror the engine op's
 keyword arguments. Full per-tool reference: [docs/reference/tools.md](docs/reference/tools.md).
 
-## Bundled skills (19)
+## Bundled skills (21)
 
-The plugin ships 20 workflow skills under `hermes_business_brain/skills/`, registered at
-load time as `hermes-business-brain:<name>` — 19 `ce-*` skills (installation, discovery,
+The plugin ships 21 workflow skills under `hermes_business_brain/skills/`, registered at
+load time as `hermes-business-brain:<name>` - 20 `ce-*` skills (installation, discovery,
 query and task execution, transcripts, taxonomy, relations, knowledge changes,
 documentation, research) plus `obsidian-router`, which mandates vault resolution before
 any access.
@@ -175,12 +175,16 @@ Organized by quadrant (Diátaxis).
 - [How to work with transcripts](docs/how-to/work-transcripts.md) — the custody and
   analysis pipeline.
 - [How to use the bundled skills](docs/how-to/use-bundled-skills.md).
+- [How to keep the vault evolving](docs/how-to/keep-the-vault-evolving.md) - the daily
+  capture, periodic scan, approved-promotion and revisit loop.
 
 **Reference** — the machinery, as a dictionary:
 
-- [Reference: Tools](docs/reference/tools.md) — the 18 tools: arguments, types,
+- [Reference: Tools](docs/reference/tools.md) — the 19 tools: arguments, types,
   required/optional, engine backings, examples.
-- [Reference: Bundled Skills](docs/reference/skills.md) — the 20 bundled skills,
+- [Reference: Evolution](docs/reference/evolution.md) - the brain_evolution_scan tool,
+  the promotion rulebook and the revisit cadence table.
+- [Reference: Bundled Skills](docs/reference/skills.md) - the 21 bundled skills,
   families, when each activates.
 - [Reference: CLI](docs/reference/cli-reference.md) — `cerebro.py` subcommands not
   exposed as plugin tools (no plugin CLI launcher exists).
@@ -239,6 +243,6 @@ schemas.py                  tool JSON schemas
 tools.py                    in-process handlers over the engine api (tool layer spawns no processes)
 hermes_business_brain/engine/   native English engine (api facade + ops_vault, ops_knowledge, ops_transcripts)
 hermes_business_brain/data/     model schemas, baseline resources, vault template (English; keys/filenames preserved)
-hermes_business_brain/skills/   the 20 bundled plugin skills (loaded as hermes-business-brain:<name>)
+hermes_business_brain/skills/   the 21 bundled plugin skills (loaded as hermes-business-brain:<name>)
 tests/                      pytest suite (engine + synthetic vault cycle)
 ```

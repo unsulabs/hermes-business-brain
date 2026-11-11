@@ -10,6 +10,8 @@ Re-exports the union of all engine operations:
   ``dx_apply``
 * transcripts family (from the ``ops_transcripts`` sibling module, once
   installed): ``transcript_cycle``
+* evolution family (from the ``ops_evolution`` sibling module, once
+  installed): ``evolution_scan``
 
 The sibling modules are imported tolerantly: while a sibling module is absent
 (or its op is not yet defined), accessing its op raises a clear ``AttributeError``
@@ -37,9 +39,11 @@ KNOWLEDGE_OPS = (
     "naming", "propose", "card", "document", "knowledge_plan", "dx_apply",
 )
 TRANSCRIPTS_OPS = ("transcript_cycle",)
+EVOLUTION_OPS = ("evolution_scan",)
 
 _SIBLING_OF = {name: "ops_knowledge" for name in KNOWLEDGE_OPS}
 _SIBLING_OF.update({name: "ops_transcripts" for name in TRANSCRIPTS_OPS})
+_SIBLING_OF.update({name: "ops_evolution" for name in EVOLUTION_OPS})
 
 def _load_sibling(name):
     """Import a sibling op module if it exists; return None when it is absent.
@@ -60,6 +64,7 @@ def _load_sibling(name):
 
 ops_knowledge = _load_sibling("ops_knowledge")
 ops_transcripts = _load_sibling("ops_transcripts")
+ops_evolution = _load_sibling("ops_evolution")
 __all__ = [
     "BrainError",
     "capture",
@@ -68,6 +73,7 @@ __all__ = [
     "doctor",
     "document",
     "dx_apply",
+    "evolution_scan",
     "knowledge_map",
     "knowledge_plan",
     "naming",
